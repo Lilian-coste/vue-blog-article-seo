@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
-import ArticlesPage from '../articles/page';
+import { BLOG_ADVICE } from '@/data/blog';
+import ScrollToTopOnMount from '@/components/globals/ScrollToTopOnMount';
+import BlogConseilClient from '@/components/blog/BlogConseilClient';
 
 export const metadata: Metadata = {
   title: 'Le blog — Tous les articles · Groupe Merlin',
@@ -8,5 +10,17 @@ export const metadata: Metadata = {
 };
 
 export default function BlogIndexPage() {
-  return <ArticlesPage />;
+  return (
+    <section className="gm-articles-page gm-articles-page--conseil">
+      <ScrollToTopOnMount />
+      <header className="gm-articles-page__head">
+        <span className="gm-articles-page__eyebrow">Le blog · Conseils</span>
+        <h1 className="gm-articles-page__title">
+          Conseils pratiques et <em>retours d&apos;expérience</em>
+        </h1>
+      </header>
+
+      <BlogConseilClient allArticles={BLOG_ADVICE} />
+    </section>
+  );
 }
