@@ -1,0 +1,151 @@
+/* ---------------------------------------------------------
+   Bouton "liquid glass" (Apple style) — variante dorée
+   Utilisé pour le CTA primaire "Nous contacter".
+   --------------------------------------------------------- */
+
+.gm-btn-glass {
+  --gm-glass-bg-tint:   rgba(250, 200, 100, 0.62);    /* doré teinté */
+  --gm-glass-edge-light: rgba(255, 255, 255, 0.55);
+  --gm-glass-edge-dark:  rgba(23, 23, 35, 0.18);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.7rem 1.25rem 0.72rem;
+  border-radius: var(--gm-radius-pill);
+
+  font-family: var(--gm-font-sans);
+  font-weight: var(--gm-fw-medium);
+  font-size: 0.95rem;
+  letter-spacing: 0.005em;
+  color: var(--gm-bleu-encre);
+  text-decoration: none;
+  white-space: nowrap;
+
+  background-color: var(--gm-glass-bg-tint);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+
+  /* effet "verre épais" : double bordure (lumière en haut, ombre en bas) */
+  box-shadow:
+    inset 0 1px 0 var(--gm-glass-edge-light),
+    inset 0 -1px 0 var(--gm-glass-edge-dark),
+    0 8px 28px -10px rgba(23, 23, 35, 0.30),
+    0 1px 2px rgba(23, 23, 35, 0.10);
+
+  cursor: pointer;
+  isolation: isolate; /* pour confiner les ::before/::after au bouton */
+  transition:
+    transform var(--gm-dur-base) var(--gm-ease-out),
+    box-shadow var(--gm-dur-base) var(--gm-ease-out),
+    background-color var(--gm-dur-base) var(--gm-ease-out);
+}
+
+/* Reflet spéculaire en haut du bouton (Apple liquid glass signature) */
+.gm-btn-glass::before {
+  content: "";
+  position: absolute;
+  inset: 1px 1px auto 1px;
+  height: 45%;
+  border-radius: var(--gm-radius-pill) var(--gm-radius-pill) 50% 50% / var(--gm-radius-pill) var(--gm-radius-pill) 100% 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Halo doré subtil derrière le bouton (sur fonds sombres) */
+.gm-btn-glass::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(closest-side, rgba(250, 200, 100, 0.30), transparent 70%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--gm-dur-base) var(--gm-ease-out);
+}
+
+.gm-btn-glass__label,
+.gm-btn-glass__icon {
+  position: relative;
+  z-index: 2;
+}
+
+.gm-btn-glass__icon {
+  display: inline-flex;
+  align-items: center;
+  width: 1.1em;
+  height: 1.1em;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(23, 23, 35, 0.10);
+  flex-shrink: 0;
+}
+
+/* drapeau français en CSS pur (pas d'asset SVG nécessaire) */
+.gm-btn-glass__icon--fr {
+  background: linear-gradient(
+    to right,
+    var(--gm-drapeau-bleu)  0%,
+    var(--gm-drapeau-bleu)  33.33%,
+    #FFFFFF                33.33%,
+    #FFFFFF                66.66%,
+    var(--gm-drapeau-rouge) 66.66%,
+    var(--gm-drapeau-rouge) 100%
+  );
+}
+
+/* icône téléphone — utilisée pour le CTA "Nous contacter" */
+.gm-btn-glass__icon--phone {
+  width: 1em;
+  height: 1em;
+  color: currentColor;
+  box-shadow: none;
+  border-radius: 0;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.gm-btn-glass__icon--phone svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* États */
+.gm-btn-glass:hover {
+  transform: translateY(-1px);
+  background-color: rgba(250, 200, 100, 0.78);
+  box-shadow:
+    inset 0 1px 0 var(--gm-glass-edge-light),
+    inset 0 -1px 0 var(--gm-glass-edge-dark),
+    0 14px 36px -12px rgba(23, 23, 35, 0.38),
+    0 2px 4px rgba(23, 23, 35, 0.12);
+}
+.gm-btn-glass:hover::after { opacity: 1; }
+
+.gm-btn-glass:active {
+  transform: translateY(0);
+  background-color: rgba(250, 200, 100, 0.92);
+}
+
+/* Variante "sur fond foncé" : accentue la luminance du verre */
+.gm-btn-glass--on-dark {
+  --gm-glass-bg-tint: rgba(250, 200, 100, 0.72);
+  color: var(--gm-bleu-encre);
+}
+
+/* Variante "sur fond clair" : verre plus dense pour rester lisible */
+.gm-btn-glass--on-light {
+  --gm-glass-bg-tint: rgba(250, 200, 100, 0.85);
+}
+
+/* Fallback si pas de backdrop-filter (Firefox <103, vieux Safari) */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .gm-btn-glass {
+    background-color: var(--gm-dore);
+  }
+}

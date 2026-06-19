@@ -1,0 +1,431 @@
+/* ---------------------------------------------------------
+   Page Contact — formulaire + aside coordonnées + garanties
+   Inspirée de l'ancienne version archivée + adaptée DA Merlin.
+   --------------------------------------------------------- */
+
+.gm-contact {
+  background-color: var(--gm-blanc-creme);
+  color: var(--gm-bleu-encre);
+  padding-block: clamp(7rem, 12vw, 10rem) clamp(4rem, 8vw, 7rem);
+}
+
+.gm-contact__head {
+  width: min(100% - 2rem, var(--gm-content-max));
+  margin-inline: auto;
+  margin-bottom: clamp(3rem, 5vw, 4rem);
+}
+
+/* ---------- Étape 1 : code postal préliminaire ---------- */
+.gm-contact__step-cp {
+  width: min(100% - 2rem, 560px);
+  margin-inline: auto;
+  background-color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(23, 23, 35, 0.10);
+  border-radius: var(--gm-radius-lg);
+  padding: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  box-shadow:
+    0 1px 2px rgba(23, 23, 35, 0.04),
+    0 8px 24px rgba(23, 23, 35, 0.06);
+}
+.gm-contact__step-cp h2 {
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  font-weight: var(--gm-fw-semibold);
+  margin-bottom: var(--gm-space-3);
+}
+.gm-contact__step-cp p {
+  font-size: 0.97rem;
+  color: var(--gm-gris-anthracite);
+  margin-bottom: var(--gm-space-6);
+  line-height: 1.55;
+}
+.gm-contact__step-cp__form {
+  display: flex;
+  gap: var(--gm-space-3);
+  align-items: stretch;
+  width: min(100%, 440px);
+  margin-inline: auto;
+}
+.gm-contact__step-cp__input {
+  flex: 1;
+  padding: 0.85rem 1rem;
+  font-family: var(--gm-font-sans);
+  font-size: 1.1rem;
+  font-weight: var(--gm-fw-medium);
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: var(--gm-bleu-encre);
+  background-color: #FFFFFF;
+  border: 1.5px solid rgba(23, 23, 35, 0.15);
+  border-radius: var(--gm-radius-md);
+  transition: border-color var(--gm-dur-fast), box-shadow var(--gm-dur-fast);
+}
+.gm-contact__step-cp__input:focus {
+  outline: none;
+  border-color: var(--gm-dore);
+  box-shadow: 0 0 0 4px rgba(250, 200, 100, 0.2);
+}
+.gm-contact__step-cp__btn {
+  padding: 0 1.5rem;
+  font-family: var(--gm-font-sans);
+  font-size: 0.95rem;
+  font-weight: var(--gm-fw-semibold);
+  color: var(--gm-blanc-creme);
+  background-color: var(--gm-bleu-encre);
+  border: none;
+  border-radius: var(--gm-radius-md);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color var(--gm-dur-fast), transform var(--gm-dur-fast);
+}
+.gm-contact__step-cp__btn:hover {
+  background-color: var(--gm-gris-ardoise);
+  transform: translateY(-1px);
+}
+.gm-contact__step-cp__error {
+  display: none;
+  margin-top: var(--gm-space-3);
+  font-size: 0.85rem;
+  color: var(--gm-drapeau-rouge);
+}
+.gm-contact__step-cp__error[data-visible="true"] { display: block; }
+
+/* État masqué/affiché des 2 étapes */
+.gm-contact[data-step="1"] .gm-contact__step-cp { display: block; }
+.gm-contact[data-step="1"] .gm-contact__grid { display: none; }
+.gm-contact[data-step="2"] .gm-contact__step-cp { display: none; }
+.gm-contact[data-step="2"] .gm-contact__grid { display: grid; }
+.gm-contact__eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: var(--gm-fw-medium);
+  color: var(--gm-gris-anthracite);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: var(--gm-space-3);
+}
+.gm-contact__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: var(--gm-fw-semibold);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.gm-contact__title em { color: var(--gm-dore); font-style: normal; }
+.gm-contact__lead {
+  margin-top: var(--gm-space-4);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--gm-gris-anthracite);
+  max-width: 60ch;
+}
+
+.gm-contact__grid {
+  width: min(100% - 2rem, var(--gm-content-max));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+@media (min-width: 1024px) {
+  .gm-contact__grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: stretch;  /* le formulaire s'étire jusqu'au bas du dernier card aside */
+  }
+  .gm-contact__form-col,
+  .gm-contact__aside { display: flex; flex-direction: column; }
+  .gm-contact__form { flex: 1; }
+}
+
+/* ---------- Formulaire ---------- */
+.gm-contact__form {
+  background-color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(23, 23, 35, 0.10);
+  border-radius: var(--gm-radius-lg);
+  padding: clamp(1.75rem, 3vw, 2.75rem);
+  box-shadow:
+    0 1px 2px rgba(23, 23, 35, 0.04),
+    0 8px 24px rgba(23, 23, 35, 0.04);
+}
+.gm-contact__form-title {
+  font-size: 1.5rem;
+  font-weight: var(--gm-fw-semibold);
+  letter-spacing: -0.01em;
+}
+.gm-contact__form-help {
+  margin-top: var(--gm-space-2);
+  font-size: 0.875rem;
+  color: var(--gm-gris-anthracite);
+}
+.gm-contact__form-help .gm-required { color: var(--gm-drapeau-rouge); }
+
+.gm-contact__fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gm-space-5);
+  margin-top: var(--gm-space-6);
+}
+@media (min-width: 600px) {
+  .gm-contact__fields { grid-template-columns: 1fr 1fr; }
+}
+
+.gm-contact__field { display: flex; flex-direction: column; }
+.gm-contact__field--full { grid-column: 1 / -1; }
+.gm-contact__field label {
+  font-size: 0.875rem;
+  font-weight: var(--gm-fw-semibold);
+  color: var(--gm-bleu-encre);
+  margin-bottom: var(--gm-space-2);
+}
+.gm-contact__field label .gm-required { color: var(--gm-drapeau-rouge); }
+
+.gm-contact__field input,
+.gm-contact__field select,
+.gm-contact__field textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-family: var(--gm-font-sans);
+  font-size: 1rem;
+  color: var(--gm-bleu-encre);
+  background-color: #FFFFFF;
+  border: 1.5px solid rgba(23, 23, 35, 0.15);
+  border-radius: var(--gm-radius-md);
+  transition:
+    border-color var(--gm-dur-fast) var(--gm-ease-out),
+    box-shadow var(--gm-dur-fast) var(--gm-ease-out);
+}
+.gm-contact__field textarea { resize: vertical; min-height: 140px; }
+.gm-contact__field input:focus,
+.gm-contact__field select:focus,
+.gm-contact__field textarea:focus {
+  outline: none;
+  border-color: var(--gm-dore);
+  box-shadow: 0 0 0 4px rgba(250, 200, 100, 0.2);
+}
+
+.gm-contact__cgu {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gm-space-3);
+  margin-top: var(--gm-space-5);
+  font-size: 0.875rem;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.gm-contact__cgu input {
+  margin-top: 0.2rem;
+  width: 16px; height: 16px;
+  accent-color: var(--gm-dore);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.gm-contact__cgu a {
+  color: var(--gm-drapeau-rouge);
+  text-decoration: underline;
+}
+
+.gm-contact__submit {
+  margin-top: var(--gm-space-6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.75rem;
+  font-family: var(--gm-font-sans);
+  font-size: 1rem;
+  font-weight: var(--gm-fw-semibold);
+  color: var(--gm-blanc-creme);
+  background-color: var(--gm-bleu-encre);
+  border: none;
+  border-radius: var(--gm-radius-md);
+  cursor: pointer;
+  transition:
+    background-color var(--gm-dur-fast) var(--gm-ease-out),
+    transform var(--gm-dur-fast) var(--gm-ease-out);
+}
+.gm-contact__submit:hover {
+  background-color: var(--gm-gris-ardoise);
+  transform: translateY(-1px);
+}
+.gm-contact__submit svg { width: 16px; height: 16px; }
+
+.gm-contact__error {
+  display: none;
+  margin-top: var(--gm-space-4);
+  padding: var(--gm-space-3) var(--gm-space-4);
+  font-size: 0.875rem;
+  color: #842029;
+  background-color: #F8D7DA;
+  border-left: 4px solid var(--gm-drapeau-rouge);
+  border-radius: var(--gm-radius-sm);
+}
+.gm-contact__error[data-visible="true"] { display: block; }
+
+.gm-contact__success {
+  display: none;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  background-color: var(--gm-bleu-encre);
+  color: var(--gm-blanc-creme);
+  border-left: 4px solid var(--gm-dore);
+  border-radius: var(--gm-radius-lg);
+}
+.gm-contact__success[data-visible="true"] { display: block; }
+.gm-contact__success h3 {
+  font-size: 1.5rem;
+  font-weight: var(--gm-fw-semibold);
+  margin-bottom: var(--gm-space-3);
+}
+.gm-contact__success p {
+  color: rgba(234, 225, 205, 0.85);
+  line-height: 1.6;
+}
+
+/* ---------- Aside coordonnées ---------- */
+.gm-contact__aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gm-space-6);
+}
+
+.gm-contact__card {
+  border-radius: var(--gm-radius-lg);
+  padding: clamp(1.75rem, 3vw, 2.25rem);
+}
+.gm-contact__card--coords {
+  background-color: rgba(234, 225, 205, 0.4);
+  border: 1px solid rgba(23, 23, 35, 0.10);
+}
+.gm-contact__card--garantie {
+  background-color: var(--gm-bleu-encre);
+  color: var(--gm-blanc-creme);
+}
+.gm-contact__card--phone {
+  background-color: var(--gm-blanc-creme);
+  border: 1px solid rgba(23, 23, 35, 0.10);
+  text-align: center;
+}
+
+.gm-contact__card-title {
+  font-size: 0.78rem;
+  font-weight: var(--gm-fw-semibold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gm-gris-anthracite);
+  margin-bottom: var(--gm-space-4);
+}
+.gm-contact__card--garantie .gm-contact__card-title {
+  color: var(--gm-dore);
+}
+
+.gm-contact__coord {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gm-space-1);
+  margin-bottom: var(--gm-space-4);
+  font-size: 0.95rem;
+}
+.gm-contact__coord:last-child { margin-bottom: 0; }
+.gm-contact__coord dt {
+  font-weight: var(--gm-fw-semibold);
+  color: var(--gm-bleu-encre);
+}
+.gm-contact__coord dd {
+  margin: 0;
+  color: var(--gm-gris-anthracite);
+}
+.gm-contact__coord a {
+  color: var(--gm-gris-anthracite);
+  text-decoration: none;
+  transition: color var(--gm-dur-fast) var(--gm-ease-out);
+}
+.gm-contact__coord a:hover { color: var(--gm-bleu-encre); }
+
+.gm-contact__garantie-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gm-space-3);
+}
+.gm-contact__garantie-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gm-space-3);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.gm-contact__garantie-list li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  border-radius: 6px;
+  background-color: var(--gm-dore);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23171723' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>");
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.gm-contact__phone-cta {
+  font-size: 0.95rem;
+  font-weight: var(--gm-fw-semibold);
+  color: var(--gm-bleu-encre);
+  margin-bottom: var(--gm-space-4);
+}
+.gm-contact__phone-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  background-color: var(--gm-dore);
+  color: var(--gm-bleu-encre);
+  font-size: 1.1rem;
+  font-weight: var(--gm-fw-semibold);
+  border-radius: var(--gm-radius-md);
+  text-decoration: none;
+  transition: background-color var(--gm-dur-fast) var(--gm-ease-out);
+}
+.gm-contact__phone-link:hover { background-color: #F5BC56; }
+.gm-contact__phone-link svg { width: 18px; height: 18px; }
+
+/* ---------- V6/V7 : bascule des 3 versions de l'aside par agence ----------
+   data-active-agence="<slug>" est posé sur .gm-contact (root) par contact-form.js.
+   On utilise display: flex (au lieu de display: contents) pour fiabilité cross-browser. */
+.gm-contact__agence-block { display: none; }
+.gm-contact[data-active-agence="clamecy"]         > .gm-contact__grid > .gm-contact__aside > [data-agence="clamecy"],
+.gm-contact[data-active-agence="corbigny"]        > .gm-contact__grid > .gm-contact__aside > [data-agence="corbigny"],
+.gm-contact[data-active-agence="mailly-la-ville"] > .gm-contact__grid > .gm-contact__aside > [data-agence="mailly-la-ville"],
+/* Sélecteur de secours plus permissif (preview HTML peut avoir une légère variation de structure) */
+.gm-contact[data-active-agence="clamecy"]         [data-agence="clamecy"],
+.gm-contact[data-active-agence="corbigny"]        [data-agence="corbigny"],
+.gm-contact[data-active-agence="mailly-la-ville"] [data-agence="mailly-la-ville"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gm-space-6);
+}
+
+/* Tag "Agence détectée :" en haut du formulaire (étape 2) */
+.gm-contact__agence-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.45rem 0.9rem;
+  background-color: rgba(250, 200, 100, 0.18);
+  border: 1px solid rgba(250, 200, 100, 0.55);
+  border-radius: var(--gm-radius-pill);
+  font-size: 0.82rem;
+  color: var(--gm-bleu-encre);
+  margin-bottom: var(--gm-space-5);
+}
+.gm-contact__agence-tag strong {
+  font-weight: var(--gm-fw-semibold);
+  color: var(--gm-bleu-encre);
+}
+/* Sous-titre agence dans la card coords (V8 : bleu encre, pas doré — meilleure lisibilité) */
+.gm-contact__card--coords .gm-contact__card-title strong {
+  display: inline-block;
+  margin-left: 0.35em;
+  color: var(--gm-bleu-encre);
+  font-weight: var(--gm-fw-semibold);
+}

@@ -1,0 +1,106 @@
+/* ---------- Reset minimal ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img, picture, video, svg { display: block; max-width: 100%; height: auto; }
+button, input, textarea, select { font: inherit; color: inherit; }
+button { background: none; border: 0; cursor: pointer; padding: 0; }
+a { color: inherit; text-decoration: none; }
+
+/* ---------- General Sans (Fontshare) ---------- */
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/general-sans/GeneralSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/general-sans/GeneralSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/general-sans/GeneralSans-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/general-sans/GeneralSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Base globale ---------- */
+/* scroll-behavior: auto — `smooth` interférait avec le scroll-to-top
+   automatique de Next.js lors d'une navigation client-side : on voyait
+   la page "remonter en haut" pendant que la page suivante chargeait.
+   Comportement WP préservé : navigation = chargement direct. */
+html { scroll-behavior: auto; }
+
+body {
+  font-family: var(--gm-font-sans);
+  font-weight: var(--gm-fw-regular);
+  font-size: var(--gm-fs-body);
+  line-height: var(--gm-lh-normal);
+  color: var(--gm-bleu-encre);
+  background-color: var(--gm-blanc-creme);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--gm-fw-semibold);
+  line-height: var(--gm-lh-tight);
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gm-dore);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Conteneur ---------- */
+.gm-container {
+  width: 100%;
+  max-width: var(--gm-content-max);
+  margin-inline: auto;
+  padding-inline: var(--gm-content-pad-x);
+}
+
+/* ---------- Section atmosphère ---------- */
+.gm-section {
+  padding-block: var(--gm-section-pad-y-desktop);
+}
+@media (max-width: 768px) {
+  .gm-section {
+    padding-block: var(--gm-section-pad-y-mobile);
+  }
+}
+.gm-section--froid {
+  background-color: var(--gm-bg-froid);
+  color: var(--gm-text-sur-froid);
+}
+.gm-section--chaud {
+  background-color: var(--gm-bg-chaud);
+  color: var(--gm-text-sur-chaud);
+}
+
+/* ---------- Utilitaire visually-hidden (a11y) ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

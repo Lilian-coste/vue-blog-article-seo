@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulateur d'aides — Pompe à chaleur — Groupe Merlin</title>
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --merlin-ink: #171723;
+      --merlin-cream: #EAE1CD;
+      --merlin-cream-soft: #F5EFE0;
+      --merlin-slate: #2E2E3A;
+      --merlin-anthracite: #42424E;
+      --merlin-gold: #E6C547;
+      --merlin-gold-hover: #D4B22F;
+      --merlin-gold-soft: #FAF3D5;
+      --merlin-blue: #0055A4;
+      --merlin-red: #EF4135;
+      --merlin-error-bg: #F8D7DA;
+      --merlin-error-text: #842029;
+      --merlin-success-bg: #1F3A2A;
+      --merlin-success-text: #D4F4DD;
+      --merlin-soft-red-bg: #FFF5F1;
+      --merlin-soft-red-border: #FCDACB;
+      --merlin-soft-red-text: #7A3010;
+      --merlin-soft-green-bg: #E1F2EA;
+      --merlin-soft-green-text: #1A6B48;
+      --merlin-light-gray: #F4F4F4;
+      --merlin-border: #E2E2E2;
+      --radius: 14px;
+      --transition: 200ms cubic-bezier(.4,0,.2,1);
+      --font: 'General Sans', system-ui, -apple-system, Segoe UI, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+
+    /* Force l'attribut HTML hidden à fonctionner même quand surchargé */
+    [hidden] { display: none !important; }
+
+    .merlin-simulator {
+      font-family: var(--font);
+      background: var(--merlin-cream);
+      color: var(--merlin-ink);
+      padding: clamp(32px, 6vw, 96px) clamp(16px, 4vw, 48px);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ─────────────────────────────────── */
+    .sim-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 40px;
+    }
+    .sim-tag {
+      display: inline-block;
+      background: var(--merlin-ink);
+      color: var(--merlin-gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 6px;
+      margin-bottom: 18px;
+    }
+    .sim-header h1 {
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.15;
+      margin: 0 0 16px;
+      letter-spacing: -0.01em;
+    }
+    .sim-header h1 .accent {
+      display: inline-block;
+      color: var(--merlin-gold);
+    }
+    .sim-subtitle {
+      margin: 0 auto;
+      max-width: 600px;
+      color: var(--merlin-anthracite);
+      font-size: clamp(14px, 1.6vw, 16px);
+      line-height: 1.55;
+    }
+
+    /* ── CARD ──────────────────────────────────── */
+    .sim-card {
+      background: #FFFFFF;
+      max-width: 720px;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      padding: clamp(24px, 4vw, 48px);
+      box-shadow: 0 1px 2px rgba(23, 23, 35, 0.04), 0 12px 32px rgba(23, 23, 35, 0.08);
+    }
+    .sim-card.sim-card-wide { max-width: 1080px; }
+
+    /* ── PROGRESS ─────────────────────────────── */
+    .progress-wrapper { margin-bottom: 36px; }
+    .progress-track {
+      background: #ECECEC;
+      height: 18px;
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .progress-fill {
+      background: linear-gradient(135deg, var(--merlin-ink) 0%, var(--merlin-slate) 100%);
+      height: 100%;
+      border-radius: 999px;
+      transition: width 400ms cubic-bezier(.4,0,.2,1);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 8px;
+    }
+    .progress-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--merlin-gold);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── STEPS ─────────────────────────────────── */
+    .step {
+      display: none;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      animation: fadeUp 320ms ease;
+    }
+    .step.active { display: block; }
+
+    /* ── BACK ARROW ────────────────────────────── */
+    .back-arrow {
+      appearance: none;
+      background: transparent;
+      border: 0;
+      padding: 8px 4px;
+      margin-top: 28px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--merlin-anthracite);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 1;
+      transition: color var(--transition);
+    }
+    .back-arrow:hover { color: var(--merlin-ink); }
+    .back-arrow svg {
+      transition: transform var(--transition);
+    }
+    .back-arrow:hover svg { transform: translateX(-3px); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-title {
+      display: block;
+      text-align: center;
+      font-weight: 600;
+      font-size: 20px;
+      margin: 0 0 24px;
+      color: var(--merlin-ink);
+    }
+    .req { color: var(--merlin-red); }
+
+    /* ── CHOICES (boutons noirs originaux) ─────── */
+    .choice-grid {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .choice-grid.two   { grid-template-columns: 1fr 1fr; }
+    .choice-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+    @media (max-width: 540px) {
+      .choice-grid.two,
+      .choice-grid.three { grid-template-columns: 1fr; }
+    }
+
+    .choice {
+      appearance: none;
+      border: 0;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+      background: var(--merlin-ink);
+      padding: 32px 16px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .choice::before,
+    .opt-card::before {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 4px;
+      background: linear-gradient(
+        to right,
+        var(--merlin-blue)   0    33.33%,
+        #FFFFFF              33.33% 66.66%,
+        var(--merlin-red)    66.66% 100%
+      );
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .choice:hover {
+      background: var(--merlin-slate);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(23, 23, 35, 0.18);
+    }
+    .choice:hover::before { opacity: 1; }
+    .choice.selected {
+      background: var(--merlin-gold);
+      color: var(--merlin-ink);
+    }
+    .choice.selected::before { opacity: 1; }
+
+    /* ── OPT-CARDS (type bâtiment, superficie, puissance) — désormais en INK ── */
+    .card-grid {
+      display: grid;
+      gap: 14px;
+    }
+    .card-grid.two   { grid-template-columns: 1fr 1fr; }
+    .card-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+    @media (max-width: 540px) {
+      .card-grid.two,
+      .card-grid.three { grid-template-columns: 1fr; }
+    }
+
+    .opt-card {
+      appearance: none;
+      font-family: inherit;
+      background: var(--merlin-ink);
+      border: 0;
+      color: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 22px 14px;
+      cursor: pointer;
+      text-align: center;
+      transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .opt-card:hover {
+      background: var(--merlin-slate);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(23, 23, 35, 0.18);
+    }
+    .opt-card:hover::before { opacity: 1; }
+    .opt-card.selected {
+      background: var(--merlin-gold);
+      color: var(--merlin-ink);
+    }
+    .opt-card.selected::before { opacity: 1; }
+
+    .opt-icon {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .opt-title {
+      display: block;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 4px;
+      letter-spacing: 0.01em;
+    }
+    .opt-desc {
+      display: block;
+      font-size: 12px;
+      opacity: 0.65;
+      line-height: 1.4;
+    }
+    .opt-card.selected .opt-desc { opacity: 0.75; }
+
+    /* Petites cards puissance kW */
+    .pow-grid {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .pow-card {
+      flex: 1 1 100px;
+      padding: 16px 10px;
+      min-width: 100px;
+    }
+    .pow-card .opt-title { font-size: 18px; margin-bottom: 0; }
+
+    /* ── SUB-LABEL ─────────────────────────────── */
+    .sub-label {
+      font-size: 13px;
+      color: var(--merlin-anthracite);
+      margin: 0 0 12px;
+      font-weight: 500;
+    }
+    .sub-zone { animation: fadeUp 320ms ease; }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--merlin-border);
+      margin: 24px 0;
+    }
+
+    /* ── CONDITIONS BOX ─────────────────────────── */
+    .conditions-box {
+      background: var(--merlin-soft-red-bg);
+      border: 1.5px solid var(--merlin-soft-red-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 22px;
+      animation: fadeUp 320ms ease;
+    }
+    .conditions-box p {
+      font-size: 13.5px;
+      color: var(--merlin-soft-red-text);
+      line-height: 1.55;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 0 0 6px;
+    }
+    .conditions-box p:last-child { margin-bottom: 0; }
+    .conditions-box p::before {
+      content: "✓";
+      font-weight: 700;
+      flex-shrink: 0;
+      color: var(--merlin-soft-red-text);
+    }
+
+    /* ── REVENUS ─── */
+    .rfr-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--merlin-ink);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .pers-grid {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+    .pers-btn {
+      appearance: none;
+      font-family: inherit;
+      padding: 10px 16px;
+      border: 2px solid var(--merlin-border);
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--merlin-ink);
+      transition: all .15s;
+    }
+    .pers-btn:hover { border-color: var(--merlin-gold); }
+    .pers-btn.selected {
+      border-color: var(--merlin-gold);
+      background: var(--merlin-gold-soft);
+      color: var(--merlin-ink);
+    }
+
+    .rev-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 13.5px;
+      margin: 4px 0 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--merlin-border);
+    }
+    .rev-table th {
+      background: var(--merlin-ink);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 11px 14px;
+      text-align: left;
+    }
+    .rev-table td {
+      padding: 12px 14px;
+      border-top: 1px solid var(--merlin-border);
+      vertical-align: middle;
+      background: #fff;
+    }
+    .rev-table tr { cursor: pointer; transition: background .15s; }
+    .rev-table tr:hover td { background: var(--merlin-cream-soft); }
+    .rev-table tr.selected td { background: var(--merlin-gold-soft); }
+    .rev-table tr.selected td:first-child {
+      box-shadow: inset 3px 0 0 var(--merlin-gold);
+    }
+    .profil-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .profil-precaire  { background: #DBEAFE; color: #1D4ED8; }
+    .profil-modeste   { background: #FEF9C3; color: #854D0E; }
+    .profil-intermed  { background: #F3E8FF; color: #7C3AED; }
+    .profil-classique { background: #F1F5F9; color: #475569; }
+
+    .note-h1 {
+      background: var(--merlin-soft-green-bg);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--merlin-soft-green-text);
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+
+    /* ── COORDONNÉES ─── */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 540px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .field-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--merlin-anthracite);
+      margin-bottom: 6px;
+    }
+    .field-group .req { color: var(--merlin-red); }
+
+    .text-input {
+      width: 100%;
+      font-family: inherit;
+      font-size: 16px;
+      padding: 13px 16px;
+      border: 1.5px solid var(--merlin-border);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--merlin-ink);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .text-input:focus {
+      outline: none;
+      border-color: var(--merlin-gold);
+      box-shadow: 0 0 0 4px rgba(230, 197, 71, 0.2);
+    }
+    .text-input.invalid {
+      border-color: var(--merlin-red);
+      box-shadow: 0 0 0 3px rgba(239, 65, 53, 0.15);
+    }
+    .text-input.valid {
+      border-color: #2E9E6B;
+    }
+
+    .field-error {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--merlin-error-text);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .field-error::before {
+      content: "⚠ ";
+      font-weight: 700;
+    }
+
+    .hint {
+      display: block;
+      font-size: 12px;
+      color: var(--merlin-anthracite);
+      margin-top: 6px;
+    }
+
+    /* ── POWER HELP ─── */
+    .power-help {
+      background: var(--merlin-cream-soft);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--merlin-ink);
+      line-height: 1.55;
+      animation: fadeUp 320ms ease;
+    }
+    .power-help-title {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .power-help-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .power-help-list li {
+      margin-bottom: 3px;
+    }
+    .power-help-list li:last-child { margin-bottom: 0; }
+
+    /* ── CTA ─── */
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      margin-top: 24px;
+      padding: 16px 24px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      color: var(--merlin-ink);
+      background: var(--merlin-gold);
+      border: 0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .cta:hover {
+      background: var(--merlin-gold-hover);
+      transform: translateY(-1px);
+    }
+    .cta:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .cta .arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--merlin-ink);
+      color: var(--merlin-gold);
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    /* ── ALERTS ─── */
+    .alert {
+      border-radius: 10px;
+      padding: 16px 20px;
+      text-align: center;
+      font-weight: 500;
+      border-left: 4px solid transparent;
+    }
+    .alert-error {
+      background: var(--merlin-red);
+      color: #FFFFFF;
+      border-left-color: #B82A1F;
+    }
+
+    .error-msg {
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: var(--merlin-error-bg);
+      color: var(--merlin-error-text);
+      border-left: 4px solid var(--merlin-red);
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    /* ── PAGE RÉSULTATS ─── */
+    .result-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .result-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: var(--merlin-ink);
+    }
+    .result-intro {
+      font-size: 14px;
+      color: var(--merlin-anthracite);
+      margin: 0 0 28px;
+      line-height: 1.5;
+    }
+
+    .adjust-block {
+      background: var(--merlin-cream-soft);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .adjust-block h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--merlin-anthracite);
+      margin: 0 0 14px;
+    }
+    .adjust-block .pers-grid { margin-bottom: 14px; }
+    .adjust-block .pers-grid:last-child { margin-bottom: 0; }
+    .adjust-block .rev-table { font-size: 12.5px; }
+
+    /* RECAP CARD (sticky) */
+    .recap-card {
+      background: var(--merlin-ink);
+      border-radius: 14px;
+      padding: 26px;
+      color: #fff;
+      position: static;
+    }
+    .recap-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin: 0 0 18px;
+      color: #fff;
+    }
+    .recap-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+    }
+    .recap-line:last-of-type { border-bottom: none; }
+    .recap-line .rl-label { color: rgba(255,255,255,0.65); }
+    .recap-line .rl-val { font-weight: 500; color: #fff; }
+
+    .aid-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 12px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+    .aid-item .ai-label { color: rgba(255,255,255,0.75); }
+    .aid-item .ai-val { color: var(--merlin-gold); font-weight: 700; }
+    .aid-item.disabled { opacity: 0.4; }
+    .aid-item.disabled .ai-val { color: rgba(255,255,255,0.6); }
+
+    .aids-section-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin: 18px 0 10px;
+    }
+
+    .total-aids {
+      margin-top: 8px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .total-aids .rl-label { color: var(--merlin-gold); font-weight: 500; }
+    .total-aids .rl-val   { color: var(--merlin-gold); font-weight: 700; }
+
+    .reste-charge-box {
+      margin-top: 18px;
+      background: var(--merlin-gold);
+      border-radius: 12px;
+      padding: 22px 18px;
+      text-align: center;
+      color: var(--merlin-ink);
+    }
+    .reste-charge-box .rc-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+      opacity: 0.7;
+    }
+    .reste-charge-box .rc-amount {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .reste-charge-box .rc-note { font-size: 12px; opacity: 0.7; margin-top: 4px; }
+    .rc-percent {
+      display: inline-block;
+      margin-top: 10px;
+      background: rgba(23,23,35,0.15);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .recap-cta {
+      display: block;
+      width: 100%;
+      margin-top: 14px;
+      padding: 14px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: center;
+      transition: all var(--transition);
+      text-decoration: none;
+      border: 0;
+    }
+    .recap-cta-primary {
+      background: var(--merlin-gold);
+      color: var(--merlin-ink);
+    }
+    .recap-cta-primary:hover {
+      background: var(--merlin-gold-hover);
+      transform: translateY(-1px);
+    }
+    /* ── ZONE CTA (sous la recap card) — sans cadre ─── */
+    .result-cta-zone {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* ── MENU DÉPLIANT "Modifier mes réponses" ─── */
+    .adjust-details {
+      background: #fff;
+      border: 1.5px solid var(--merlin-border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: box-shadow var(--transition);
+    }
+    .adjust-details[open] {
+      box-shadow: 0 4px 16px rgba(23,23,35,0.06);
+    }
+    .adjust-details > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--merlin-ink);
+      user-select: none;
+      transition: background var(--transition);
+    }
+    .adjust-details > summary:hover { background: var(--merlin-cream-soft); }
+    .adjust-details > summary::-webkit-details-marker { display: none; }
+    .adjust-summary-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .adjust-summary-text svg { color: var(--merlin-anthracite); flex-shrink: 0; }
+    .adjust-chevron {
+      font-size: 20px;
+      line-height: 1;
+      color: var(--merlin-anthracite);
+      transition: transform var(--transition);
+      transform: rotate(0deg);
+    }
+    .adjust-details[open] .adjust-chevron { transform: rotate(180deg); }
+    .adjust-details > .adjust-block {
+      margin: 0;
+      border-radius: 0;
+      border-top: 1px solid var(--merlin-border);
+      background: #fff;
+    }
+    .adjust-details > .adjust-block + .adjust-block {
+      border-top: 1px solid var(--merlin-border);
+    }
+
+    /* Bouton "Imprimer / Sauvegarder" — version carte bleu marine */
+    .btn-print {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      margin-top: 14px;
+      padding: 13px 24px;
+      border: 1.5px solid rgba(255,255,255,0.18);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.07);
+      color: #fff;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+    }
+    .btn-print:hover {
+      background: rgba(255,255,255,0.13);
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    /* V12 — Bouton "Nous contacter" : aligné EXACTEMENT sur .gm-btn-glass de la navbar
+       (cf. assets/css/components/btn-liquidglass.css). Dimensions inline-flex compact,
+       fond doré teinté avec backdrop-filter, double bordure inset (lumière haut + ombre bas). */
+    .liquid-cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.7rem 1.25rem 0.72rem;
+      margin: 0 auto;
+      border: none;
+      border-radius: 999px;
+      background-color: rgba(250, 200, 100, 0.62);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+              backdrop-filter: blur(18px) saturate(160%);
+      color: var(--merlin-ink);
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.005em;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+      isolation: isolate;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        inset 0 -1px 0 rgba(23, 23, 35, 0.18),
+        0 8px 28px -10px rgba(23, 23, 35, 0.30),
+        0 1px 2px rgba(23, 23, 35, 0.10);
+      transition: transform 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+    }
+    /* Reflet spéculaire en haut (signature liquid glass Apple) */
+    .liquid-cta::before {
+      content: '';
+      position: absolute;
+      inset: 1px 1px auto 1px;
+      height: 45%;
+      border-radius: 999px 999px 50% 50% / 999px 999px 100% 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    /* Halo doré subtil au hover */
+    .liquid-cta::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: inherit;
+      background: radial-gradient(closest-side, rgba(250,200,100,0.30), transparent 70%);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+    .liquid-cta:hover {
+      transform: translateY(-1px);
+      background-color: rgba(250, 200, 100, 0.78);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        inset 0 -1px 0 rgba(23, 23, 35, 0.18),
+        0 14px 36px -12px rgba(23, 23, 35, 0.38),
+        0 2px 4px rgba(23, 23, 35, 0.12);
+    }
+    .liquid-cta:hover::after { opacity: 1; }
+    .liquid-cta:active { transform: translateY(0) scale(0.99); }
+    .liquid-cta-inner { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 0.6rem; }
+    .liquid-cta svg { width: 1em; height: 1em; }
+
+    .non-eligible-msg {
+      margin-top: 16px;
+      background: var(--merlin-soft-red-bg);
+      border-left: 4px solid var(--merlin-red);
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      color: var(--merlin-soft-red-text);
+      line-height: 1.5;
+    }
+
+    /* ── RÉASSURANCE ─── */
+    .reassurance {
+      list-style: none;
+      padding: 0;
+      margin: 64px auto 0;
+      max-width: 960px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+    @media (max-width: 760px) {
+      .reassurance { grid-template-columns: 1fr; }
+    }
+    .reassurance li .ico-img {
+      display: block;
+      margin: 0 auto 12px;
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+    }
+    .reassurance li h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--merlin-ink);
+    }
+    .reassurance li p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--merlin-anthracite);
+      line-height: 1.4;
+    }
+
+    /* ── PRINT ─── */
+    @media print {
+      body { background: #fff; }
+      .merlin-simulator { padding: 20px; }
+      .progress-wrapper, .reassurance, .recap-cta { display: none !important; }
+      .result-layout { grid-template-columns: 1fr 1fr !important; }
+      .recap-card {
+        position: static !important;
+        background: #fff !important;
+        color: var(--merlin-ink) !important;
+        border: 1.5px solid var(--merlin-ink);
+      }
+      .recap-card h3,
+      .recap-line .rl-label,
+      .recap-line .rl-val,
+      .aid-item .ai-label { color: var(--merlin-ink) !important; }
+      .aid-item { background: var(--merlin-cream-soft) !important; }
+    }
+
+    /* ── MOBILE OVERRIDES (ajouts pour fix débordements iframe) ─── */
+    @media (max-width: 768px) {
+      /* Empêche tout élément de causer un overflow horizontal dans l'iframe */
+      .merlin-simulator,
+      .sim-card,
+      .step,
+      .form-grid,
+      .recap-card,
+      .reste-charge-box,
+      .conditions-box,
+      .non-eligible-msg,
+      .reassurance,
+      .result-layout,
+      .adjust-block { max-width: 100%; box-sizing: border-box; }
+
+      .merlin-simulator { padding: 8px; }
+      .sim-card { padding: 16px; }
+
+      /* Foyer : 3 colonnes x 2 lignes au lieu d'un wrap fluide qui déborde */
+      .pers-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+      .pers-btn {
+        padding: 10px 6px;
+        font-size: 12.5px;
+        text-align: center;
+      }
+
+      /* Table revenus : empêche le débordement, taille réduite */
+      .rev-table { font-size: 12px; }
+      .rev-table th,
+      .rev-table td { padding: 8px 6px; }
+
+      /* Badge RFR : padding réduit, ne déborde plus */
+      .rfr-badge {
+        padding: 12px;
+        font-size: 13px;
+      }
+
+      /* Bandeau vert "Reste à charge" : pas d'élargissement, padding réduit */
+      .reste-charge-box {
+        padding: 16px;
+      }
+      .rc-amount { font-size: clamp(1.5rem, 7vw, 2rem); }
+
+      /* Recap card : tous les contenus contenus */
+      .recap-line {
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      /* Form grid résultat : 1 col */
+      .form-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Bouton liquid CTA : nowrap pour éviter qu'il prenne 2 lignes */
+      .liquid-cta { white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+  <section class="merlin-simulator" aria-labelledby="sim-title">
+    <header class="sim-header">
+      <span class="sim-tag">Simulateur d'aide</span>
+      <h1 id="sim-title">
+        Découvrez le montant de vos aides pour votre
+        <span class="accent">pompe à chaleur</span>
+      </h1>
+      <p class="sim-subtitle">
+        Renseignez votre situation en quelques clics et découvrez le montant des aides CEE + MaPrimeRénov' applicables à votre projet.
+      </p>
+    </header>
+
+    <form id="sim-form" class="sim-card" novalidate>
+      <div class="progress-wrapper" aria-hidden="true">
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill" style="width:12%">
+            <span class="progress-label" id="progressLabel">12%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 1 : Statut -->
+      <fieldset class="step active" data-step="1">
+        <legend class="step-title">Vous êtes ? <span class="req">*</span></legend>
+        <div class="choice-grid two">
+          <button type="button" class="choice" data-field="statut" data-value="proprietaire">PROPRIÉTAIRE</button>
+          <button type="button" class="choice" data-field="statut" data-value="locataire">LOCATAIRE</button>
+        </div>
+        <p class="error-msg" hidden>Ce champ est obligatoire</p>
+      </fieldset>
+
+      <fieldset class="step" data-step="block-locataire">
+        <div class="alert alert-error">
+          Désolé, les locataires ne sont pas éligibles aux aides de l'État
+          pour la pompe à chaleur.
+        </div>
+        <button type="button" class="back-arrow" data-back="1" aria-label="Retour">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Retour
+        </button>
+      </fieldset>
+
+      <fieldset class="step" data-step="2">
+        <legend class="step-title">Type de chauffage actuel <span class="req">*</span></legend>
+        <div class="choice-grid three">
+          <button type="button" class="choice" data-field="chauffage" data-value="gaz">GAZ</button>
+          <button type="button" class="choice" data-field="chauffage" data-value="fioul">FIOUL</button>
+          <button type="button" class="choice" data-field="chauffage" data-value="autre">AUTRE</button>
+        </div>
+        <p class="error-msg" hidden>Ce champ est obligatoire</p>
+        <button type="button" class="back-arrow" data-back="1" aria-label="Retour">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Retour
+        </button>
+      </fieldset>
+
+      <fieldset class="step" data-step="2b">
+        <legend class="step-title">Précisez votre solution de chauffage actuelle <span class="req">*</span></legend>
+        <input type="text" class="text-input" name="chauffage_autre"
+          placeholder="Ex : pompe à chaleur ancienne, électrique, bois, granulés..." required />
+        <button type="button" class="cta next-btn">SUIVANT <span class="arrow">›</span></button>
+        <p class="error-msg" hidden>Ce champ est obligatoire</p>
+        <button type="button" class="back-arrow" data-back="2" aria-label="Retour">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Retour
+        </button>
+      </fieldset>
+
+      <!-- ÉTAPE 3 : Type de logement & superficie -->
+      <fieldset class="step" data-step="3">
+        <legend class="step-title">Type de logement &amp; superficie <span class="req">*</span></legend>
+
+        <p class="sub-label">Type de bâtiment</p>
+        <div class="card-grid two" id="type-options">
+          <button type="button" class="opt-card" data-field="type_logement" data-value="maison">
+            <span class="opt-icon">🏡</span>
+            <span class="opt-title">Maison</span>
+            <span class="opt-desc">Maison individuelle</span>
+          </button>
+          <button type="button" class="opt-card" data-field="type_logement" data-value="appartement">
+            <span class="opt-icon">🏢</span>
+            <span class="opt-title">Appartement</span>
+            <span class="opt-desc">Logement en copropriété</span>
+          </button>
+        </div>
+
+        <div class="sub-zone" id="surface-zone" hidden>
+          <hr class="divider">
+          <p class="sub-label">Superficie chauffée — sélectionnez votre tranche</p>
+          <div class="card-grid three" id="surface-options"></div>
+        </div>
+
+        <div class="sub-zone" id="power-zone" hidden>
+          <hr class="divider">
+          <p class="sub-label">Puissance de la PAC (pour superficie ≥ 90 m²)</p>
+          <div class="pow-grid" id="power-options"></div>
+          <div class="power-help">
+            <span class="power-help-title">Comment choisir ?</span>
+            <ul class="power-help-list">
+              <li><strong>9 kW</strong> — logements 90 à 120 m²</li>
+              <li><strong>12 kW</strong> — logements 120 à 160 m²</li>
+              <li><strong>14 kW</strong> — logements 160 à 190 m²</li>
+              <li><strong>16 kW</strong> — logements 190 à 220 m²</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="conditions-box" id="conditions-box" hidden>
+          <p>Dépose d'une chaudière fioul, gaz ou charbon obligatoire</p>
+          <p>La PAC doit être la seule source de chaleur raccordée au réseau hydraulique</p>
+          <p>Thermostat d'ambiance classe IV à VIII requis (fourni dans notre devis)</p>
+        </div>
+
+        <p class="error-msg" hidden>Veuillez compléter toutes les sélections</p>
+        <button type="button" class="back-arrow" data-back="2" aria-label="Retour">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Retour
+        </button>
+      </fieldset>
+
+      <!-- ÉTAPE 4 : Profil de revenus -->
+      <fieldset class="step" data-step="4">
+        <legend class="step-title">Profil de revenus (MaPrimeRénov') <span class="req">*</span></legend>
+
+        <div style="text-align:center;">
+          <span class="rfr-badge">ℹ️ Revenu Fiscal de Référence — avis d'imposition</span>
+        </div>
+
+        <p class="sub-label">Nombre de personnes dans le foyer fiscal</p>
+        <div class="pers-grid" id="persons-options"></div>
+
+        <p class="sub-label">Sélectionnez votre tranche de revenus</p>
+        <table class="rev-table" id="rev-table">
+          <thead>
+            <tr>
+              <th>Profil</th>
+              <th>Revenu fiscal ≤</th>
+              <th>MaPrimeRénov'</th>
+            </tr>
+          </thead>
+          <tbody id="rev-tbody"></tbody>
+        </table>
+
+        <div class="note-h1">
+          💡 Le facteur correctif zone climatique H1 (×1,2) est automatiquement appliqué aux primes CEE.
+        </div>
+
+        <p class="error-msg" hidden>Veuillez sélectionner votre tranche de revenus</p>
+        <button type="button" class="back-arrow" data-back="3" aria-label="Retour">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Retour
+        </button>
+      </fieldset>
+
+      <!-- ÉTAPE 5 : Coordonnées -->
+      <fieldset class="step" data-step="5">
+        <legend class="step-title">Vos coordonnées <span class="req">*</span></legend>
+
+        <div class="form-grid">
+          <div class="field-group">
+            <label for="f-prenom">Prénom <span class="req">*</span></label>
+            <input type="text" class="text-input" id="f-prenom" name="prenom" autocomplete="given-name" required />
+            <small class="field-error" hidden></small>
+          </div>
+          <div class="field-group">
+            <label for="f-nom">Nom <span class="req">*</span></label>
+            <input type="text" class="text-input" id="f-nom" name="nom" autocomplete="family-name" required />
+            <small class="field-error" hidden></small>
+          </div>
+          <div class="field-group" style="grid-column: 1 / -1;">
+            <label for="f-email">Adresse email <span class="req">*</span></label>
+            <input type="email" class="text-input" id="f-email" name="email" autocomplete="email" placeholder="exemple@domaine.fr" required />
+            <small class="field-error" hidden></small>
+          </div>
+          <div class="field-group" style="grid-column: 1 / -1;">
+            <label for="f-tel">Téléphone mobile <span class="req">*</span></label>
+            <input type="tel" class="text-input" id="f-tel" name="telephone" placeholder="06 12 34 56 78" autocomplete="tel" maxlength="14" required />
+            <small class="field-error" hidden></small>
+          </div>
+        </div>
+
+        <button type="button" class="cta submit-btn" id="submit-btn">VOIR MES AIDES <span class="arrow">›</span></button>
+        <p class="error-msg" hidden></p>
+        <button type="button" class="back-arrow" data-back="4" aria-label="Retour">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Retour
+        </button>
+      </fieldset>
+
+      <!-- ÉTAPE RÉSULTATS -->
+      <fieldset class="step" data-step="done">
+        <div class="result-layout">
+          <div>
+            <h2 class="result-title">🎉 Votre simulation personnalisée</h2>
+            <p class="result-intro">
+              Voici l'estimation des aides applicables à votre projet.
+            </p>
+            <p class="result-intro" style="margin-top: 0.75rem;">
+              <strong>Bon à savoir :</strong> vous pouvez aussi financer le reste à charge via un <strong>Éco-PTZ</strong> (prêt à taux zéro jusqu'à 50&nbsp;000&nbsp;€ sur 20 ans). Pour en bénéficier, contactez votre banque pour savoir si elle propose cette aide financière (la plupart des établissements la proposent).
+            </p>
+            <p class="result-intro" style="margin-top: 1.5rem;">
+              <strong>Important :</strong> ces aides ne sont accordées que si l'installation est réalisée par un artisan certifié <strong>RGE QualiPAC</strong>. Le Groupe Merlin est certifié RGE QualiPAC (et a été élu 3ᵉ meilleur artisan de France).
+            </p>
+          </div>
+
+          <aside class="recap-card" id="recap-card">
+            <h3>🧮 Votre simulation</h3>
+            <div id="recap-content"></div>
+          </aside>
+
+          <!-- Zone CTA (bouton "Nous contacter") -->
+          <div class="result-cta-zone" id="result-cta-zone" hidden></div>
+
+          <!-- Menu dépliant pour ajuster les réponses -->
+          <details class="adjust-details">
+            <summary>
+              <span class="adjust-summary-text">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+                Modifier mes réponses pour comparer d'autres scénarios
+              </span>
+              <span class="adjust-chevron" aria-hidden="true">⌄</span>
+            </summary>
+
+            <div class="adjust-block" id="adjust-power" hidden>
+              <h4>⚡ Ajuster la puissance de votre PAC</h4>
+              <div class="pow-grid" id="adjust-power-options"></div>
+            </div>
+
+            <div class="adjust-block">
+              <h4>👥 Personnes dans le foyer</h4>
+              <div class="pers-grid" id="adjust-persons"></div>
+              <h4 style="margin-top:6px;">💶 Tranche de revenus</h4>
+              <table class="rev-table">
+                <thead>
+                  <tr>
+                    <th>Profil</th>
+                    <th>Revenu fiscal ≤</th>
+                    <th>MPR'</th>
+                  </tr>
+                </thead>
+                <tbody id="adjust-rev-tbody"></tbody>
+              </table>
+            </div>
+          </details>
+        </div>
+      </fieldset>
+    </form>
+
+    <!-- Fallback SVG pour la preview (si les PNG ne sont pas trouvés) -->
+    <template id="icon-economie">
+      <svg class="ico-img" viewBox="0 0 64 64" fill="none" stroke="#171723" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <!-- Document avec lignes de texte -->
+        <path d="M12 8 L38 8 L38 52 L12 52 Z"/>
+        <line x1="18" y1="20" x2="32" y2="20"/>
+        <line x1="18" y1="28" x2="32" y2="28"/>
+        <line x1="18" y1="36" x2="26" y2="36"/>
+        <!-- Cercle avec flèche descendante -->
+        <circle cx="48" cy="44" r="10"/>
+        <line x1="48" y1="40" x2="48" y2="48"/>
+        <polyline points="44,44 48,48 52,44"/>
+      </svg>
+    </template>
+    <template id="icon-subvention">
+      <svg class="ico-img" viewBox="0 0 64 64" fill="none" stroke="#171723" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <!-- Bâtiment institutionnel : toit + colonnes + sol -->
+        <path d="M6 24 L26 10 L46 24"/>
+        <line x1="4" y1="50" x2="50" y2="50"/>
+        <line x1="12" y1="24" x2="12" y2="50"/>
+        <line x1="26" y1="24" x2="26" y2="50"/>
+        <line x1="40" y1="24" x2="40" y2="50"/>
+        <!-- Cercle euro à droite -->
+        <circle cx="51" cy="46" r="9"/>
+        <path d="M55 41 Q47 41 47 46 Q47 51 55 51"/>
+        <line x1="44" y1="44" x2="51" y2="44"/>
+        <line x1="44" y1="48" x2="50" y2="48"/>
+      </svg>
+    </template>
+    <template id="icon-pompe">
+      <svg class="ico-img" viewBox="0 0 64 64" fill="none" stroke="#171723" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <!-- Boîtier de la PAC -->
+        <rect x="6" y="10" width="36" height="40" rx="5"/>
+        <!-- Ventilateur -->
+        <circle cx="24" cy="30" r="11"/>
+        <circle cx="24" cy="30" r="2" fill="#171723"/>
+        <!-- 4 pales -->
+        <ellipse cx="24" cy="22" rx="2.5" ry="6" fill="#171723"/>
+        <ellipse cx="32" cy="30" rx="6" ry="2.5" fill="#171723"/>
+        <ellipse cx="24" cy="38" rx="2.5" ry="6" fill="#171723"/>
+        <ellipse cx="16" cy="30" rx="6" ry="2.5" fill="#171723"/>
+        <!-- 3 ondes à droite -->
+        <path d="M48 18 Q52 14 56 18"/>
+        <path d="M48 30 Q52 26 56 30"/>
+        <path d="M48 42 Q52 38 56 42"/>
+      </svg>
+    </template>
+
+    <ul class="reassurance">
+      <li>
+        <img class="ico-img" src="icons/economie.png" alt="" data-fallback="economie" aria-hidden="true" />
+        <h3>70% Économies</h3>
+        <p>sur vos factures d'électricité par rapport à votre ancienne installation Fioul ou Gaz</p>
+      </li>
+      <li>
+        <img class="ico-img" src="icons/subvention.png" alt="" data-fallback="subvention" aria-hidden="true" />
+        <h3>Subventions</h3>
+        <p>de l'État pouvant aller jusqu'à 10 800€</p>
+      </li>
+      <li>
+        <img class="ico-img" src="icons/pompe-a-chaleur.png" alt="" data-fallback="pompe" aria-hidden="true" />
+        <h3>Chauffage en hiver</h3>
+        <p>Grâce à notre pompe à chaleur AIR-EAU pour votre confort toute l'année.</p>
+      </li>
+    </ul>
+  </section>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ───────────────────────────────────────────────────────────────
+     ⚙️ CONFIG : URL DE REDIRECTION DU CTA "NOUS CONTACTER"
+     ⚠️ À adapter pour la prod (ex: '/contact.html' ou URL absolue)
+  ─────────────────────────────────────────────────────────────── */
+  const CONTACT_URL = 'http://127.0.0.1:3000/site%20web%20christophe/_preview/contact.html';
+
+  /* ─── BARÈMES ─── */
+  // Barème unifié maison / appartement (validé Lilian 2026-06-11) :
+  // mêmes surfaces, puissances et devis TTC pour les deux types de logement.
+  const DEVIS_MAISON = {
+    "<70":   [{ kw: 5, ttc: 10800 }],
+    "70-90": [{ kw: 7, ttc: 11800 }],
+    ">=90":  [
+      { kw: 9,  ttc: 12800 },
+      { kw: 12, ttc: 13800 },
+      { kw: 14, ttc: 14800 },
+      { kw: 16, ttc: 15800 },
+    ],
+  };
+  const DEVIS_APPART = DEVIS_MAISON;
+
+  const CEE_MAISON = {
+    "<70":   { precaire: 3276, modeste: 2555, intermed: 2555, classique: 2555 },
+    "70-90": { precaire: 4586, modeste: 3577, intermed: 3577, classique: 3577 },
+    ">=90":  { precaire: 6552, modeste: 5110, intermed: 5110, classique: 5110 },
+  };
+  const CEE_APPART = CEE_MAISON;
+
+  const MPR_MAISON = {
+    precaire:  { "<70": 5000, "70-90": 5000, ">=90": 4248 },
+    modeste:   { "<70": 4000, "70-90": 4000, ">=90": 3890 },
+    intermed:  { "<70": 3000, "70-90": 3000, ">=90": 2090 },
+    classique: { "<70": 0,    "70-90": 0,    ">=90": 0    },
+  };
+  const MPR_APPART = MPR_MAISON;
+
+  const RFR_PLAFONDS = {
+    1: { precaire: 17363, modeste: 22259, intermed: 31185 },
+    2: { precaire: 25393, modeste: 32553, intermed: 45842 },
+    3: { precaire: 30540, modeste: 39148, intermed: 55196 },
+    4: { precaire: 35676, modeste: 45735, intermed: 64550 },
+    5: { precaire: 40835, modeste: 52348, intermed: 73907 },
+  };
+  const RFR_SUPP = { precaire: 5151, modeste: 6598, intermed: 9357 };
+
+  const PROFIL_LABELS = {
+    precaire:  { label: "Très modeste",  badge: "profil-precaire",  emoji: "🔵" },
+    modeste:   { label: "Modeste",       badge: "profil-modeste",   emoji: "🟡" },
+    intermed:  { label: "Intermédiaire", badge: "profil-intermed",  emoji: "🟣" },
+    classique: { label: "Aisé",          badge: "profil-classique", emoji: "🌸" },
+  };
+
+  // Plus de prix affiché — uniquement label + description
+  const SURFACE_MAISON = [
+    { key: "<70",   label: "< 70 m²",    desc: "PAC 5 kW" },
+    { key: "70-90", label: "70 – 90 m²", desc: "PAC 7 kW" },
+    { key: ">=90",  label: "> 90 m²",    desc: "PAC 9 / 12 / 14 / 16 kW" },
+  ];
+  const SURFACE_APPART = SURFACE_MAISON;
+
+  /* ─── DOM ─── */
+  const form          = document.getElementById('sim-form');
+  const progressFill  = document.getElementById('progressFill');
+  const progressLabel = document.getElementById('progressLabel');
+  const steps         = Array.from(form.querySelectorAll('.step'));
+
+  const PROGRESS = {
+    '1': 12, '2': 28, '2b': 35, '3': 50,
+    '4': 70, '5': 85, 'done': 100, 'block-locataire': 50
+  };
+
+  /* ─── STATE ─── */
+  const state = {
+    statut: null,
+    chauffage: null,
+    chauffage_autre: '',
+    type_logement: null,
+    surface: null,
+    power: null,
+    persons: null,
+    profil: null,
+    prenom: '', nom: '', email: '', telephone: '',
+  };
+
+  let currentKey = '1';
+
+  function showStep(key) {
+    steps.forEach(s => s.classList.toggle('active', s.dataset.step === key));
+    currentKey = key;
+    const pct = PROGRESS[key] ?? 0;
+    progressFill.style.width = pct + '%';
+    progressLabel.textContent = pct + '%';
+    if (key === 'done') {
+      try {
+        renderResults();
+      } catch (err) {
+        console.error('[Simulateur] Erreur lors du rendu des résultats :', err);
+      }
+    }
+    if (key === '4' && document.getElementById('persons-options').children.length === 0) {
+      renderPersons('persons-options');
+      renderRevTable('rev-tbody');
+    }
+    // V15 : on délègue le scroll au parent via postMessage. Le parent scrollera
+    // l'IFRAME entière (pas un élément interne — qui sortait du viewport en haut).
+    // Garde-fou : seulement après vraie interaction utilisateur (flag posé au 1er click).
+    if (window.__gmSimUserInteracted && window.parent !== window) {
+      setTimeout(() => {
+        window.parent.postMessage({ type: 'gm-sim-scroll-bottom' }, '*');
+      }, 100);
+    }
+    // Focus sur le champ actif sans déclencher de scroll parent involontaire
+    const target = form.querySelector('.step.active input[type="text"], .step.active input[type="tel"], .step.active input[type="email"]');
+    if (target) setTimeout(() => target.focus({ preventScroll: true }), 380);
+  }
+
+  function setError(stepEl, msg) {
+    const el = stepEl.querySelector('.error-msg');
+    if (!el) return;
+    if (msg) { el.hidden = false; el.textContent = msg; }
+    else { el.hidden = true; }
+  }
+
+  /* ─── VALIDATION FIELD-BY-FIELD (étape 5) ─── */
+  function validateFieldEl(input, showError = true) {
+    const name = input.name;
+    const value = input.value.trim();
+    const errorEl = input.parentElement.querySelector('.field-error');
+    let error = '';
+
+    switch (name) {
+      case 'prenom':
+        if (value.length === 0) error = 'Veuillez renseigner votre prénom';
+        else if (value.length < 2) error = 'Prénom trop court (min. 2 caractères)';
+        break;
+      case 'nom':
+        if (value.length === 0) error = 'Veuillez renseigner votre nom';
+        else if (value.length < 2) error = 'Nom trop court (min. 2 caractères)';
+        break;
+      case 'email':
+        if (value.length === 0) error = 'Veuillez renseigner votre adresse email';
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) error = 'Adresse email invalide (ex : prenom@domaine.fr)';
+        break;
+      case 'telephone': {
+        const tel = value.replace(/\s+/g, '');
+        if (tel.length === 0) error = 'Veuillez renseigner votre numéro';
+        else if (!/^0[67]\d{8}$/.test(tel)) error = 'Numéro invalide — il doit commencer par 06 ou 07 et contenir 10 chiffres';
+        break;
+      }
+    }
+
+    if (error && showError) {
+      input.classList.add('invalid');
+      input.classList.remove('valid');
+      if (errorEl) { errorEl.hidden = false; errorEl.textContent = error; }
+      return false;
+    }
+    if (error && !showError) {
+      return false;
+    }
+    input.classList.remove('invalid');
+    input.classList.add('valid');
+    if (errorEl) errorEl.hidden = true;
+    return true;
+  }
+
+  function validate(key) {
+    const stepEl = form.querySelector(`.step[data-step="${key}"]`);
+    setError(stepEl, '');
+    switch (key) {
+      case '1':
+        if (!state.statut) { setError(stepEl, 'Ce champ est obligatoire'); return false; }
+        return true;
+      case '2':
+        if (!state.chauffage) { setError(stepEl, 'Ce champ est obligatoire'); return false; }
+        return true;
+      case '2b': {
+        const v = stepEl.querySelector('input').value.trim();
+        if (v.length < 2) { setError(stepEl, 'Ce champ est obligatoire'); return false; }
+        state.chauffage_autre = v;
+        return true;
+      }
+      case '3':
+        if (!state.type_logement || !state.surface || !state.power) {
+          setError(stepEl, 'Veuillez compléter toutes les sélections');
+          return false;
+        }
+        return true;
+      case '4':
+        if (!state.persons || !state.profil) {
+          setError(stepEl, 'Veuillez sélectionner votre tranche de revenus');
+          return false;
+        }
+        return true;
+      case '5': {
+        // Valide chaque champ et affiche les erreurs sous chaque input
+        const ids = ['f-prenom', 'f-nom', 'f-email', 'f-tel'];
+        let allOK = true;
+        let firstInvalidEl = null;
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          const ok = validateFieldEl(el, true);
+          if (!ok) {
+            allOK = false;
+            if (!firstInvalidEl) firstInvalidEl = el;
+          }
+        });
+        if (!allOK) {
+          setError(stepEl, 'Veuillez corriger les champs marqués en rouge avant de continuer.');
+          if (firstInvalidEl) firstInvalidEl.focus();
+          return false;
+        }
+        state.prenom    = document.getElementById('f-prenom').value.trim();
+        state.nom       = document.getElementById('f-nom').value.trim();
+        state.email     = document.getElementById('f-email').value.trim();
+        state.telephone = document.getElementById('f-tel').value.replace(/\s+/g, '');
+        return true;
+      }
+    }
+    return true;
+  }
+
+  function nextOf(key) {
+    if (key === '1' && state.statut === 'locataire') return 'block-locataire';
+    if (key === '2' && state.chauffage === 'autre')  return '2b';
+    const map = { '1':'2', '2':'3', '2b':'3', '3':'4', '4':'5', '5':'done' };
+    return map[key] ?? null;
+  }
+
+  /* ─── ÉTAPE 3 : RENDU ─── */
+  function renderSurfaceOptions() {
+    const opts = state.type_logement === 'maison' ? SURFACE_MAISON : SURFACE_APPART;
+    const c = document.getElementById('surface-options');
+    c.innerHTML = opts.map(o => `
+      <button type="button" class="opt-card ${state.surface === o.key ? 'selected' : ''}"
+              data-surface="${o.key}">
+        <span class="opt-title">${o.label}</span>
+        <span class="opt-desc">${o.desc}</span>
+      </button>
+    `).join('');
+    document.getElementById('surface-zone').hidden = false;
+    // Mobile : signal au parent que la zone superficie vient d'apparaître,
+    // pour qu'il scrolle l'iframe et que la nouvelle question soit visible.
+    if (window.parent !== window) {
+      setTimeout(() => {
+        window.parent.postMessage({ type: 'gm-sim-scroll-to-surface' }, '*');
+      }, 120);
+    }
+  }
+
+  function renderPowerOptions(targetId) {
+    const c = document.getElementById(targetId);
+    c.innerHTML = DEVIS_MAISON['>=90'].map(p => `
+      <button type="button" class="opt-card pow-card ${state.power && state.power.kw === p.kw ? 'selected' : ''}"
+              data-kw="${p.kw}" data-ttc="${p.ttc}">
+        <span class="opt-title">${p.kw} kW</span>
+      </button>
+    `).join('');
+  }
+
+  function showConditionsAndCta() {
+    document.getElementById('conditions-box').hidden = false;
+  }
+  function tryAutoNext(key, delay = 350) {
+    if (currentKey !== key) return;
+    if (!validate(key)) return;
+    setTimeout(() => {
+      if (currentKey !== key) return;
+      const next = nextOf(key);
+      if (next) showStep(next);
+    }, delay);
+  }
+
+  /* ─── ÉTAPE 4 : RENDU ─── */
+  function renderPersons(targetId) {
+    const c = document.getElementById(targetId);
+    c.innerHTML = [1,2,3,4,5,6].map(n => `
+      <button type="button" class="pers-btn ${state.persons === n ? 'selected' : ''}" data-persons="${n}">
+        ${n <= 5 ? n : '5+'} pers.
+      </button>
+    `).join('');
+  }
+
+  function getPlafonds(persons) {
+    if (persons <= 5) return RFR_PLAFONDS[persons];
+    const extra = persons - 5;
+    const base  = RFR_PLAFONDS[5];
+    return {
+      precaire: base.precaire + extra * RFR_SUPP.precaire,
+      modeste:  base.modeste  + extra * RFR_SUPP.modeste,
+      intermed: base.intermed + extra * RFR_SUPP.intermed,
+    };
+  }
+
+  function renderRevTable(targetId) {
+    if (!state.persons) {
+      document.getElementById(targetId).innerHTML = `
+        <tr><td colspan="3" style="text-align:center;color:var(--merlin-anthracite);font-style:italic;padding:24px;">
+          Sélectionnez d'abord le nombre de personnes ↑
+        </td></tr>`;
+      return;
+    }
+    const p = getPlafonds(state.persons);
+    document.getElementById(targetId).innerHTML = ['precaire','modeste','intermed','classique'].map(k => {
+      const info  = PROFIL_LABELS[k];
+      const limit = k === 'classique' ? `> ${p.intermed.toLocaleString('fr-FR')} €` : `≤ ${p[k].toLocaleString('fr-FR')} €`;
+      return `
+        <tr class="${state.profil === k ? 'selected' : ''}" data-profil="${k}">
+          <td><span class="profil-badge ${info.badge}">${info.emoji} ${info.label}</span></td>
+          <td>${limit}</td>
+          <td>${k === 'classique' ? '—' : 'Inclus'}</td>
+        </tr>`;
+    }).join('');
+  }
+
+  /* ─── CALCUL ─── */
+  function calcAides() {
+    if (!state.type_logement || !state.surface || !state.power || !state.persons || !state.profil) return null;
+    const ceeTable = state.type_logement === 'maison' ? CEE_MAISON : CEE_APPART;
+    const mprTable = state.type_logement === 'maison' ? MPR_MAISON : MPR_APPART;
+
+    const cee  = ceeTable[state.surface][state.profil];
+    const mpr  = mprTable[state.profil][state.surface];
+    const ttc  = state.power.ttc;
+    const total = cee + mpr;
+    const reste = Math.max(0, ttc - total);
+    const pct   = Math.round((total / ttc) * 100);
+
+    return { cee, mpr, total, reste, pct, ttc };
+  }
+
+  /* ─── RÉSULTATS ─── */
+  function renderResults() {
+    const adjPow = document.getElementById('adjust-power');
+    if (state.surface === '>=90') {
+      adjPow.hidden = false;
+      renderPowerOptions('adjust-power-options');
+    } else {
+      adjPow.hidden = true;
+    }
+    renderPersons('adjust-persons');
+    renderRevTable('adjust-rev-tbody');
+    updateRecap();
+  }
+
+  function updateRecap() {
+    const r = calcAides();
+    const c = document.getElementById('recap-content');
+    const ctaZone = document.getElementById('result-cta-zone');
+
+    if (!r) {
+      c.innerHTML = `<p style="color:rgba(255,255,255,0.5);text-align:center;font-size:13px;">Sélectionnez un profil pour voir le résultat.</p>`;
+      if (ctaZone) ctaZone.hidden = true;
+      return;
+    }
+
+    const profilInfo = PROFIL_LABELS[state.profil];
+    const typeLabel  = state.type_logement === 'maison' ? 'Maison individuelle' : 'Appartement';
+
+    // ── Carte bleu marine : calcul uniquement, sans CTA ──
+    c.innerHTML = `
+      <div class="recap-line">
+        <span class="rl-label">Logement</span>
+        <span class="rl-val">${typeLabel}</span>
+      </div>
+      <div class="recap-line">
+        <span class="rl-label">PAC ${state.power.kw} kW</span>
+        <span class="rl-val">${r.ttc.toLocaleString('fr-FR')} € TTC</span>
+      </div>
+      <div class="recap-line">
+        <span class="rl-label">Profil</span>
+        <span class="rl-val">${profilInfo.emoji} ${profilInfo.label}</span>
+      </div>
+      <div class="aids-section-title">Aides obtenues</div>
+      <div class="aid-item">
+        <span class="ai-label">Prime CEE (zone H1)</span>
+        <span class="ai-val">− ${r.cee.toLocaleString('fr-FR')} €</span>
+      </div>
+      <div class="aid-item ${r.mpr === 0 ? 'disabled' : ''}">
+        <span class="ai-label">MaPrimeRénov'</span>
+        <span class="ai-val">${r.mpr === 0 ? 'Non éligible' : '− ' + r.mpr.toLocaleString('fr-FR') + ' €'}</span>
+      </div>
+      <div class="recap-line total-aids">
+        <span class="rl-label">Total aides</span>
+        <span class="rl-val">− ${r.total.toLocaleString('fr-FR')} €</span>
+      </div>
+      <div class="reste-charge-box">
+        <span class="rc-label">Votre reste à charge</span>
+        <div class="rc-amount">${r.reste.toLocaleString('fr-FR')} €</div>
+        <div class="rc-note">TTC, aides déduites</div>
+        <span class="rc-percent">${r.pct}% financé par les aides</span>
+      </div>
+      ${r.mpr === 0 ? `
+        <div class="non-eligible-msg">
+          ℹ️ Votre profil <strong>Aisé</strong> n'est pas éligible à MaPrimeRénov', mais la prime CEE reste cumulable.
+        </div>` : ''}
+      <button type="button" class="btn-print" onclick="window.print()">📄 Imprimer / Sauvegarder</button>
+    `;
+
+    // ── Bulle blanche : uniquement "Nous contacter" ──
+    if (ctaZone) {
+      ctaZone.hidden = false;
+      ctaZone.innerHTML = `
+        <a href="#" data-gm-contact-cta class="liquid-cta">
+          <span class="liquid-cta-inner">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.11a16 16 0 0 0 5.45 5.45l1.17-1.17a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Nous contacter
+          </span>
+        </a>
+      `;
+    }
+  }
+
+  /* ─── EVENT LISTENERS ─── */
+
+  // V14 : marque dès le premier click n'importe où dans le simulateur (capture phase
+  // pour intercepter avant les autres handlers). Active le scroll auto bottom dans showStep.
+  form.addEventListener('click', () => { window.__gmSimUserInteracted = true; }, true);
+
+  // Boutons "choice" (statut, chauffage)
+  form.addEventListener('click', (e) => {
+    const btn = e.target.closest('.choice');
+    if (!btn) return;
+    const field = btn.dataset.field;
+    const value = btn.dataset.value;
+    state[field] = value;
+    form.querySelectorAll(`.choice[data-field="${field}"]`).forEach(b => b.classList.toggle('selected', b === btn));
+    setTimeout(() => {
+      if (!validate(currentKey)) return;
+      const next = nextOf(currentKey);
+      if (next) showStep(next);
+    }, 250);
+  });
+
+  // Cards type_logement
+  form.addEventListener('click', (e) => {
+    const btn = e.target.closest('.opt-card[data-field="type_logement"]');
+    if (!btn) return;
+    state.type_logement = btn.dataset.value;
+    state.surface = null;
+    state.power = null;
+    document.querySelectorAll('.opt-card[data-field="type_logement"]').forEach(b =>
+      b.classList.toggle('selected', b === btn));
+    document.getElementById('power-zone').hidden = true;
+    renderSurfaceOptions();
+    document.getElementById('conditions-box').hidden = false;
+    showConditionsAndCta();
+  });
+
+  // Cards superficie
+  form.addEventListener('click', (e) => {
+    const btn = e.target.closest('.opt-card[data-surface]');
+    if (!btn) return;
+    state.surface = btn.dataset.surface;
+    document.querySelectorAll('.opt-card[data-surface]').forEach(b =>
+      b.classList.toggle('selected', b === btn));
+
+    const powZone = document.getElementById('power-zone');
+    if (state.surface === '>=90') {
+      powZone.hidden = false;
+      state.power = null;
+      renderPowerOptions('power-options');
+      showConditionsAndCta();
+    } else {
+      powZone.hidden = true;
+      const tbl = state.type_logement === 'maison' ? DEVIS_MAISON : DEVIS_APPART;
+      state.power = tbl[state.surface][0];
+      showConditionsAndCta();
+      tryAutoNext('3');
+    }
+  });
+
+  // Cards puissance (étape 3 + résultats)
+  form.addEventListener('click', (e) => {
+    const btn = e.target.closest('.opt-card.pow-card');
+    if (!btn) return;
+    state.power = { kw: parseInt(btn.dataset.kw, 10), ttc: parseInt(btn.dataset.ttc, 10) };
+    btn.parentElement.querySelectorAll('.opt-card.pow-card').forEach(b =>
+      b.classList.toggle('selected', b === btn));
+    if (currentKey === '3') {
+      showConditionsAndCta();
+      tryAutoNext('3');
+    }
+    if (currentKey === 'done') updateRecap();
+  });
+
+  // Sélecteur personnes
+  form.addEventListener('click', (e) => {
+    const btn = e.target.closest('.pers-btn[data-persons]');
+    if (!btn) return;
+    state.persons = parseInt(btn.dataset.persons, 10);
+    if (currentKey === '4') {
+      renderPersons('persons-options');
+      renderRevTable('rev-tbody');
+      // Mobile : signal au parent que la table revenus vient d'apparaître,
+      // pour qu'il scrolle légèrement et que la sélection de tranche soit visible.
+      if (window.parent !== window) {
+        setTimeout(() => {
+          window.parent.postMessage({ type: 'gm-sim-scroll-to-revenus' }, '*');
+        }, 120);
+      }
+    } else if (currentKey === 'done') {
+      renderPersons('adjust-persons');
+      renderRevTable('adjust-rev-tbody');
+      updateRecap();
+    }
+  });
+
+  // Sélecteur profil
+  form.addEventListener('click', (e) => {
+    const tr = e.target.closest('tr[data-profil]');
+    if (!tr) return;
+    state.profil = tr.dataset.profil;
+    if (currentKey === '4') {
+      renderRevTable('rev-tbody');
+      tryAutoNext('4');
+    } else if (currentKey === 'done') {
+      renderRevTable('adjust-rev-tbody');
+      updateRecap();
+    }
+  });
+
+  // Bouton "Suivant"
+  form.addEventListener('click', (e) => {
+    const btn = e.target.closest('.next-btn');
+    if (!btn) return;
+    if (!validate(currentKey)) return;
+    const next = nextOf(currentKey);
+    if (next) showStep(next);
+  });
+
+  // ─── VALIDATION TEMPS RÉEL ÉTAPE 5 ───
+  ['f-prenom', 'f-nom', 'f-email', 'f-tel'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    // Au blur → validation complète
+    el.addEventListener('blur', () => {
+      if (el.value.trim().length > 0) validateFieldEl(el, true);
+    });
+    // Pendant la saisie → si en erreur, re-valider en live
+    el.addEventListener('input', () => {
+      if (el.classList.contains('invalid')) validateFieldEl(el, true);
+    });
+  });
+
+  // Téléphone : auto-format
+  const phoneInput = document.getElementById('f-tel');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', (e) => {
+      const digits = e.target.value.replace(/\D/g, '').slice(0, 10);
+      e.target.value = digits.replace(/(\d{2})(?=\d)/g, '$1 ').trim();
+    });
+  }
+
+  // Enter
+  form.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter') return;
+    if (e.target.tagName === 'TEXTAREA') return;
+    e.preventDefault();
+    const activeStep = form.querySelector('.step.active');
+    const submit = activeStep.querySelector('.submit-btn');
+    if (submit) { submit.click(); return; }
+    const nextBtn = activeStep.querySelector('.next-btn');
+    if (nextBtn && !nextBtn.disabled) nextBtn.click();
+  });
+
+  // BOUTON VOIR MES AIDES — type="button" pour éviter le submit natif (incompatible sandbox)
+  const submitBtn = document.getElementById('submit-btn');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', () => {
+      console.log('━━━━━━ [Simulateur] Clic sur VOIR MES AIDES ━━━━━━');
+      try {
+        const isValid = validate('5');
+        console.log('[Simulateur] Validation :', isValid ? '✅ OK' : '❌ ÉCHEC');
+        if (!isValid) return;
+        state.prenom    = document.getElementById('f-prenom').value.trim();
+        state.nom       = document.getElementById('f-nom').value.trim();
+        state.email     = document.getElementById('f-email').value.trim();
+        state.telephone = document.getElementById('f-tel').value.replace(/\s+/g, '');
+        // Expose les coordonnées au parent pour pré-remplir le formulaire de contact
+        // du site quand l'utilisateur cliquera ensuite sur "Nous contacter".
+        window.__gmSimLead = {
+          prenom: state.prenom,
+          nom: state.nom,
+          email: state.email,
+          telephone: state.telephone,
+        };
+        showStep('done');
+      } catch (err) {
+        console.error('[Simulateur] ❌ Erreur :', err);
+        const stepEl = form.querySelector('.step[data-step="5"]');
+        setError(stepEl, 'Erreur : ' + err.message);
+      }
+    });
+  }
+
+  // Conserver le submit form comme fallback (Enter key)
+  form.addEventListener('submit', (e) => { e.preventDefault(); submitBtn && submitBtn.click(); });
+
+  // ─── FALLBACK ICÔNES (si les PNG ne se chargent pas — preview uniquement) ───
+  document.querySelectorAll('img[data-fallback]').forEach(img => {
+    img.addEventListener('error', () => {
+      const tpl = document.getElementById('icon-' + img.dataset.fallback);
+      if (tpl && tpl.content) {
+        img.replaceWith(tpl.content.cloneNode(true));
+      }
+    });
+    // Force le check : si l'image est déjà cassée au moment où on attache l'event
+    if (img.complete && img.naturalWidth === 0) {
+      const tpl = document.getElementById('icon-' + img.dataset.fallback);
+      if (tpl && tpl.content) {
+        img.replaceWith(tpl.content.cloneNode(true));
+      }
+    }
+  });
+
+  // Flèche retour : déplacer chaque bouton à la fin de son étape (alignement bas-gauche)
+  form.querySelectorAll('.back-arrow[data-back]').forEach(btn => {
+    btn.parentElement.appendChild(btn);
+  });
+
+  // Flèche retour sur chaque étape
+  form.addEventListener('click', (e) => {
+    const btn = e.target.closest('.back-arrow[data-back]');
+    if (!btn) return;
+    showStep(btn.dataset.back);
+  });
+
+  showStep('1');
+})();
+</script>
+
+<!-- Bridge auto-resize pour intégration via iframe dans le site Groupe Merlin (V10) -->
+<script>
+(function () {
+  if (window.parent === window) return; // standalone : pas d'iframe
+
+  // FIX V10b : neutraliser min-height: 100vh qui en iframe = hauteur du viewport parent
+  // → créait un espace blanc infini sous le simulateur.
+  var killVhStyle = document.createElement('style');
+  killVhStyle.textContent = '.merlin-simulator { min-height: 0 !important; height: auto !important; padding-block: clamp(24px, 4vw, 56px) !important; }';
+  document.head.appendChild(killVhStyle);
+
+  function postHeight() {
+    // Mesure sur l'élément simulateur lui-même (plus fiable que body en iframe)
+    var sim = document.querySelector('.merlin-simulator');
+    var h = sim ? sim.getBoundingClientRect().height : 0;
+    if (!h) {
+      h = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight
+      );
+    }
+    window.parent.postMessage({ type: 'gm-sim-height', height: Math.ceil(h) }, '*');
+  }
+  new MutationObserver(postHeight).observe(document.body, { subtree: true, childList: true, attributes: true });
+  window.addEventListener('resize', postHeight);
+  window.addEventListener('load', postHeight);
+  setTimeout(postHeight, 100);
+  setTimeout(postHeight, 500);
+  setTimeout(postHeight, 1500);
+
+  // V10b : signal "step changed" → parent scrolle iframe en haut
+  // Détecte les changements de step (.step.active toggling)
+  var lastStepKey = null;
+  function checkStepChange() {
+    var active = document.querySelector('.step.active');
+    var key = active ? (active.dataset.step || active.id || '?') : null;
+    if (key !== lastStepKey) {
+      lastStepKey = key;
+      if (key) {
+        window.parent.postMessage({ type: 'gm-sim-step-changed', step: key }, '*');
+      }
+    }
+  }
+  new MutationObserver(checkStepChange).observe(document.body, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  setTimeout(checkStepChange, 100);
+
+  // V10b : bouton "Nous contacter" → postMessage parent (qui sait où est sa page contact)
+  document.addEventListener('click', function (e) {
+    var cta = e.target.closest('[data-gm-contact-cta]');
+    if (!cta) return;
+    e.preventDefault();
+    window.parent.postMessage({ type: 'gm-sim-contact-click', lead: (window.__gmSimLead || {}) }, '*');
+  });
+})();
+</script>
+
+</body>
+</html>

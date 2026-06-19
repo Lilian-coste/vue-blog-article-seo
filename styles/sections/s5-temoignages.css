@@ -1,0 +1,195 @@
+/* ---------------------------------------------------------
+   S5 — Témoignages : 3 colonnes verticales défilantes
+   Inspiré du composant testimonial-v2 (21st.dev) fourni par Lilian.
+   --------------------------------------------------------- */
+
+.gm-s5 {
+  background-color: var(--gm-bleu-encre);
+  color: var(--gm-blanc-creme);
+  padding-block: clamp(5rem, 10vw, 9rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.gm-s5__header {
+  text-align: center;
+  width: min(100% - 2rem, 720px);
+  margin-inline: auto;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gm-space-4);
+}
+.gm-s5__title {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: var(--gm-fw-semibold);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--gm-blanc-pur);
+}
+
+/* Bouton "Voir tous les avis" outline crème */
+.gm-s5__view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border: 1px solid rgba(234, 225, 205, 0.35);
+  border-radius: var(--gm-radius-pill);
+  font-family: var(--gm-font-sans);
+  font-size: 0.78rem;
+  font-weight: var(--gm-fw-medium);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gm-blanc-creme);
+  text-decoration: none;
+  background-color: transparent;
+  transition:
+    background-color var(--gm-dur-fast) var(--gm-ease-out),
+    color var(--gm-dur-fast) var(--gm-ease-out),
+    border-color var(--gm-dur-fast) var(--gm-ease-out);
+}
+.gm-s5__view-all:hover {
+  background-color: var(--gm-dore);
+  color: var(--gm-bleu-encre);
+  border-color: var(--gm-dore);
+}
+
+/* ---------- Bandeau 3 colonnes verticales ---------- */
+.gm-s5__columns {
+  display: flex;
+  gap: var(--gm-space-6);
+  justify-content: center;
+  max-height: 740px;
+  overflow: hidden;
+  /* Mask gradient haut + bas pour fade-in/fade-out */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+@media (max-width: 900px) {
+  .gm-s5__columns { max-height: 560px; }
+  .gm-s5__column--3 { display: none; }
+}
+@media (max-width: 600px) {
+  .gm-s5__column--2 { display: none; }
+}
+
+/* Une colonne défilante */
+.gm-s5__column {
+  flex: 0 0 320px;
+  max-width: 320px;
+}
+@media (max-width: 600px) {
+  .gm-s5__column { flex: 1 1 100%; max-width: 360px; }
+}
+
+.gm-s5__column-track {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gm-space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  animation: gm-marquee-vertical var(--gm-marquee-duration, 30s) linear infinite;
+}
+@keyframes gm-marquee-vertical {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gm-s5__column-track { animation: none; }
+}
+
+/* Vitesses différentes par colonne (effet asynchrone) */
+.gm-s5__column--1 .gm-s5__column-track { --gm-marquee-duration: 30s; }
+.gm-s5__column--2 .gm-s5__column-track { --gm-marquee-duration: 38s; }
+.gm-s5__column--3 .gm-s5__column-track { --gm-marquee-duration: 34s; }
+
+/* ---------- Carte avis ---------- */
+.gm-s5__card {
+  background-color: #FFFFFF;
+  border-radius: var(--gm-radius-lg);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gm-space-4);
+  color: var(--gm-bleu-encre);
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.gm-s5__card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.30),
+    0 10px 10px -5px rgba(0, 0, 0, 0.10),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.gm-s5__card-meta {
+  font-size: 0.72rem;
+  font-weight: var(--gm-fw-medium);
+  color: var(--gm-gris-anthracite);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.gm-s5__card-meta--dot { color: var(--gm-dore); margin-inline: 0.4em; }
+.gm-s5__card-quote {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--gm-bleu-encre);
+  margin: 0;
+  font-style: italic;
+}
+.gm-s5__card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--gm-space-3);
+  padding-top: var(--gm-space-3);
+  border-top: 1px solid rgba(23, 23, 35, 0.08);
+}
+/* Avatar silhouette neutre — placeholder en attendant les vraies photos clients */
+.gm-s5__card-avatar {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(23, 23, 35, 0.08);
+  color: var(--gm-gris-anthracite);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.gm-s5__card-avatar svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+  /* Cadrage : on tronque légèrement le bas (épaules) pour un rendu type photo de profil */
+  margin-top: 6px;
+}
+.gm-s5__card-stars {
+  color: var(--gm-dore);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 0.15em;
+}
+.gm-s5__card-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05em;
+  font-size: 0.85rem;
+  min-width: 0;
+}
+.gm-s5__card-author-name {
+  font-weight: var(--gm-fw-semibold);
+  color: var(--gm-bleu-encre);
+}
+.gm-s5__card-author-place {
+  color: var(--gm-gris-anthracite);
+  font-size: 0.78rem;
+}

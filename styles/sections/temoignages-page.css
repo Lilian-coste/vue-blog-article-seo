@@ -1,0 +1,70 @@
+/* ---------------------------------------------------------
+   Page /temoignages — grid statique 3 colonnes (port preview).
+   --------------------------------------------------------- */
+
+.gm-temoignages-page {
+  background-color: var(--gm-blanc-creme);
+  color: var(--gm-bleu-encre);
+  padding-block: clamp(7rem, 12vw, 10rem) clamp(4rem, 8vw, 7rem);
+}
+
+.gm-temoignages-page__head {
+  width: min(100% - 2rem, 720px);
+  margin-inline: auto;
+  margin-bottom: clamp(3rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.gm-temoignages-page__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: var(--gm-fw-semibold);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.gm-temoignages-page__title em {
+  color: var(--gm-dore);
+  font-style: normal;
+}
+
+.gm-temoignages-page__lead {
+  margin-top: var(--gm-space-4);
+  font-size: 1.05rem;
+  color: var(--gm-gris-anthracite);
+}
+
+.gm-temoignages-page__grid {
+  width: min(100% - 2rem, var(--gm-content-max));
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gm-space-6);
+  justify-content: center;
+  justify-items: center;
+}
+
+@media (min-width: 700px) {
+  .gm-temoignages-page__grid {
+    grid-template-columns: repeat(2, minmax(0, 360px));
+  }
+}
+
+@media (min-width: 1024px) {
+  .gm-temoignages-page__grid {
+    grid-template-columns: repeat(3, minmax(0, 360px));
+  }
+}
+
+.gm-temoignages-page__card {
+  background-color: #FFFFFF;
+  border-radius: var(--gm-radius-lg);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gm-space-4);
+  width: 100%;
+  max-width: 360px;
+}

@@ -1,0 +1,30 @@
+/* ---------------------------------------------------------
+   Bandeau "outro" page 18 PDF DA
+   Photo technicien + monogramme + tagline + 3 services.
+   Option A par défaut : embed direct du PNG.
+   --------------------------------------------------------- */
+
+.gm-footer-bandeau-da {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  min-height: 320px;
+  max-height: 560px;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--gm-bleu-encre);
+}
+
+.gm-footer-bandeau-da__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .gm-footer-bandeau-da { aspect-ratio: 4 / 3; max-height: 400px; }
+}

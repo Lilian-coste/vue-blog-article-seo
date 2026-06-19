@@ -1,0 +1,94 @@
+:root {
+  /* ---------- Palette officielle DA Groupe Merlin ---------- */
+  --gm-bleu-encre:      #171723;
+  --gm-blanc-creme:     #EAE1CD;
+  --gm-gris-ardoise:    #2E2E3A;
+  --gm-dore:            #FAC864; /* CTA primaire, accents (PAS #CDFF8F — coquille DA) */
+  --gm-gris-anthracite: #42424E;
+  --gm-drapeau-bleu:    #0055A4;
+  --gm-drapeau-rouge:   #EF4135;
+  --gm-blanc-pur:       #FFFFFF;
+
+  /* ---------- Surfaces (alias sémantiques) ---------- */
+  --gm-bg-froid:        var(--gm-bleu-encre);
+  --gm-bg-chaud:        var(--gm-blanc-creme);
+  --gm-article-bg:      #FDFAF0;
+  --gm-text-sur-froid:  var(--gm-blanc-creme);
+  --gm-text-sur-chaud:  var(--gm-bleu-encre);
+  --gm-accent:          var(--gm-dore);
+
+  /* ---------- Typographie ---------- */
+  --gm-font-sans: "General Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --gm-fw-regular:  400;
+  --gm-fw-medium:   500;
+  --gm-fw-semibold: 600;
+  --gm-fw-bold:     700;
+
+  --gm-fs-h1-desktop: clamp(2.75rem, 5vw, 4.5rem);
+  --gm-fs-h1-mobile:  clamp(2rem, 8vw, 2.75rem);
+  --gm-fs-h2:         clamp(2rem, 3.5vw, 3rem);
+  --gm-fs-h3:         clamp(1.25rem, 2vw, 1.5rem);
+  --gm-fs-h4:         1.125rem;
+  --gm-fs-body:       1rem;
+  --gm-fs-small:      0.875rem;
+
+  --gm-lh-tight:      1.1;
+  --gm-lh-normal:     1.5;
+  --gm-lh-relaxed:    1.65;
+
+  /* ---------- Espacement (échelle 4px) ---------- */
+  --gm-space-1:  0.25rem;
+  --gm-space-2:  0.5rem;
+  --gm-space-3:  0.75rem;
+  --gm-space-4:  1rem;
+  --gm-space-6:  1.5rem;
+  --gm-space-8:  2rem;
+  --gm-space-12: 3rem;
+  --gm-space-16: 4rem;
+  --gm-space-20: 5rem;
+  --gm-space-24: 6rem;
+  --gm-space-32: 8rem;
+
+  --gm-section-pad-y-desktop: clamp(5rem, 10vw, 10rem);
+  --gm-section-pad-y-mobile:  clamp(3rem, 12vw, 5rem);
+
+  /* ---------- Radius ---------- */
+  --gm-radius-sm:   8px;
+  --gm-radius-md:   16px;
+  --gm-radius-lg:   24px;
+  --gm-radius-xl:   32px;
+  --gm-radius-pill: 999px;
+
+  /* ---------- Ombres ---------- */
+  --gm-shadow-soft:    0 10px 30px -12px rgba(23, 23, 35, 0.12);
+  --gm-shadow-video:   0 30px 60px -20px rgba(23, 23, 35, 0.18);
+  --gm-shadow-glass:   0 8px 32px rgba(23, 23, 35, 0.18);
+
+  /* ---------- Transitions ---------- */
+  --gm-ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --gm-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --gm-dur-fast:    180ms;
+  --gm-dur-base:    260ms;
+  --gm-dur-slow:    420ms;
+  --gm-dur-xslow:   600ms;
+
+  /* ---------- Layout ---------- */
+  --gm-content-max:   1280px;
+  --gm-content-pad-x: clamp(1rem, 4vw, 2rem);
+
+  /* ---------- Z-index ---------- */
+  --gm-z-base:    1;
+  --gm-z-overlay: 10;
+  --gm-z-navbar:  100;
+  --gm-z-modal:   1000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --gm-dur-fast:  0ms;
+    --gm-dur-base:  0ms;
+    --gm-dur-slow:  0ms;
+    --gm-dur-xslow: 0ms;
+  }
+}

@@ -1,0 +1,181 @@
+/* ============================================================================
+   Section 2b — Double bandeau certifications + partenaires
+   V7 : refonte élégante inspirée de 21st.dev (LogoCloud 4 + BlurredInfiniteSlider).
+   Cards logos uniformes pour normaliser les formats hétéroclites,
+   mask progressif sur les bords, header type "trusted by".
+   ============================================================================ */
+
+.gm-s2b {
+    background-color: var(--gm-cream);
+    padding: clamp(3.5rem, 7vw, 5.5rem) 0 clamp(3rem, 6vw, 4.5rem);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Liserai discret en haut + bas pour ancrer la section */
+.gm-s2b::before,
+.gm-s2b::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(23, 23, 35, 0.10), transparent);
+}
+.gm-s2b::before { top: 0; }
+.gm-s2b::after  { bottom: 0; }
+
+/* ---------- Header type "trusted by" centré ---------- */
+.gm-s2b__header {
+    width: min(100% - 2rem, 920px);
+    margin-inline: auto;
+    margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+    text-align: center;
+}
+.gm-s2b__eyebrow {
+    display: inline-block;
+    font-size: 0.74rem;
+    font-weight: var(--gm-fw-semibold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gm-gris-anthracite);
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(23, 23, 35, 0.12);
+    border-radius: var(--gm-radius-pill);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.gm-s2b__title {
+    margin-top: var(--gm-space-3);
+    font-size: clamp(1.3rem, 2.4vw, 1.65rem);
+    font-weight: var(--gm-fw-medium);
+    letter-spacing: -0.01em;
+    color: var(--gm-bleu-encre);
+    line-height: 1.3;
+}
+.gm-s2b__title em {
+    color: var(--gm-dore);
+    font-style: normal;
+}
+
+/* ---------- Conteneur des 2 rangées (largeur réduite, centrée) ---------- */
+.gm-s2b__rows {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    width: min(100% - 2rem, var(--gm-content-max));
+    margin-inline: auto;
+}
+
+.gm-s2b__row {
+    overflow: hidden;
+    width: 100%;
+    /* Fade progressif sur les bords */
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
+/* Petit label discret au-dessus de chaque rangée */
+.gm-s2b__row-label {
+    display: block;
+    width: min(100% - 2rem, 920px);
+    margin: 0 auto var(--gm-space-3);
+    font-size: 0.7rem;
+    font-weight: var(--gm-fw-medium);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(23, 23, 35, 0.45);
+    text-align: center;
+}
+
+.gm-s2b__track {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(1rem, 1.8vw, 1.5rem);
+    width: max-content;
+    will-change: transform;
+}
+
+/* Sens de défilement + vitesses (V8 : plus rapide, ~2× la vitesse précédente) */
+.gm-s2b__row--certifs .gm-s2b__track {
+    animation: gm-s2b-scroll-left 28s linear infinite;
+}
+.gm-s2b__row--partenaires .gm-s2b__track {
+    animation: gm-s2b-scroll-right 32s linear infinite;
+}
+
+/* Pause au hover */
+.gm-s2b__row:hover .gm-s2b__track {
+    animation-play-state: paused;
+}
+
+@keyframes gm-s2b-scroll-left {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+}
+@keyframes gm-s2b-scroll-right {
+    from { transform: translate3d(-50%, 0, 0); }
+    to   { transform: translate3d(0, 0, 0); }
+}
+
+/* ---------- Card logo : NORMALISE les formats disparates ----------
+   Les certifs et partenaires ont des logos très différents
+   (carrés, rectangulaires, fonds colorés…). Une card uniforme
+   stabilise visuellement le rendu. */
+.gm-s2b__item {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(23, 23, 35, 0.06);
+    border-radius: var(--gm-radius-md);
+    padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 1.4vw, 1rem);
+    box-shadow: 0 1px 3px rgba(23, 23, 35, 0.04);
+    transition:
+        box-shadow var(--gm-dur-fast) var(--gm-ease-out),
+        transform var(--gm-dur-fast) var(--gm-ease-out);
+}
+.gm-s2b__item:hover {
+    box-shadow: 0 6px 18px rgba(23, 23, 35, 0.08);
+    transform: translateY(-2px);
+}
+
+.gm-s2b__item--certif {
+    width: clamp(150px, 17vw, 190px);
+    height: clamp(78px, 9vw, 100px);
+}
+.gm-s2b__item--partenaire {
+    width: clamp(150px, 17vw, 190px);
+    height: clamp(72px, 8.5vw, 92px);
+}
+
+/* Image : remplit toute la card (object-fit contain pour éviter la déformation).
+   width/height 100% force les petits logos (Daikin, etc.) à occuper l'espace,
+   uniformisant visuellement les tailles malgré les fichiers source disparates. */
+.gm-s2b__item img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+/* Reduced motion : pas de défilement, présentation grille statique */
+@media (prefers-reduced-motion: reduce) {
+    .gm-s2b__row { -webkit-mask-image: none; mask-image: none; overflow-x: auto; }
+    .gm-s2b__row--certifs .gm-s2b__track,
+    .gm-s2b__row--partenaires .gm-s2b__track {
+        animation: none;
+        transform: none;
+    }
+}
+
+/* ---------- V9/V11 : boost individuel des logos source minuscules ----------
+   Daikin, BWT ont des fichiers source avec beaucoup de whitespace interne.
+   Mitsubishi a été crop V11 (PIL trim haut+bas) → plus besoin de boost. */
+.gm-s2b__item--partenaire img[src*="daikin"],
+.gm-s2b__item--partenaire img[src*="bwt"] {
+  transform: scale(1.35);
+}

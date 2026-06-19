@@ -1,0 +1,98 @@
+/* ---------------------------------------------------------
+   Pages dédiées d'agence (Clamecy / Corbigny / Mailly-la-Ville)
+   --------------------------------------------------------- */
+
+.gm-agence {
+  background-color: var(--gm-blanc-creme);
+  color: var(--gm-bleu-encre);
+  padding-block: clamp(7rem, 12vw, 11rem) clamp(4rem, 8vw, 7rem);
+}
+
+.gm-agence__container {
+  width: min(100% - 2rem, var(--gm-content-max));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+@media (max-width: 900px) {
+  .gm-agence__container { grid-template-columns: 1fr; }
+}
+
+.gm-agence__title {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: var(--gm-fw-semibold);
+  line-height: 1.05;
+  margin-bottom: var(--gm-space-6);
+}
+.gm-agence__address {
+  font-size: 1.05rem;
+  color: var(--gm-gris-anthracite);
+  margin-bottom: var(--gm-space-3);
+}
+.gm-agence__phones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gm-space-1);
+  margin-bottom: var(--gm-space-3);
+}
+.gm-agence__phone {
+  font-size: 1.25rem;
+  font-weight: var(--gm-fw-semibold);
+  color: var(--gm-bleu-encre);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gm-space-3);
+  transition: color var(--gm-dur-fast) var(--gm-ease-out);
+}
+.gm-agence__phone:hover { color: var(--gm-dore); }
+.gm-agence__email {
+  font-size: 1rem;
+  margin-bottom: var(--gm-space-6);
+}
+.gm-agence__email a {
+  color: var(--gm-gris-anthracite);
+  text-decoration: underline;
+}
+.gm-agence__phone::before {
+  content: "";
+  display: inline-block;
+  width: 28px; height: 28px;
+  background-color: var(--gm-dore);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z'/></svg>") center / contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z'/></svg>") center / contain no-repeat;
+}
+
+.gm-agence__description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--gm-gris-anthracite);
+  margin-bottom: var(--gm-space-8);
+  max-width: 50ch;
+}
+
+.gm-agence__map {
+  width: 100%;
+  height: clamp(360px, 60vh, 540px);
+  border: 0;
+  border-radius: var(--gm-radius-lg);
+  box-shadow: 0 20px 40px -16px rgba(0,0,0,0.20);
+}
+
+/* ---- Variante utilisée dans un article de blog (en-tête d'agence sous le H1) ---- */
+.gm-agence--blog {
+  padding-block: clamp(2rem, 4vw, 3.5rem) clamp(2.5rem, 5vw, 4rem);
+}
+.gm-agence__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 1.4rem;
+  background-color: var(--gm-dore);
+  color: var(--gm-bleu-encre);
+  border-radius: var(--gm-radius-pill);
+  font-weight: var(--gm-fw-semibold);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 8px 20px -10px rgba(250, 200, 100, 0.7);
+}

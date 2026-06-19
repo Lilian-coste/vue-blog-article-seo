@@ -1,0 +1,35 @@
+/* ---------------------------------------------------------
+   S3 — Simulateur PAC (V10 : nouveau simulateur via iframe)
+   Le simulateur source est dans assets/simulateur-v2/index.html
+   et embarque son propre style + script. Ici on style juste le conteneur.
+   --------------------------------------------------------- */
+
+.gm-s3 {
+  background-color: var(--gm-blanc-creme);
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.gm-s3__inner {
+  width: min(100% - 2rem, 1100px);
+  margin-inline: auto;
+}
+
+.gm-s3__prefix {
+  /* emplacement réservé pour l'élément que Lilian précisera plus tard */
+  min-height: 1px;
+  margin-bottom: var(--gm-space-6);
+}
+
+/* Conteneur iframe du nouveau simulateur (V10/V12) */
+.gm-s3__embed {
+  width: 100%;
+  background-color: transparent;
+}
+.gm-s3__iframe {
+  width: 100%;
+  border: 0;
+  display: block;
+  /* V16 : hauteur auto-ajustée par JS (simulateur-iframe.js + bridge dans le simu).
+     min-height pour le load initial avant le 1er postMessage. */
+  min-height: 720px;
+}

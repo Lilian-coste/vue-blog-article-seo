@@ -1,0 +1,363 @@
+/* ---------------------------------------------------------
+   Page Articles — grid 3 colonnes statique (style Allure VIEW ALL)
+   Au hover : l'image se relève (translateY négatif), le bouton "Lire"
+   apparaît en-dessous, fade-in.
+   --------------------------------------------------------- */
+
+.gm-articles-page {
+  background-color: var(--gm-blanc-creme);
+  color: var(--gm-bleu-encre);
+  padding-block: clamp(7rem, 12vw, 10rem) clamp(4rem, 8vw, 7rem);
+}
+
+.gm-articles-page__head {
+  width: min(100% - 2rem, var(--gm-content-max));
+  margin-inline: auto;
+  margin-bottom: clamp(3rem, 5vw, 4rem);
+}
+.gm-articles-page__eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: var(--gm-fw-medium);
+  color: var(--gm-gris-anthracite);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: var(--gm-space-3);
+}
+.gm-articles-page__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: var(--gm-fw-semibold);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  max-width: 18ch;
+}
+.gm-articles-page__title em { color: var(--gm-dore); font-style: normal; }
+
+/* Grille 3 colonnes (responsive) */
+.gm-articles-page__grid {
+  width: min(100% - 2rem, var(--gm-content-max));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+@media (min-width: 720px)  { .gm-articles-page__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1080px) { .gm-articles-page__grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* Variante /blog-conseil : 1 col → 2 col → 3 col (même breakpoints que la grille de base) */
+.gm-articles-page__grid--conseil {
+  grid-template-columns: 1fr;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+@media (min-width: 720px)  { .gm-articles-page__grid--conseil { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1080px) { .gm-articles-page__grid--conseil { grid-template-columns: repeat(3, 1fr); } }
+
+/* Card article */
+.gm-articles-page__card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Conteneur image (clip + reveal du bouton Lire au hover) */
+.gm-articles-page__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--gm-radius-md);
+  background-color: rgba(23, 23, 35, 0.06);
+  margin-bottom: var(--gm-space-4);
+}
+.gm-articles-page__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* Bouton "Lire" qui apparaît derrière l'image (révélé quand l'image se lève) */
+.gm-articles-page__read-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--gm-space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gm-bleu-encre);
+  color: var(--gm-blanc-creme);
+  font-family: var(--gm-font-sans);
+  font-size: 0.78rem;
+  font-weight: var(--gm-fw-medium);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  z-index: 0;
+}
+.gm-articles-page__read-btn::after {
+  content: "→";
+  margin-left: 0.5rem;
+  letter-spacing: 0;
+}
+
+/* Hover : l'image se relève (translateY -16%) → laisse apparaître le bouton */
+.gm-articles-page__card:hover .gm-articles-page__img,
+.gm-articles-page__card:focus-visible .gm-articles-page__img {
+  transform: translateY(-16%);
+}
+.gm-articles-page__card:hover .gm-articles-page__read-btn,
+.gm-articles-page__card:focus-visible .gm-articles-page__read-btn {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gm-articles-page__img,
+  .gm-articles-page__read-btn { transition: none; }
+}
+
+/* Body card */
+.gm-articles-page__category {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: var(--gm-fw-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gm-gris-anthracite);
+  margin-bottom: var(--gm-space-2);
+}
+.gm-articles-page__card-title {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  font-weight: var(--gm-fw-semibold);
+  line-height: 1.3;
+  color: var(--gm-bleu-encre);
+}
+.gm-articles-page__card-excerpt {
+  margin-top: var(--gm-space-2);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--gm-gris-anthracite);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Barre de filtres /blog-conseil ─────────────────────────────────────── */
+.gm-conseil-filters {
+  width: min(100% - 2rem, var(--gm-content-max));
+  margin-inline: auto;
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+.gm-conseil-filters__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;          /* pour positionner "Réinitialiser" en absolu */
+  border-bottom: 1px solid rgba(23, 23, 35, 0.2);
+  padding-block: 0.9rem;
+  gap: 0;
+}
+.gm-conseil-filters__item {
+  position: relative;
+}
+.gm-conseil-filters__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--gm-font-sans);
+  font-size: 0.72rem;
+  font-weight: var(--gm-fw-medium);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gm-gris-anthracite);
+  padding: 0.2rem 1.25rem;
+  transition: color 0.2s ease;
+}
+.gm-conseil-filters__btn:hover,
+.gm-conseil-filters__btn[aria-expanded="true"],
+.gm-conseil-filters__btn.is-active {
+  color: var(--gm-bleu-encre);
+}
+.gm-conseil-filters__btn.is-active {
+  font-weight: var(--gm-fw-semibold);
+}
+.gm-conseil-filters__chevron {
+  color: currentColor;
+  flex-shrink: 0;
+}
+.gm-conseil-filters__sep {
+  width: 1px;
+  height: 1.1rem;
+  background-color: rgba(23, 23, 35, 0.2);
+  flex-shrink: 0;
+}
+/* Dropdown */
+.gm-conseil-filters__dropdown {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 0;
+  min-width: 190px;
+  background: var(--gm-blanc-creme);
+  border: 1px solid rgba(23, 23, 35, 0.18);
+  border-radius: var(--gm-radius-md);
+  box-shadow: 0 6px 28px rgba(23, 23, 35, 0.1);
+  z-index: 50;
+  overflow: hidden;
+}
+.gm-conseil-filters__option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.7rem 1.1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--gm-font-sans);
+  font-size: 0.85rem;
+  color: var(--gm-gris-anthracite);
+  transition: background 0.12s, color 0.12s;
+}
+.gm-conseil-filters__option:hover {
+  background: rgba(23, 23, 35, 0.05);
+  color: var(--gm-bleu-encre);
+}
+.gm-conseil-filters__option.is-active {
+  color: var(--gm-dore);
+  font-weight: var(--gm-fw-semibold);
+}
+/* Bouton réinitialiser — positionné en absolu à droite pour ne pas casser le centrage */
+.gm-conseil-filters__clear {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--gm-font-sans);
+  font-size: 0.72rem;
+  font-weight: var(--gm-fw-medium);
+  letter-spacing: 0.06em;
+  color: var(--gm-bleu-encre);
+  padding: 0.2rem 0;
+  transition: opacity 0.2s;
+}
+.gm-conseil-filters__clear:hover { opacity: 0.7; }
+
+/* État vide */
+.gm-conseil-empty {
+  width: min(100% - 2rem, var(--gm-content-max));
+  margin-inline: auto;
+  margin-top: 3rem;
+  font-size: 0.95rem;
+  color: var(--gm-gris-anthracite);
+  text-align: center;
+}
+.gm-conseil-empty__reset {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--gm-font-sans);
+  font-size: inherit;
+  color: var(--gm-dore);
+  text-decoration: underline;
+}
+
+/* ── Bouton "Plus d'articles" ───────────────────────────────────────────── */
+.gm-conseil-load-more {
+  width: min(100% - 2rem, var(--gm-content-max));
+  margin-inline: auto;
+  margin-top: clamp(3rem, 5vw, 4.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gm-conseil-load-more__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--gm-font-sans);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: var(--gm-fw-semibold);
+  letter-spacing: -0.01em;
+  color: var(--gm-bleu-encre);
+  padding: 0;
+  transition: gap 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s;
+}
+.gm-conseil-load-more__btn:hover {
+  gap: 1rem;
+  color: var(--gm-dore);
+}
+.gm-conseil-load-more__arrow {
+  font-size: 0.85em;
+  line-height: 1;
+}
+
+/* ---------- V9 : overlay éditorial sur card spécifique de la page articles ---------- */
+.gm-articles-page__card--with-overlay .gm-articles-page__media {
+  position: relative;
+  overflow: hidden;
+}
+.gm-articles-page__card--with-overlay .gm-articles-page__img {
+  transform: scale(1.18);
+  transform-origin: center 35%;
+  transition: transform var(--gm-dur-slow) var(--gm-ease-out);
+}
+.gm-articles-page__card--with-overlay:hover .gm-articles-page__img,
+.gm-articles-page__card--with-overlay:focus-visible .gm-articles-page__img {
+  /* Combine le scale d'origine + le translateY pour révéler le bouton "Lire"
+     comme sur les cards sans overlay. */
+  transform: scale(1.25) translateY(-13%);
+}
+.gm-articles-page__card--with-overlay:hover .gm-articles-page__overlay,
+.gm-articles-page__card--with-overlay:focus-visible .gm-articles-page__overlay {
+  transform: translateY(-16%);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.gm-articles-page__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 23, 35, 0.10) 0%,
+    rgba(23, 23, 35, 0.10) 35%,
+    rgba(23, 23, 35, 0.55) 70%,
+    rgba(23, 23, 35, 0.85) 100%
+  );
+}
+.gm-articles-page__overlay-eyebrow {
+  font-size: 0.7rem;
+  font-weight: var(--gm-fw-semibold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 0.5rem;
+}
+.gm-articles-page__overlay-title {
+  font-size: 1.25rem;
+  font-weight: var(--gm-fw-bold);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--gm-dore);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}

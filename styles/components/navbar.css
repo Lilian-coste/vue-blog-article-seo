@@ -1,0 +1,253 @@
+/* ---------------------------------------------------------
+   Navbar globale (desktop + mobile)
+   - data-state="transparent" : sur le hero (top), pas de fond, juste le contenu
+   - data-state="solid"       : après scroll, fond liquid glass + bord
+   - data-tone="dark|light"   : couleur du texte/CTA selon le fond derrière
+   --------------------------------------------------------- */
+
+.gm-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--gm-z-navbar);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gm-space-4);
+
+  padding-block: 0.85rem;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+
+  background-color: rgba(234, 225, 205, 0.55);   /* teinte chaude par défaut */
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
+
+  border-bottom: 1px solid rgba(23, 23, 35, 0.06);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+  transition:
+    background-color var(--gm-dur-base) var(--gm-ease-out),
+    border-bottom-color var(--gm-dur-base) var(--gm-ease-out);
+}
+
+/* État "transparent" : sur le hero, pas de fond, juste le contenu en overlay pur.
+   Le tone (dark/light) gouverne uniquement la couleur du TEXTE pas du fond. */
+.gm-navbar[data-state="transparent"] {
+  background-color: transparent;
+  border-bottom-color: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+/* Couleur du texte selon le ton (sur fond transparent ou pas) */
+.gm-navbar[data-tone="dark"] {
+  color: var(--gm-blanc-creme);
+}
+.gm-navbar[data-tone="dark"] .gm-navbar__link,
+.gm-navbar[data-tone="dark"] .gm-navbar__logo {
+  color: var(--gm-blanc-creme);
+}
+.gm-navbar[data-tone="light"] {
+  color: var(--gm-bleu-encre);
+}
+
+/* Sur état "solid" + tone dark, on ajoute un fond bleu encre translucide
+   pour que la navbar reste lisible quand elle se pose au-dessus d'une section claire. */
+.gm-navbar[data-state="solid"][data-tone="dark"] {
+  background-color: rgba(23, 23, 35, 0.55);
+  border-bottom-color: rgba(255, 255, 255, 0.10);
+}
+
+/* ---------- Logo (gauche) ---------- */
+.gm-navbar__logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: inherit;
+}
+.gm-navbar__logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+/* ---------- Liens (centre, desktop) ---------- */
+.gm-navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  padding: 0.55rem 1.5rem;
+  border-radius: var(--gm-radius-pill);
+  position: relative;
+  isolation: isolate;
+  transition:
+    background-color var(--gm-dur-base) var(--gm-ease-out),
+    box-shadow var(--gm-dur-base) var(--gm-ease-out),
+    backdrop-filter var(--gm-dur-base) var(--gm-ease-out);
+}
+
+/* Bulle "liquid glass" autour des liens — uniquement sur le hero (data-state="transparent").
+   Aspect crème/jaunâtre clair (couleur DA `#EAE1CD`) translucide, fidèle à la capture envoyée par Lilian.
+   Le contenu (texte des liens) reste lisible quelle que soit l'image en arrière-plan. */
+.gm-navbar[data-state="transparent"] .gm-navbar__nav {
+  background-color: rgba(234, 225, 205, 0.45);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
+  backdrop-filter: blur(20px) saturate(170%);
+  box-shadow:
+    inset 2px 2px 1px 0 rgba(255, 255, 255, 0.55),
+    inset -1px -1px 1px 1px rgba(234, 225, 205, 0.55),
+    0 10px 28px rgba(23, 23, 35, 0.25),
+    0 2px 4px rgba(23, 23, 35, 0.12);
+}
+/* Sur la bulle crème, les liens passent en bleu encre (lisibilité optimale, pas en crème) */
+.gm-navbar[data-state="transparent"] .gm-navbar__nav .gm-navbar__link {
+  color: var(--gm-bleu-encre);
+}
+/* Reflet spéculaire en haut (effet "verre liquide") */
+.gm-navbar[data-state="transparent"] .gm-navbar__nav::before {
+  content: "";
+  position: absolute;
+  inset: 1px 1px auto 1px;
+  height: 50%;
+  border-radius: var(--gm-radius-pill) var(--gm-radius-pill) 50% 50% / var(--gm-radius-pill) var(--gm-radius-pill) 100% 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+.gm-navbar__link {
+  position: relative;
+  font-family: var(--gm-font-sans);
+  font-weight: var(--gm-fw-medium);
+  font-size: 0.95rem;
+  color: var(--gm-bleu-encre);
+  text-decoration: none;
+  padding-block: 0.4rem;
+  transition: color var(--gm-dur-fast) var(--gm-ease-out);
+}
+.gm-navbar__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0;
+  transform: translateY(2px);
+  transition:
+    opacity var(--gm-dur-fast) var(--gm-ease-out),
+    transform var(--gm-dur-fast) var(--gm-ease-out);
+}
+.gm-navbar__link:hover::after,
+.gm-navbar__link[aria-current="page"]::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- CTA (droite) ---------- */
+.gm-navbar__cta {
+  flex-shrink: 0;
+}
+
+/* ---------- Burger (mobile) ---------- */
+.gm-navbar__burger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--gm-radius-sm);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  color: inherit;
+}
+.gm-navbar__burger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background-color: currentColor;
+  border-radius: 1px;
+  transition: transform var(--gm-dur-base) var(--gm-ease-out),
+              opacity var(--gm-dur-fast) var(--gm-ease-out);
+}
+
+/* ---------- Drawer mobile ---------- */
+.gm-navbar__drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(80vw, 360px);
+  z-index: calc(var(--gm-z-navbar) + 1);
+
+  background-color: var(--gm-blanc-creme);
+  color: var(--gm-bleu-encre);
+  padding: var(--gm-space-8) var(--gm-space-6);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gm-space-6);
+
+  transform: translateX(100%);
+  transition: transform var(--gm-dur-slow) var(--gm-ease-out);
+  box-shadow: -20px 0 60px -20px rgba(23, 23, 35, 0.25);
+}
+.gm-navbar__drawer[data-open="true"] { transform: translateX(0); }
+
+.gm-navbar__drawer-close {
+  align-self: flex-end;
+  width: 40px;
+  height: 40px;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.gm-navbar__drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gm-space-4);
+  margin-top: var(--gm-space-4);
+}
+.gm-navbar__drawer-link {
+  font-size: 1.5rem;
+  font-weight: var(--gm-fw-semibold);
+  color: var(--gm-bleu-encre);
+  text-decoration: none;
+}
+
+.gm-navbar__drawer-cta {
+  margin-top: auto;
+}
+
+/* Voile derrière le drawer */
+.gm-navbar__overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(23, 23, 35, 0.45);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  z-index: var(--gm-z-navbar);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--gm-dur-base) var(--gm-ease-out);
+}
+.gm-navbar__overlay[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .gm-navbar__nav      { display: none; }
+  .gm-navbar__cta      { display: none; }
+  .gm-navbar__burger   { display: inline-flex; }
+}
+@media (min-width: 901px) {
+  .gm-navbar__drawer,
+  .gm-navbar__overlay { display: none; }
+}

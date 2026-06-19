@@ -1,0 +1,70 @@
+/* ---------------------------------------------------------
+   S2 — Vidéo de présentation
+   Fond chaud, player centré, autoplay muet, bouton son.
+   --------------------------------------------------------- */
+
+.gm-s2 {
+  background-color: var(--gm-blanc-creme);
+  color: var(--gm-bleu-encre);
+  padding-block: clamp(5rem, 10vw, 10rem);
+}
+
+.gm-s2__player {
+  position: relative;
+  width: min(100% - 2rem, 1100px);
+  margin-inline: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--gm-radius-lg);
+  overflow: hidden;
+  background-color: var(--gm-bleu-encre);
+  box-shadow: var(--gm-shadow-video);
+}
+.gm-s2__player video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gm-s2__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gm-blanc-creme);
+  font-weight: var(--gm-fw-medium);
+  letter-spacing: 0.04em;
+  background:
+    radial-gradient(ellipse at center, rgba(250, 200, 100, 0.12), transparent 70%),
+    var(--gm-bleu-encre);
+}
+
+.gm-s2__sound-toggle {
+  position: absolute;
+  bottom: var(--gm-space-4);
+  right: var(--gm-space-4);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(23, 23, 35, 0.55);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  color: var(--gm-blanc-creme);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color var(--gm-dur-fast) var(--gm-ease-out),
+    transform var(--gm-dur-fast) var(--gm-ease-out);
+}
+.gm-s2__sound-toggle:hover {
+  background-color: rgba(250, 200, 100, 0.85);
+  color: var(--gm-bleu-encre);
+  transform: scale(1.05);
+}
+.gm-s2__sound-toggle svg { width: 20px; height: 20px; }
+.gm-s2__sound-toggle [data-state="muted"]   { display: block; }
+.gm-s2__sound-toggle [data-state="unmuted"] { display: none; }
+.gm-s2__sound-toggle[data-muted="false"] [data-state="muted"]   { display: none; }
+.gm-s2__sound-toggle[data-muted="false"] [data-state="unmuted"] { display: block; }

@@ -1,0 +1,351 @@
+/* ---------------------------------------------------------
+   Pages dédiées d'expertise — gabarit unique
+   Hero / Installation / Dépannage / Partenaires / Avis / (Simu PAC) / CTA
+   --------------------------------------------------------- */
+
+/* ---- Bloc 1 — Hero plein 16:9 ---- */
+.gm-exp-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 480px;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--gm-bleu-encre);
+}
+.gm-exp-hero__bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.gm-exp-hero__overlay {
+  position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.15), rgba(0,0,0,0.45) 80%);
+}
+.gm-exp-hero__icon {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+.gm-exp-hero__icon-inner {
+  width: clamp(120px, 14vw, 200px);
+  height: clamp(120px, 14vw, 200px);
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(250, 200, 100, 0.25), rgba(250, 200, 100, 0.05));
+  border: 1px solid rgba(250, 200, 100, 0.4);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  display: grid;
+  place-items: center;
+  color: var(--gm-dore);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4);
+}
+.gm-exp-hero__icon-inner svg {
+  width: 50%;
+  height: 50%;
+}
+
+/* ---- Blocs 2 & 3 — Installation / Dépannage (2 carrés) ---- */
+.gm-exp-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--gm-blanc-creme);
+  color: var(--gm-bleu-encre);
+}
+@media (max-width: 900px) {
+  .gm-exp-block { grid-template-columns: 1fr; }
+}
+.gm-exp-block--installation {} /* texte gauche, image droite (par défaut) */
+.gm-exp-block--depannage   {
+  background-color: var(--gm-bleu-encre);
+  color: var(--gm-blanc-creme);
+}
+.gm-exp-block--depannage .gm-exp-block__text { order: 2; }
+.gm-exp-block--depannage .gm-exp-block__image { order: 1; }
+@media (max-width: 900px) {
+  .gm-exp-block--depannage .gm-exp-block__text { order: 1; }
+  .gm-exp-block--depannage .gm-exp-block__image { order: 2; }
+}
+
+.gm-exp-block__text {
+  padding: clamp(2rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gm-space-3);
+  position: relative;
+  min-height: 620px;
+}
+.gm-exp-block__h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: var(--gm-fw-semibold);
+  line-height: 1.05;
+}
+.gm-exp-block__h3 {
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  font-weight: var(--gm-fw-medium);
+  line-height: 1.35;
+  color: var(--gm-gris-anthracite);
+  text-wrap: balance;
+}
+.gm-exp-block--depannage .gm-exp-block__h3 { color: rgba(234,225,205,0.78); }
+
+.gm-exp-block__slide {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.gm-exp-block__slide-track {
+  display: flex;
+  transition: transform var(--gm-dur-slow) var(--gm-ease-in-out);
+  will-change: transform;
+}
+.gm-exp-block__slide-item {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gm-space-3);
+  padding-right: var(--gm-space-4);
+}
+.gm-exp-block__h4 {
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+  font-weight: var(--gm-fw-semibold);
+  color: var(--gm-bleu-encre);
+}
+.gm-exp-block--depannage .gm-exp-block__h4 { color: var(--gm-blanc-pur); }
+
+.gm-exp-block__p {
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--gm-gris-anthracite);
+  max-width: 60ch;
+}
+.gm-exp-block__p p { margin-bottom: 0.75rem; }
+.gm-exp-block__p p:last-child { margin-bottom: 0; }
+.gm-exp-block__p strong { color: var(--gm-bleu-encre); font-weight: var(--gm-fw-semibold); }
+.gm-exp-block__p em { color: var(--gm-bleu-encre); font-style: italic; }
+.gm-exp-block--depannage .gm-exp-block__p { color: rgba(234,225,205,0.85); }
+.gm-exp-block--depannage .gm-exp-block__p strong { color: var(--gm-blanc-pur); }
+.gm-exp-block--depannage .gm-exp-block__p em { color: var(--gm-dore); font-style: normal; }
+
+/* Flèche carrousel */
+.gm-exp-block__nav {
+  position: absolute;
+  bottom: clamp(1.5rem, 3vw, 2.5rem);
+  right: clamp(1.5rem, 3vw, 2.5rem);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gm-space-3);
+}
+.gm-exp-block__dots {
+  display: inline-flex;
+  gap: 6px;
+}
+.gm-exp-block__dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background-color: rgba(23,23,35,0.25);
+  transition: background-color var(--gm-dur-fast) var(--gm-ease-out);
+}
+.gm-exp-block__dot[data-active="true"] {
+  background-color: var(--gm-dore);
+}
+.gm-exp-block__arrow {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(23,23,35,0.20);
+  display: inline-flex; align-items: center; justify-content: center;
+  background-color: transparent;
+  color: var(--gm-bleu-encre);
+  transition:
+    background-color var(--gm-dur-fast) var(--gm-ease-out),
+    color var(--gm-dur-fast) var(--gm-ease-out),
+    transform var(--gm-dur-fast) var(--gm-ease-out);
+}
+.gm-exp-block__arrow:hover {
+  background-color: var(--gm-dore);
+  border-color: var(--gm-dore);
+  color: var(--gm-bleu-encre);
+  transform: translateX(2px);
+}
+
+.gm-exp-block__image {
+  position: relative;
+  min-height: 620px;
+  background-color: rgba(23,23,35,0.06);
+  display: grid;
+  place-items: center;
+  color: var(--gm-gris-anthracite);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.gm-exp-block__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute; inset: 0;
+}
+.gm-exp-block__image--placeholder::after {
+  content: "Image à définir";
+}
+
+/* ---- Bloc 4 — Bandeau partenaires (défilant D→G) ---- */
+.gm-exp-partenaires {
+  background-color: var(--gm-blanc-creme);
+  border-top: 1px solid rgba(23,23,35,0.10);
+  border-bottom: 1px solid rgba(23,23,35,0.10);
+  overflow: hidden;
+  padding-block: clamp(2rem, 4vw, 3.5rem);
+}
+.gm-exp-partenaires__track {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  width: max-content;
+  animation: gm-marquee 28s linear infinite;
+  color: var(--gm-bleu-encre);
+}
+/* Variante FIXE (≤ 3 logos) : centré, pas de défilement, pas de doublon. */
+.gm-exp-partenaires--fixed .gm-exp-partenaires__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  width: min(100% - 2rem, var(--gm-content-max));
+  margin-inline: auto;
+}
+/* BWT (page Adoucisseur, seul logo) : plus gros, et on "efface" le carré
+   blanc du JPG par mix-blend-mode multiply contre le fond crème de la section.
+   Avec multiply : blanc × crème = crème (donc le rectangle blanc disparaît),
+   et les couleurs du logo (bleu BWT) restent visibles, légèrement assombries. */
+.gm-exp-partenaires--fixed .gm-exp-partenaires__item:has(img[alt="BWT"]) {
+  height: clamp(130px, 18vw, 210px);
+}
+.gm-exp-partenaires--fixed img[alt="BWT"] {
+  max-width: clamp(240px, 30vw, 360px);
+  mix-blend-mode: multiply;
+}
+.gm-exp-partenaires:hover .gm-exp-partenaires__track {
+  animation-play-state: paused;
+}
+/* Logos en marquee : conteneur flex pour centrage vertical + hauteur fixée */
+.gm-exp-partenaires__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  height: clamp(52px, 7vw, 84px);
+}
+.gm-exp-partenaires__item img {
+  max-height: 100%;
+  width: auto;
+  max-width: clamp(120px, 14vw, 180px);
+  object-fit: contain;
+  display: block;
+}
+/* Certifs RGE : un peu plus haut pour bien voir le badge */
+.gm-exp-partenaires__item--certif {
+  height: clamp(60px, 8vw, 96px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .gm-exp-partenaires__track { animation: none; }
+}
+
+/* ---- Bloc 5 — Bandeau avis (cartes fixes, S5 simplifiée, fond crème) ---- */
+.gm-exp-avis {
+  background-color: var(--gm-blanc-creme);
+  padding-block: clamp(4rem, 7vw, 6rem);
+  border-bottom: 1px solid rgba(23,23,35,0.08);
+}
+.gm-exp-avis__title {
+  text-align: center;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: var(--gm-fw-semibold);
+  color: var(--gm-bleu-encre);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  padding-inline: 1rem;
+  text-wrap: balance;
+}
+/* Grille fixe : 1 colonne par défaut, 2-3 colonnes sur large écran selon le
+   nombre d'avis (auto-fit). Largeur min ~300px → reflow automatique. */
+.gm-exp-avis__grid {
+  width: min(100% - 2rem, var(--gm-content-max));
+  margin-inline: auto;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  justify-content: center;
+}
+/* Une seule carte : on la cale au centre, largeur lisible (pas pleine page). */
+.gm-exp-avis[data-count="1"] .gm-exp-avis__grid {
+  grid-template-columns: minmax(0, 560px);
+}
+/* Keyframe défilement horizontal infini — encore utilisé par le bandeau
+   partenaires (track dupliqué × 2, translate de -50% pour boucle sans saut). */
+@keyframes gm-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ---- Bloc 7 — CTA final ---- */
+.gm-exp-cta {
+  background-color: var(--gm-blanc-creme);
+  /* Padding-top réduit pour remonter le bloc CTA, padding-bottom inchangé. */
+  padding-top: clamp(2rem, 4vw, 4rem);
+  padding-bottom: clamp(5rem, 10vw, 9rem);
+  text-align: center;
+}
+.gm-exp-cta__inner {
+  width: min(100% - 2rem, 720px);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gm-space-6);
+}
+.gm-exp-cta__title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: var(--gm-fw-semibold);
+  line-height: 1.1;
+  color: var(--gm-bleu-encre);
+  text-wrap: balance;
+}
+.gm-exp-cta__sub {
+  font-size: 1.05rem;
+  color: var(--gm-gris-anthracite);
+  max-width: 50ch;
+}
+
+/* ---- Bloc 8 (optionnel, page mère SEO) ---- */
+/* Lien discret vers le guide complet (page mère SEO du cocon sémantique).
+   Affiché uniquement si `exp.seo.guideSlug` est défini dans data/expertises.ts.
+   Visuel volontairement minimaliste : ne concurrence pas le CTA principal au-dessus. */
+.gm-exp-guide {
+  background-color: var(--gm-creme);
+  padding-block: var(--gm-space-7);
+  border-top: 1px solid color-mix(in srgb, var(--gm-bleu-encre) 10%, transparent);
+}
+.gm-exp-guide__container {
+  width: min(100% - 2rem, 720px);
+  margin-inline: auto;
+  text-align: center;
+}
+.gm-exp-guide__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-size: 0.95rem;
+  color: var(--gm-bleu-encre);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-block: 0.2em;
+  transition: opacity 0.2s ease;
+}
+.gm-exp-guide__link:hover { opacity: 0.7; }
+.gm-exp-guide__arrow { font-weight: var(--gm-fw-semibold); }

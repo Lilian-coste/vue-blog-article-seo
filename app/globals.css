@@ -1,0 +1,11 @@
+/* Import du CSS porté du thème WordPress */
+@import "../styles/main.css";
+
+/* ---------- Layout root spécifique Next.js ---------- */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  /* Empêche le bouncing horizontal sur iOS Safari + le zoom-out déclenché
+     par un élément qui déborde. */
+  overscroll-behavior-x: none;
+}

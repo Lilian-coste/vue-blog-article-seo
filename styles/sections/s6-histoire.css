@@ -1,0 +1,312 @@
+/* ---------------------------------------------------------
+   S6 — Notre histoire (carousel vertical : 1 carte à la fois)
+   Navigation avec flèches haut/bas en bas à droite.
+   Bandeau de clôture fixe en bas de section.
+   --------------------------------------------------------- */
+
+.gm-s6 {
+  background-color: var(--gm-bleu-encre);
+  color: var(--gm-blanc-creme);
+  position: relative;
+  padding-block: clamp(5rem, 9vw, 8rem);
+}
+
+/* Header (intro) inchangé */
+.gm-s6__header {
+  width: min(100% - 2rem, var(--gm-content-max));
+  margin-inline: auto;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+  text-align: center;
+}
+.gm-s6__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: var(--gm-fw-semibold);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.gm-s6__title em { color: var(--gm-dore); font-style: normal; }
+.gm-s6__intro {
+  margin-top: var(--gm-space-4);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.6;
+  color: rgba(234, 225, 205, 0.85);
+  max-width: 56ch;
+  margin-inline: auto;
+}
+
+/* ---------- Carousel viewport ---------- */
+.gm-s6__carousel {
+  width: min(100% - 2rem, var(--gm-content-max));
+  margin-inline: auto;
+  position: relative;
+  /* Hauteur dynamique : assez d'espace pour la carte la plus longue (2021-2025).
+     Fallback : si le contenu déborde malgré tout, scroll interne sur la carte. */
+  min-height: clamp(620px, 78vh, 820px);
+  overflow: hidden;
+}
+
+/* Ligne verticale au centre (desktop) */
+@media (min-width: 900px) {
+  .gm-s6__carousel::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(250, 200, 100, 0.20);
+    transform: translateX(-0.5px);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+/* Une carte (chapitre) */
+.gm-s6__chapter {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gm-space-6);
+  position: absolute;
+  inset: 0;
+  /* Si la carte est plus longue que le viewport, scroll interne plutôt que coupure */
+  overflow-y: auto;
+  padding: clamp(0.5rem, 1vw, 1rem);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(80px);
+  transition:
+    opacity 0.6s var(--gm-ease-out),
+    transform 0.6s var(--gm-ease-out),
+    visibility 0s linear 0.6s;
+  pointer-events: none;
+}
+.gm-s6__chapter[data-active="true"] {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition:
+    opacity 0.6s var(--gm-ease-out),
+    transform 0.6s var(--gm-ease-out),
+    visibility 0s linear 0s;
+}
+/* État sortant vers le haut (clic ↓) */
+.gm-s6__chapter[data-leaving="up"] {
+  opacity: 0;
+  visibility: visible;
+  transform: translateY(-80px);
+}
+/* État sortant vers le bas (clic ↑) */
+.gm-s6__chapter[data-leaving="down"] {
+  opacity: 0;
+  visibility: visible;
+  transform: translateY(80px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .gm-s6__chapter,
+  .gm-s6__chapter[data-active="true"] { transition: none; }
+}
+
+@media (min-width: 900px) {
+  .gm-s6__chapter {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: center;
+  }
+  .gm-s6__chapter[data-pos="even"] .gm-s6__chapter-text { order: 2; }
+  .gm-s6__chapter[data-pos="even"] .gm-s6__chapter-media { order: 1; }
+}
+
+.gm-s6__chapter-date {
+  font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+  font-weight: var(--gm-fw-bold);
+  line-height: 1;
+  color: var(--gm-dore);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--gm-space-3);
+  font-variant-numeric: tabular-nums;
+}
+.gm-s6__chapter-eyebrow {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: var(--gm-fw-medium);
+  color: rgba(250, 200, 100, 0.75);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: var(--gm-space-2);
+}
+.gm-s6__chapter-title {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: var(--gm-fw-semibold);
+  color: var(--gm-blanc-creme);
+  line-height: 1.15;
+  margin-bottom: var(--gm-space-4);
+  text-wrap: balance;
+}
+.gm-s6__chapter-body p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(234, 225, 205, 0.85);
+  margin-bottom: var(--gm-space-3);
+  max-width: 56ch;
+}
+.gm-s6__chapter-body p:last-child { margin-bottom: 0; }
+.gm-s6__chapter-body strong { color: var(--gm-blanc-pur); font-weight: var(--gm-fw-medium); }
+.gm-s6__chapter-body em { color: var(--gm-dore); font-style: normal; }
+
+.gm-s6__chapter-media {
+  position: relative;
+  border-radius: var(--gm-radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, rgba(250, 200, 100, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(250, 200, 100, 0.15);
+}
+.gm-s6__chapter-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gm-s6__chapter-media--placeholder {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: var(--gm-space-8);
+}
+.gm-s6__chapter-media--placeholder span {
+  font-size: 0.85rem;
+  color: rgba(250, 200, 100, 0.7);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ---------- Flèches navigation (bas à droite) ---------- */
+.gm-s6__nav {
+  width: min(100% - 2rem, var(--gm-content-max));
+  /* Margin-top négatif : remonte les flèches dans la zone du carousel
+     pour qu'elles soient plus proches du contenu du chapitre. */
+  margin: clamp(-4rem, -5vw, -2.5rem) auto 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gm-space-2);
+  position: relative;
+  z-index: 2;
+}
+.gm-s6__nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gm-dore);
+  background: transparent;
+  color: var(--gm-dore);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background-color var(--gm-dur-fast) var(--gm-ease-out),
+    color var(--gm-dur-fast) var(--gm-ease-out),
+    border-color var(--gm-dur-fast) var(--gm-ease-out),
+    transform var(--gm-dur-fast) var(--gm-ease-out);
+}
+.gm-s6__nav-btn svg { width: 20px; height: 20px; }
+.gm-s6__nav-btn:hover:not(:disabled) {
+  background-color: var(--gm-dore);
+  color: var(--gm-bleu-encre);
+  border-color: var(--gm-dore);
+}
+.gm-s6__nav-btn:active:not(:disabled) { transform: scale(0.95); }
+.gm-s6__nav-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+/* Indicateur position (petits points verticaux à côté des flèches) */
+.gm-s6__indicators {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: var(--gm-space-3);
+  font-size: 0.85rem;
+  color: rgba(234, 225, 205, 0.55);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Outro fixe en bas de la section (indépendant du carousel) */
+.gm-s6__outro {
+  width: min(100% - 2rem, 720px);
+  margin-inline: auto;
+  margin-top: clamp(4rem, 7vw, 6rem);
+  text-align: center;
+  padding-top: clamp(3rem, 5vw, 4rem);
+  border-top: 1px solid rgba(250, 200, 100, 0.15);
+}
+.gm-s6__outro p {
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--gm-blanc-creme);
+  font-weight: var(--gm-fw-medium);
+  text-wrap: balance;
+}
+
+/* ============================================================
+   Mode TEMPORAIRE (gm-s6--temp) — section Histoire sans images
+   sauf pour la dernière étape (2026). À retirer dès que toutes
+   les photos de la section sont fournies.
+   ============================================================ */
+/* Chapitre sans média : texte pleine largeur, même en desktop */
+@media (min-width: 900px) {
+  .gm-s6--temp .gm-s6__chapter--no-media {
+    grid-template-columns: 1fr;
+  }
+}
+/* Le trait vertical central du carousel ne s'affiche que quand l'étape
+   active possède un média (donc pour 2026). Sinon il couperait le texte. */
+.gm-s6--temp .gm-s6__carousel:has(.gm-s6__chapter[data-active="true"].gm-s6__chapter--no-media)::before {
+  display: none;
+}
+/* Confort de lecture : largeur ET base de police alignées sur l'intro
+   (.gm-s6__intro : 56ch @ clamp(1rem,1.2vw,1.15rem)) → même largeur de bloc exactement. */
+.gm-s6--temp .gm-s6__chapter--no-media .gm-s6__chapter-text {
+  max-width: 56ch;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  margin-inline: auto;
+}
+/* Les paragraphes remplissent toute la largeur du conteneur (= largeur de l'intro),
+   gardent leur taille de texte (1rem) et sont justifiés. */
+.gm-s6--temp .gm-s6__chapter--no-media .gm-s6__chapter-body p {
+  max-width: none;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+/* Hauteur du carousel = hauteur de l'étape active → s'adapte au texte de chaque
+   étape (au lieu d'une hauteur fixe calée sur la carte la plus longue).
+   L'étape active passe dans le flux normal ; les étapes inactives / sortantes
+   restent superposées en absolu (inset: 0) le temps de la transition.
+   On annule le min-height fixe hérité de .gm-s6__carousel (et de mobile.css). */
+.gm-s6--temp .gm-s6__carousel {
+  min-height: 0;
+}
+.gm-s6--temp .gm-s6__chapter[data-active="true"] {
+  position: relative;
+  inset: auto;
+  overflow: visible;
+}
+/* Étapes non actives : on clippe le débordement éventuel pendant la transition
+   (cas où la carte sortante est plus haute que la carte entrante). */
+.gm-s6--temp .gm-s6__chapter:not([data-active="true"]) {
+  overflow: hidden;
+}
+/* Flèches de navigation centrées, juste AU-DESSUS du trait fin de l'outro :
+   on garde un peu d'air au-dessus des flèches (margin-top du nav) et on colle
+   le trait juste en dessous (margin-top réduit de l'outro). */
+.gm-s6--temp .gm-s6__nav {
+  justify-content: center;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.gm-s6--temp .gm-s6__outro {
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+}
