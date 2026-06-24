@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect, useRef } from 'react';
+import { useState, useMemo, useEffect, useLayoutEffect, useRef } from 'react';
 import Link from 'next/link';
 import type { BlogArticle } from '@/data/blog';
 
@@ -38,6 +38,8 @@ function getTheme(slug: string): string {
 }
 
 const PAGE_SIZE = 6;
+// Clé sessionStorage pour restaurer la vue au retour d'un article (filtres + nb affichés + scroll).
+const RETURN_KEY = 'gm-blog-conseil-return';
 
 // ── Chevron SVG ─────────────────────────────────────────────────────────────
 function Chevron({ open }: { open: boolean }) {
@@ -56,16 +58,17 @@ function Chevron({ open }: { open: boolean }) {
 }
 
 // ── Card article ─────────────────────────────────────────────────────────────
-function ArticleCard({ article }: { article: BlogArticle }) {
+function ArticleCard({ article, onNavigate }: { article: BlogArticle; onNavigate?: () => void }) {
   const imgDir = article.imgDir || 'hero';
   return (
-    <Link className="gm-articles-page__card" href={`/blog/${article.slug}`}>
+    <Link className="gm-articles-page__card" href={`/blog/${article.slug}`} onClick={onNavigate}>
       <div className="gm-articles-page__media">
         <img
           className="gm-articles-page__img"
           src={`/images/${imgDir}/${article.img}`}
           alt=""
           loading="lazy"
+          style={article.imgFocus ? { objectPosition: article.imgFocus } : undefined}
         />
         <span className="gm-articles-page__read-btn">Lire</span>
       </div>
@@ -84,6 +87,42 @@ export default function BlogConseilClient({ allArticles }: { allArticles: BlogAr
   const [visibleCount, setVisibleCount] = useState(0);
   const [openDropdown, setOpenDropdown] = useState<'expertise' | 'theme' | null>(null);
   const barRef = useRef<HTMLDivElement>(null);
+
+  // ── Restauration de la vue au retour d'un article ───────────────────────────
+  // Quand on revient en arrière (depuis un article), on remet les filtres, le
+  // nombre d'articles affichés et la position de scroll d'avant le clic.
+  useLayoutEffect(() => {
+    let saved: { ret?: boolean; expertiseFilter?: string; themeFilter?: string; visibleCount?: number; scrollY?: number } | null = null;
+    try {
+      const raw = sessionStorage.getItem(RETURN_KEY);
+      if (raw) saved = JSON.parse(raw);
+    } catch {}
+
+    if (saved && saved.ret) {
+      setExpertiseFilter(saved.expertiseFilter || '');
+      setThemeFilter(saved.themeFilter || '');
+      setVisibleCount(saved.visibleCount || 0);
+      // Marqueur consommé : une nouvelle visite « fraîche » ne restaurera pas.
+      try { sessionStorage.setItem(RETURN_KEY, JSON.stringify({ ...saved, ret: false })); } catch {}
+      // Le setState ci-dessus agrandit la liste de façon synchrone ; on attend
+      // deux frames pour que le DOM ait sa hauteur finale avant de scroller.
+      const y = saved.scrollY || 0;
+      requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo(0, y)));
+    } else {
+      // Visite normale → on part du haut.
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
+  // Sauvegarde la vue courante juste avant d'ouvrir un article.
+  function saveReturn() {
+    try {
+      sessionStorage.setItem(
+        RETURN_KEY,
+        JSON.stringify({ ret: true, expertiseFilter, themeFilter, visibleCount, scrollY: window.scrollY }),
+      );
+    } catch {}
+  }
 
   // Ferme les dropdowns au clic en dehors
   useEffect(() => {
@@ -217,9 +256,9 @@ export default function BlogConseilClient({ allArticles }: { allArticles: BlogAr
       {/* ── Grille d'articles ─────────────────────────────────────────────── */}
       <div className="gm-articles-page__grid gm-articles-page__grid--conseil">
         {/* 6 guides complets — toujours en tête, masqués si filtre actif */}
-        {!isFiltered && hubArticles.map(a => <ArticleCard key={a.slug} article={a} />)}
+        {!isFiltered && hubArticles.map(a => <ArticleCard key={a.slug} article={a} onNavigate={saveReturn} />)}
         {/* Articles additionnels / résultats filtrés */}
-        {visibleExtras.map(a => <ArticleCard key={a.slug} article={a} />)}
+        {visibleExtras.map(a => <ArticleCard key={a.slug} article={a} onNavigate={saveReturn} />)}
       </div>
 
       {/* ── État vide ─────────────────────────────────────────────────────── */}

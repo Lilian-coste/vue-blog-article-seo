@@ -7,6 +7,8 @@ export type BlogArticle = {
   excerpt: string;
   img: string;
   imgDir?: string;
+  /** object-position CSS de la vignette (ex: "10% center") pour recadrer le sujet. */
+  imgFocus?: string;
   overlayEyebrow?: string;
   overlayTitle?: string;
   body: string;
@@ -2181,6 +2183,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     datePublished: "2026-05-27",
     img: "prime-cee-pompe-a-chaleur.jpg",
     imgDir: "blog",
+    imgFocus: "10% center",
     excerpt:
       "La prime CEE pour une pompe à chaleur : qui la verse, combien elle représente et comment elle se cumule avec MaPrimeRénov' pour réduire votre reste à charge.",
     body: `
@@ -2575,6 +2578,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     datePublished: "2026-05-27",
     img: "comment-fonctionne-climatisation.jpg",
     imgDir: "blog",
+    imgFocus: "95% center",
     excerpt:
       "Une climatisation capte les calories de l'air intérieur et les rejette dehors. On vous explique le cycle frigorifique, la différence entre EER et SEER et pourquoi la réversible chauffe aussi bien qu'elle refroidit.",
     body: `
@@ -2767,6 +2771,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     datePublished: "2026-05-27",
     img: "climatisation-monosplit-ou-multisplit.jpg",
     imgDir: "blog",
+    imgFocus: "20% center",
     excerpt:
       "Monosplit ou multi-split : le choix détermine combien de pièces vous climatisez, le nombre d'unités extérieures et votre budget. On compare les deux configurations pour vous aider à décider.",
     body: `
@@ -2960,6 +2965,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     datePublished: "2026-05-27",
     img: "installation-climatisation-etapes.jpg",
     imgDir: "blog",
+    imgFocus: "55% center",
     excerpt:
       "Comment se passe l'installation d'une climatisation chez vous ? De la visite préalable à la mise en service, voici les 6 étapes d'une installation réalisée par un technicien RGE.",
     body: `
@@ -3011,6 +3017,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     datePublished: "2026-05-27",
     img: "entretien-climatisation-obligatoire.jpg",
     imgDir: "blog",
+    imgFocus: "82% center",
     excerpt:
       "L'entretien d'une climatisation est recommandé annuellement et parfois obligatoire selon la réglementation F-Gas. Voici ce que la loi impose, ce que comprend une visite d'entretien et pourquoi le négliger coûte plus cher que de le faire.",
     body: `
@@ -3211,6 +3218,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     datePublished: "2026-05-27",
     img: "climatisation-ne-refroidit-plus.jpg",
     imgDir: "blog",
+    imgFocus: "45% center",
     excerpt:
       "Votre climatisation tourne mais la pièce ne refroidit plus ? Voici comment diagnostiquer la cause étape par étape, ce que vous pouvez vérifier vous-même et quand appeler un technicien.",
     body: `
@@ -3271,6 +3279,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     datePublished: "2026-05-27",
     img: "installateur-climatisation-nievre.jpg",
     imgDir: "blog",
+    imgFocus: "15% center",
     excerpt:
       "Vous cherchez un installateur de climatisation dans la Nièvre (58) ? Voici les critères pour choisir un professionnel fiable, certifié et réactif, et pourquoi la proximité compte autant que la marque.",
     body: `

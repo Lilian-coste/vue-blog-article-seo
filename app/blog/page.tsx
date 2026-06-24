@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { BLOG_ADVICE } from '@/data/blog';
-import ScrollToTopOnMount from '@/components/globals/ScrollToTopOnMount';
 import BlogConseilClient from '@/components/blog/BlogConseilClient';
 
 export const metadata: Metadata = {
@@ -12,7 +11,6 @@ export const metadata: Metadata = {
 export default function BlogIndexPage() {
   return (
     <section className="gm-articles-page gm-articles-page--conseil">
-      <ScrollToTopOnMount />
       <header className="gm-articles-page__head">
         <span className="gm-articles-page__eyebrow">Le blog · Conseils</span>
         <h1 className="gm-articles-page__title">
