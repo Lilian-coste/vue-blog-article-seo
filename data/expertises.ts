@@ -153,13 +153,14 @@ export const EXPERTISES: Record<string, Expertise> = {
         },
         {
           h4: "Le poêle et l'insert à granulés",
+          img: "install-poele-granules.jpg",
           p: "<p>Le poêle à granulés est une solution de chauffage au bois à la fois économique et autonome. Grâce à son réservoir et à sa programmation, il diffuse une chaleur douce et régulière dans votre pièce de vie, sans que vous ayez à le recharger en permanence.</p><p>L'insert à granulés vient quant à lui s'installer dans une cheminée existante pour la transformer en véritable chauffage performant. Vous gardez le charme du feu tout en gagnant en confort et en rendement.</p><p>Au quotidien, vous profitez d'un allumage et d'une régulation automatiques, d'un combustible renouvelable et d'une chaleur homogène dans tout votre logement.</p><p>Nous étudions votre intérieur et vos habitudes pour vous conseiller l'appareil le mieux adapté, puis nous réalisons une installation soignée et conforme aux normes, pour un fonctionnement optimal dès le départ.</p>",
         },
       ],
     },
     depannage: {
       h3: "Une panne de chauffage, ça n'attend pas.",
-      p: "<p>Une chaudière, un poêle ou un insert à granulés en panne, c'est un inconfort immédiat, surtout en hiver. Nos équipes interviennent rapidement pour diagnostiquer le problème et remettre votre chauffage en fonctionnement.</p><p>Chaque intervention vise une réparation durable, pour éviter que la panne ne se répète.</p><p>Nous assurons également l'entretien de votre chaudière, de votre poêle ou de votre insert à granulés pour limiter les pannes et prolonger leur durée de vie.</p>",
+      p: "<p>Un poêle, un insert à granulés ou une chaudière en panne, c'est un inconfort immédiat, surtout en hiver. Nos équipes interviennent rapidement pour diagnostiquer le problème et remettre votre chauffage en fonctionnement.</p><p>Chaque intervention vise une réparation durable, pour éviter que la panne ne se répète.</p><p>Nous assurons également l'entretien de votre chaudière, de votre poêle ou de votre insert à granulés pour limiter les pannes et prolonger leur durée de vie.</p>",
     },
     partenaireLogos: [
       { src: 'viessmann.png', alt: 'Viessmann' },

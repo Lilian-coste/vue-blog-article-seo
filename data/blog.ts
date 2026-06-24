@@ -2574,6 +2574,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     datePublished: "2026-05-27",
     img: "quelle-climatisation-choisir.jpg",
     imgDir: "blog",
+    imgFocus: "18% center",
     excerpt:
       "Surface, exposition, isolation, budget : les critères pour choisir la bonne climatisation pour votre logement dans la Nièvre ou l'Yonne. Monosplit, multi-split ou gainable, simple froide ou réversible.",
     body: `
@@ -3103,7 +3104,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     datePublished: "2026-05-27",
     img: "installateur-climatisation-nievre.jpg",
     imgDir: "blog",
-    imgFocus: "90% center",
+    imgFocus: "88% center",
     excerpt:
       "Vous cherchez un installateur de climatisation dans la Nièvre (58) ? Voici les critères pour choisir un professionnel fiable, certifié et réactif, et pourquoi la proximité compte autant que la marque.",
     body: `
