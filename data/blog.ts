@@ -445,11 +445,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Une pompe à chaleur ne crée pas de chaleur : elle la capte dans l'air extérieur et la transfère dans votre maison. On vous explique le cycle frigorifique, le COP et ce que ça change concrètement pour votre facture de chauffage.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">COP 3 à 4</span><span class="gm-stat__label">1 kWh électrique produit 3 à 4 kWh de chaleur</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">60-75 %</span><span class="gm-stat__label">d'économies sur la facture vs chaudière fioul</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">-15 °C</span><span class="gm-stat__label">température de fonctionnement des PAC modernes</span></div>
-</div>
 
 <p>On vous pose souvent la question à notre agence de Clamecy : "Mais comment ça fonctionne exactement, une pompe à chaleur ?" C'est une bonne question, parce que comprendre le principe aide à mieux choisir son installation et à s'éviter des déceptions.</p>
 <p>La réponse tient en une phrase : une pompe à chaleur ne crée pas de chaleur. Elle la capte dans l'air extérieur — même par temps froid — et la transfère dans votre maison. C'est tout. Et c'est précisément ce qui la rend si efficace.</p>
@@ -550,11 +545,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "PAC air/eau ou air/air : deux technologies, deux usages très différents. L'une remplace votre chaudière et chauffe vos radiateurs, l'autre souffle de l'air chaud ou frais dans vos pièces. On compare pour vous aider à choisir.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">10 800 – 15 800 €</span><span class="gm-stat__label">PAC air/eau (matériel + pose)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">6 000 – 9 000 €</span><span class="gm-stat__label">PAC air/air (matériel + pose)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Jusqu'à 10 800 €</span><span class="gm-stat__label">d'aides pour une PAC air/eau en 2026</span></div>
-</div>
 
 <p>Quand on parle de pompe à chaleur, on mélange souvent deux technologies qui n'ont pas le même usage. La PAC air/eau remplace votre chaudière et alimente vos radiateurs ou votre plancher chauffant. La PAC air/air souffle de l'air chaud l'hiver et frais l'été dans vos pièces. Ce sont deux réponses à deux besoins différents.</p>
 <p>Les deux puisent leurs calories dans l'air extérieur. Mais la façon dont elles distribuent la chaleur est radicalement différente. Et ça change tout pour décider laquelle vous correspond.</p>
@@ -636,11 +626,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Daikin, Mitsubishi Electric, Atlantic, Viessmann, Frisquet, Froling : quelles sont les marques de pompes à chaleur fiables en 2026 et comment choisir ? On vous donne les critères qui comptent vraiment.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">5</span><span class="gm-stat__label">certifications RGE de Groupe Merlin dont QualiPAC</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">500+</span><span class="gm-stat__label">familles accompagnées dans la Nièvre et l'Yonne</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">48 h</span><span class="gm-stat__label">délai d'intervention en cas de panne</span></div>
-</div>
 
 <p>La question de la marque est souvent la première qu'on nous pose. "Est-ce que Daikin c'est bien ?" "Atlantic, c'est fiable ?" La réponse courte : toutes les marques que nous installons chez Groupe Merlin sont fiables. La vraie question, c'est celle que personne ne pose : qui installe, et comment.</p>
 <p>Une excellente PAC mal dimensionnée ou mal posée donnera de moins bons résultats qu'une PAC de milieu de gamme parfaitement installée. La marque compte moins que l'installateur. Cela dit, voici ce que vous devez savoir sur chacune.</p>
@@ -741,11 +726,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Votre pompe à chaleur nécessite un entretien régulier, voire obligatoire selon certaines conditions réglementaires. Voici ce que la loi impose, ce que comprend une visite annuelle et pourquoi négliger l'entretien coûte plus cher que de le faire.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">1 fois / an</span><span class="gm-stat__label">fréquence recommandée de l'entretien PAC</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">100 – 200 €</span><span class="gm-stat__label">coût indicatif d'une visite d'entretien annuelle</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">15 – 20 ans</span><span class="gm-stat__label">durée de vie d'une PAC bien entretenue</span></div>
-</div>
 
 <p>La pompe à chaleur a la réputation d'être un équipement sans entretien. C'est faux. Moins contraignante qu'une chaudière au fioul, certes, mais une PAC qui n'est jamais vérifiée perd en efficacité, en confort et en longévité. Et dans certains cas, l'entretien est une obligation réglementaire.</p>
 
@@ -813,11 +793,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Une pompe à chaleur bien installée et bien entretenue dure entre 15 et 20 ans. Voici ce qui détermine cette longévité, comment la préserver et à quel moment anticiper le remplacement.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">15 – 20 ans</span><span class="gm-stat__label">durée de vie moyenne d'une PAC bien entretenue</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">2 à 5 ans</span><span class="gm-stat__label">garantie constructeur selon les modèles</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">10 %</span><span class="gm-stat__label">de baisse de COP = signal d'alerte à ne pas ignorer</span></div>
-</div>
 
 <p>Quand on investit entre 10 000 € et 16 000 € dans une pompe à chaleur, la question de la durée de vie est légitime. Combien d'années va-t-elle durer ? Quand faudra-t-il la remplacer ? Est-ce que les économies générées compenseront l'investissement sur la durée ?</p>
 <p>La réponse dépend de trois facteurs principaux : la qualité de l'installation initiale, l'entretien régulier et le bon dimensionnement. Une PAC correctement posée et entretenue dure entre 15 et 20 ans. Une PAC sous-dimensionnée, mal installée ou jamais vérifiée peut tomber en panne bien avant.</p>
@@ -893,11 +868,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Votre pompe à chaleur affiche un code erreur, fait du bruit ou ne chauffe plus autant qu'avant ? Voici les 5 pannes les plus fréquentes, comment les identifier et ce que vous pouvez faire avant d'appeler un technicien.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">48 h</span><span class="gm-stat__label">délai d'intervention Groupe Merlin en cas de panne</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">500+</span><span class="gm-stat__label">familles accompagnées dans la Nièvre et l'Yonne</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">80 %</span><span class="gm-stat__label">des appels de dépannage résolus dès la première intervention</span></div>
-</div>
 
 <p>Une pompe à chaleur est un équipement fiable, mais aucun appareil électromécanique n'est à l'abri d'une panne. Savoir reconnaître les signes avant-coureurs et distinguer ce que vous pouvez vérifier vous-même de ce qui nécessite un technicien peut vous faire gagner du temps et éviter des frais inutiles.</p>
 <p>Voici les 5 pannes que nos techniciens rencontrent le plus souvent dans la Nièvre et l'Yonne.</p>
@@ -992,10 +962,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Votre pompe à chaleur tourne mais la maison ne chauffe plus, ou chauffe nettement moins bien qu'avant ? Voici comment diagnostiquer la cause étape par étape, ce que vous pouvez vérifier seul et quand appeler un technicien.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">48 h</span><span class="gm-stat__label">délai d'intervention Groupe Merlin dans la Nièvre et l'Yonne</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">3 sur 5</span><span class="gm-stat__label">pannes résolues dès la première vérification de base</span></div>
-</div>
 
 <p>C'est le scénario redouté en plein hiver : vous rentrez chez vous, il fait froid, et la PAC tourne mais la maison ne chauffe plus. Ou presque plus. Avant de paniquer et d'appeler en urgence, il y a quelques vérifications simples à faire. La majorité des cas ont une cause simple et réparable rapidement.</p>
 
@@ -1096,12 +1062,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Comment choisir un installateur de pompe à chaleur dans la Nièvre : certification RGE, ancrage local, visite préalable et ce que le Groupe Merlin apporte concrètement dans le département.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">RGE QualiPAC</span><span class="gm-stat__label">certification obligatoire pour débloquer les aides de l'État</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">14 ans</span><span class="gm-stat__label">présence du Groupe Merlin dans la Nièvre et dans l'Yonne</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">48 h ouvrées</span><span class="gm-stat__label">délai d'intervention en dépannage dans la Nièvre</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">500 familles</span><span class="gm-stat__label">accompagnées depuis notre création dans la Nièvre et l'Yonne</span></div>
-</div>
 
 <p>Vous habitez dans la Nièvre et vous cherchez un installateur de pompe à chaleur sérieux, pas un sous-traitant envoyé par une enseigne nationale qui ne remettra jamais les pieds dans votre maison après la pose.</p>
 <p>Voici les critères qui comptent vraiment pour choisir un installateur PAC dans notre région et ce que Groupe Merlin apporte concrètement sur chaque point.</p>
@@ -1189,12 +1149,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Trouver un installateur de pompe à chaleur dans l'Yonne : critères de sélection, certification RGE, aides 2026 et intervention du Groupe Merlin dans le département.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">RGE QualiPAC</span><span class="gm-stat__label">certification obligatoire pour bénéficier des aides de l'État</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Jusqu'à 10 800 €</span><span class="gm-stat__label">aides cumulables en 2026 pour un remplacement fioul</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">48 h ouvrées</span><span class="gm-stat__label">délai d'intervention en dépannage dans l'Yonne</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Clamecy</span><span class="gm-stat__label">agence la plus proche pour la majorité du nord de l'Yonne</span></div>
-</div>
 
 <p>Vous habitez dans l'Yonne et vous cherchez un installateur de pompe à chaleur qui connaît votre région, qui est certifié RGE pour débloquer les aides et qui sera encore là dans dix ans pour intervenir si vous avez un problème.</p>
 <p>Voici comment choisir et ce que le Groupe Merlin propose concrètement dans l'Yonne.</p>
@@ -1257,12 +1211,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Peut-on installer une pompe à chaleur dans une vieille maison en pierre dans la Nièvre ? Ce qui change par rapport à un logement récent, les précautions à prendre et pourquoi ça peut très bien fonctionner.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Forte inertie</span><span class="gm-stat__label">les murs en pierre accumulent et restituent la chaleur lentement</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Basse température</span><span class="gm-stat__label">la PAC chauffe à 35–45 °C, compatible avec les planchers et les grands radiateurs</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Visite obligatoire</span><span class="gm-stat__label">chaque maison en pierre est différente — le dimensionnement se fait sur place</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Oui</span><span class="gm-stat__label">la PAC fonctionne très bien dans les maisons en pierre, si elle est bien dimensionnée</span></div>
-</div>
 
 <p>La Nièvre est une région de maisons en pierre. Longères, corps de ferme rénovés, maisons de bourg en calcaire ou en grès : c'est le bâti dominant du département. Et c'est aussi le type de logement pour lequel on nous pose le plus de questions sur la pompe à chaleur : est-ce que ça marche dans une vieille maison, est-ce qu'il faut d'abord isoler, est-ce que les vieux radiateurs sont compatibles ?</p>
 <p>La réponse courte : oui, ça marche, et souvent très bien. Mais il faut comprendre les particularités de ce type de logement pour dimensionner correctement l'installation.</p>
@@ -1323,12 +1271,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "La Bourgogne et ses hivers froids : comment la pompe à chaleur s'adapte au climat local, quelles performances attendre et les points à vérifier pour une installation adaptée à la région.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Zone H1</span><span class="gm-stat__label">classification climatique de la Bourgogne — hivers froids</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">-7 °C</span><span class="gm-stat__label">température de base de référence pour le dimensionnement en zone H1c</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">SCOP ≥ 3,9</span><span class="gm-stat__label">seuil de performance saisonnière recommandé pour notre zone climatique</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">15 – 20 ans</span><span class="gm-stat__label">durée de vie d'une PAC bien adaptée à son environnement climatique</span></div>
-</div>
 
 <p>La Bourgogne, et la Nièvre en particulier, n'est pas une région méditerranéenne. Les hivers y sont froids, parfois très froids en janvier et février, et les maisons rurales avec leurs volumes importants et leurs murs anciens ont des besoins en chaleur significatifs.</p>
 <p>La bonne question à se poser avant d'installer une pompe à chaleur en Bourgogne n'est donc pas "est-ce que ça marche ?" mais "comment adapter l'installation aux conditions climatiques locales pour que ça marche bien ?"</p>
@@ -1394,12 +1336,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Combien coûte vraiment une pompe à chaleur air/eau en 2026 : fourchette de prix matériel + pose, décomposition des postes et reste à charge après aides selon votre situation.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">10 800 – 15 800 €</span><span class="gm-stat__label">prix d'une PAC air/eau posée en 2026, aides non déduites</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">3 postes</span><span class="gm-stat__label">matériel, pose, ajustements — à exiger détaillés sur tout devis</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Jusqu'à 10 800 €</span><span class="gm-stat__label">aides cumulables pour un remplacement fioul (revenus modestes)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Visite = RDV 1</span><span class="gm-stat__label">aucun prix juste sans visite préalable de votre logement</span></div>
-</div>
 
 <p>Le prix d'une pompe à chaleur air/eau est la première question que tout le monde pose. Et c'est la bonne : avant de décider si c'est le bon investissement pour vous, il faut savoir ce que vous allez vraiment débourser, pas une fourchette vague de 8 000 à 25 000 €.</p>
 <p>Voici les prix réels pratiqués sur nos chantiers dans la Nièvre et dans l'Yonne, les postes qui composent ce prix et ce qui fait varier la facture d'un logement à l'autre.</p>
@@ -1503,12 +1439,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Prix d'une pompe à chaleur air/air en 2026 : fourchette mono-split et multi-split, aides disponibles et différences avec la PAC air/eau pour guider votre choix.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">6 000 – 9 000 €</span><span class="gm-stat__label">prix d'une PAC air/air posée pour une maison individuelle</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Chaud + froid</span><span class="gm-stat__label">la PAC air/air chauffe l'hiver et rafraîchit l'été (réversible)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">CEE + TVA 5,5 %</span><span class="gm-stat__label">aides disponibles — pas de MaPrimeRénov' parcours par geste</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Sans ECS</span><span class="gm-stat__label">la PAC air/air ne produit pas d'eau chaude sanitaire</span></div>
-</div>
 
 <p>La pompe à chaleur air/air, souvent appelée climatisation réversible, chauffe l'hiver et rafraîchit l'été. Son prix est nettement inférieur à celui d'une PAC air/eau, mais elle n'offre pas les mêmes prestations et n'est pas éligible aux mêmes aides.</p>
 <p>Voici les prix réels d'une installation air/air en 2026, les aides auxquelles vous pouvez prétendre et les cas où cette technologie est la bonne réponse à votre besoin.</p>
@@ -1583,12 +1513,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Comment se passe l'installation d'une pompe à chaleur, de la visite préalable à la mise en service : les étapes, la durée et ce que vous devez préparer.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">1 à 2 jours</span><span class="gm-stat__label">durée typique d'une installation PAC air/eau en rénovation</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Visite = étape 0</span><span class="gm-stat__label">aucune installation correcte sans étude préalable du logement</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Avant signature</span><span class="gm-stat__label">le dossier d'aides doit être déposé avant tout engagement</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Mise en service</span><span class="gm-stat__label">la PAC est réglée par le technicien avant de vous laisser l'utiliser</span></div>
-</div>
 
 <p>On vous a remis un devis pour une pompe à chaleur et vous vous demandez comment ça va se passer concrètement : combien de temps durent les travaux, ce qui va être installé où, si vous pouvez rester chez vous pendant le chantier, et ce que vous devez préparer.</p>
 <p>Voici le déroulement complet d'une installation PAC air/eau, de la première visite jusqu'à la mise en service.</p>
@@ -1701,12 +1625,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Le dimensionnement d'une pompe à chaleur détermine sa performance et sa durée de vie. Voici comment il se calcule, pourquoi il ne peut pas se faire sans visite et ce qui se passe quand il est mal fait.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">kW</span><span class="gm-stat__label">unité de puissance — la bonne valeur se calcule, elle ne s'estime pas</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">3 facteurs</span><span class="gm-stat__label">superficie, isolation, zone climatique — les 3 piliers du calcul</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">-7 °C</span><span class="gm-stat__label">température de base hiver pour la Nièvre (zone H1c)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">SCOP ≥ 3,9</span><span class="gm-stat__label">seuil de performance saisonnière d'une bonne PAC bien dimensionnée</span></div>
-</div>
 
 <p>Le dimensionnement d'une pompe à chaleur, c'est le calcul de la puissance qui lui permettra de chauffer votre logement les jours les plus froids de l'hiver, sans consommer trop et sans tomber en panne prématurée.</p>
 <p>C'est l'étape la plus importante d'une installation PAC et la plus souvent bâclée par les installateurs peu sérieux. Une PAC sous-dimensionnée n'arrivera pas à chauffer votre maison par grand froid. Une PAC surdimensionnée s'use prématurément, coûte plus cher à l'achat et consomme davantage. Dans les deux cas, c'est vous qui payez.</p>
@@ -1767,12 +1685,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "PAC air/eau monobloc ou bibloc : différences techniques, avantages de chacune et comment choisir selon votre logement et votre configuration.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Monobloc</span><span class="gm-stat__label">toute la mécanique dans l'unité extérieure, installation simplifiée</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Bibloc</span><span class="gm-stat__label">deux unités liées par un circuit frigorifique, plus de flexibilité</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">R290 / R32</span><span class="gm-stat__label">fluides frigorigènes courants sur les monoblocs (bas impact climatique)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Certifié RGE</span><span class="gm-stat__label">seul un technicien RGE peut manipuler le circuit frigorigène</span></div>
-</div>
 
 <p>Quand vous commencez à comparer des devis de pompe à chaleur air/eau, vous tombez sur deux configurations : monobloc et bibloc (ou split). Ces deux mots désignent la façon dont la PAC est architecturée, et ils ont des implications concrètes sur l'installation, l'entretien et les conditions d'utilisation de votre équipement.</p>
 <p>Voici ce qui distingue les deux et comment choisir selon votre logement.</p>
@@ -1852,12 +1764,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Votre chaudière fioul vieillit et vous envisagez le passage à la pompe à chaleur : prix réel de l'installation, aides 2026 cumulables et déroulement des travaux dans la Nièvre et dans l'Yonne.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">1er juillet 2022</span><span class="gm-stat__label">date d'interdiction des nouvelles chaudières fioul</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">10 800 – 15 800 €</span><span class="gm-stat__label">prix d'une PAC air/eau posée hors aides</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Jusqu'à 10 800 €</span><span class="gm-stat__label">aides cumulables pour un remplacement fioul en 2026</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">15 – 20 ans</span><span class="gm-stat__label">durée de vie d'une PAC bien entretenue</span></div>
-</div>
 
 <p>Vous chauffez votre maison au fioul depuis des années, votre chaudière approche des quinze ou vingt ans et vous vous demandez si le moment est venu d'en changer. Vous avez entendu parler de la pompe à chaleur et vous voulez savoir ce que ça coûte vraiment, ce à quoi vous avez droit et comment ça se passe concrètement.</p>
 <p>Nous vous donnons ici toutes les réponses, en partant des faits : l'interdiction qui s'applique depuis 2022, le prix réel d'une installation, les aides auxquelles vous pouvez prétendre et ce qu'il vous restera à payer une fois les aides déduites.</p>
@@ -1979,12 +1885,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Remplacer une chaudière gaz par une PAC air/eau : dans quels cas ça vaut le coup en 2026, quel est l'écart de coût réel sur 15 ans et pourquoi les aides ont changé par rapport au remplacement fioul.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">0 €</span><span class="gm-stat__label">d'aides MaPrimeRénov' pour une chaudière gaz en 2026</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">COP 3 – 4</span><span class="gm-stat__label">kWh de chaleur restitués par kWh consommé par la PAC</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">5,5 %</span><span class="gm-stat__label">TVA applicable avec un artisan RGE sur une PAC air/eau</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">15 – 20 ans</span><span class="gm-stat__label">durée de vie d'une PAC air/eau bien entretenue</span></div>
-</div>
 
 <p>Vous avez une chaudière gaz qui fonctionne encore, ou qui arrive en fin de vie, et on vous parle de pompe à chaleur. Vous vous posez la bonne question : est-ce que ça vaut vraiment le coup de remplacer son gaz par une PAC, ou est-ce que c'est une bonne affaire uniquement pour ceux qui chauffaient au fioul ?</p>
 <p>La réponse est plus nuancée que pour le fioul. Le gaz n'est pas interdit en remplacement, et son kWh reste moins cher à l'achat que l'électricité. Mais en 2026, il n'est plus aidé du tout, et la PAC, elle, consomme bien moins d'énergie pour produire la même chaleur. Ce sont les deux éléments centraux à comprendre avant de décider.</p>
@@ -2075,12 +1975,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "MaPrimeRénov' pompe à chaleur 2026 : barèmes exacts selon vos revenus, conditions à respecter et démarches pour obtenir jusqu'à 5 000 € sur votre installation.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">23 fév. 2026</span><span class="gm-stat__label">date de réouverture du guichet MaPrimeRénov' par geste</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">5 000 €</span><span class="gm-stat__label">montant maximum pour les ménages aux revenus très modestes</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">4</span><span class="gm-stat__label">tranches de revenus définissant votre montant d'aide</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">100 %</span><span class="gm-stat__label">des démarches prises en charge par Groupe Merlin à votre place</span></div>
-</div>
 
 <p>MaPrimeRénov' est l'aide de l'État dont tout le monde parle mais dont presque personne ne connaît le montant exact. Ce qui n'aide pas, c'est que les règles changent chaque année et que la communication officielle reste souvent floue.</p>
 <p>Dans cet article, on vous donne les barèmes exacts 2026 pour une pompe à chaleur air/eau, les conditions à remplir pour en bénéficier et les étapes pour déposer votre dossier sans rater l'aide à laquelle vous avez droit.</p>
@@ -2187,12 +2081,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "La prime CEE pour une pompe à chaleur : qui la verse, combien elle représente et comment elle se cumule avec MaPrimeRénov' pour réduire votre reste à charge.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Plusieurs k€</span><span class="gm-stat__label">montant de la prime CEE sur un remplacement de chaudière fioul</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">0 €</span><span class="gm-stat__label">d'avance à faire — la prime est déduite du devis ou versée directement</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">100 %</span><span class="gm-stat__label">des acteurs CEE sont des fournisseurs d'énergie ou leurs mandataires</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">RGE</span><span class="gm-stat__label">certification obligatoire de l'artisan pour déclencher la prime</span></div>
-</div>
 
 <p>La prime CEE est probablement la moins bien comprise des aides disponibles pour une pompe à chaleur. Tout le monde a entendu parler de MaPrimeRénov' mais beaucoup ignorent qu'une deuxième aide, parfois équivalente en montant, peut s'y ajouter.</p>
 <p>CEE signifie Certificats d'Économies d'Énergie. Ce sont les fournisseurs d'énergie (EDF, TotalEnergies et les autres) qui la versent, pas l'État. Et pour une pompe à chaleur air/eau, en particulier sur un remplacement de chaudière fioul, cette prime peut représenter plusieurs milliers d'euros supplémentaires par rapport à MaPrimeRénov'.</p>
@@ -2260,12 +2148,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "L'éco-prêt à taux zéro pour une pompe à chaleur : un prêt sans intérêts pour financer votre reste à charge, comment le demander et quelles banques le proposent.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">30 000 €</span><span class="gm-stat__label">montant maximum de l'éco-PTZ pour une installation PAC</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">0 %</span><span class="gm-stat__label">taux d'intérêt — c'est l'État qui paie les intérêts à votre place</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">20 ans</span><span class="gm-stat__label">durée maximale de remboursement</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Votre banque</span><span class="gm-stat__label">l'éco-PTZ se demande auprès d'une banque agréée, pas à l'État</span></div>
-</div>
 
 <p>Vous avez calculé le coût de votre pompe à chaleur, vous avez déduit MaPrimeRénov' et la prime CEE, et il reste encore une partie à financer. C'est là qu'intervient l'éco-prêt à taux zéro, ou éco-PTZ : un prêt sans intérêts, que vous demandez auprès de votre banque, pour couvrir ce reste à charge sans supporter de coût financier supplémentaire.</p>
 <p>C'est souvent la pièce manquante dans le plan de financement d'une installation PAC. Et c'est l'une des moins connues, parce qu'elle se gère directement avec la banque et non avec l'État.</p>
@@ -2333,12 +2215,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Comment monter votre dossier MaPrimeRénov' : les 7 étapes pour déposer correctement votre demande d'aide et ne pas rater une seule condition.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">7 étapes</span><span class="gm-stat__label">pour monter correctement un dossier MaPrimeRénov'</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Avant devis</span><span class="gm-stat__label">moment impératif pour déposer le dossier — pas après</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">5 000 €</span><span class="gm-stat__label">aide maximale pour une PAC air/eau (revenus très modestes)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">100 %</span><span class="gm-stat__label">des démarches prises en charge par Groupe Merlin si vous nous confiez les travaux</span></div>
-</div>
 
 <p>MaPrimeRénov' peut représenter jusqu'à 5 000 € sur votre installation de pompe à chaleur. Mais pour en bénéficier, il faut suivre un ordre précis d'étapes et respecter des règles qui ne souffrent aucune exception. Une seule erreur, comme signer le devis avant d'avoir déposé le dossier, et vous perdez l'aide définitivement.</p>
 <p>Voici le dossier MaPrimeRénov' expliqué étape par étape, dans l'ordre où il faut le faire.</p>
@@ -2582,11 +2458,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Une climatisation capte les calories de l'air intérieur et les rejette dehors. On vous explique le cycle frigorifique, la différence entre EER et SEER et pourquoi la réversible chauffe aussi bien qu'elle refroidit.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">EER ≥ 3</span><span class="gm-stat__label">performance minimum recommandée en refroidissement</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">SEER ≥ 6</span><span class="gm-stat__label">efficacité saisonnière recommandée (label EU A+++)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Réversible</span><span class="gm-stat__label">même appareil : rafraîchit l'été, chauffe en mi-saison</span></div>
-</div>
 
 <p>Une climatisation ne crée pas du froid. Elle déplace la chaleur : elle la capte à l'intérieur de votre maison et la rejette à l'extérieur. C'est exactement le même principe thermodynamique qu'un réfrigérateur, ou qu'une pompe à chaleur — dans le sens inverse. Comprendre ce mécanisme aide à choisir le bon appareil et à interpréter ses performances.</p>
 
@@ -2647,11 +2518,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Climatisation simple froide ou réversible : deux technologies, deux niveaux de service et deux prix. Laquelle correspond à votre situation dans la Nièvre ou l'Yonne ?",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">3 000 – 5 000 €</span><span class="gm-stat__label">climatisation simple froide posée</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">6 000 – 9 000 €</span><span class="gm-stat__label">climatisation réversible posée</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">COP 3 – 4</span><span class="gm-stat__label">efficacité en mode chauffage (réversible)</span></div>
-</div>
 
 <p>La question revient systématiquement : "Est-ce que je prends une clim simple ou une réversible ?" La réponse dépend de ce que vous attendez de l'appareil. Si vous voulez uniquement vous rafraîchir en été, la simple froide suffit. Si vous voulez aussi un appoint de chauffage en mi-saison ou un remplacement partiel de votre chauffage principal, la réversible s'impose.</p>
 
@@ -2711,11 +2577,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Surface, exposition, isolation, budget : les critères pour choisir la bonne climatisation pour votre logement dans la Nièvre ou l'Yonne. Monosplit, multi-split ou gainable, simple froide ou réversible.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">20 m²</span><span class="gm-stat__label">environ couverts par un monosplit 2,5 kW bien dimensionné</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">5 RGE</span><span class="gm-stat__label">certifications Groupe Merlin dont QualiPAC et Eco Artisan</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">500+</span><span class="gm-stat__label">familles accompagnées dans la Nièvre et l'Yonne</span></div>
-</div>
 
 <p>Choisir une climatisation, c'est d'abord répondre à quatre questions dans le bon ordre : combien de pièces, quelle surface, quel usage et quel budget ? Le modèle vient après. Beaucoup de clients achètent d'abord une marque ou une puissance, puis découvrent que ça ne correspond pas à leur logement. La visite préalable existe précisément pour éviter ça.</p>
 
@@ -2775,11 +2636,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Monosplit ou multi-split : le choix détermine combien de pièces vous climatisez, le nombre d'unités extérieures et votre budget. On compare les deux configurations pour vous aider à décider.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">1</span><span class="gm-stat__label">unité extérieure pour un multi-split, quelle que soit le nombre d'unités intérieures</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">2 à 5</span><span class="gm-stat__label">unités intérieures possibles sur un multi-split</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">48 h</span><span class="gm-stat__label">délai d'intervention Groupe Merlin dans la Nièvre et l'Yonne</span></div>
-</div>
 
 <p>La confusion entre monosplit et multi-split est fréquente. En résumé : le monosplit traite une pièce avec une unité extérieure dédiée, le multi-split traite plusieurs pièces avec une seule unité extérieure. Ce n'est pas juste une question de taille d'appareil, c'est une question d'architecture de l'installation.</p>
 
@@ -2843,11 +2699,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Daikin, Mitsubishi Electric, Atlantic : quelles sont les marques de climatisation fiables en 2026 et comment choisir ? Les critères qui comptent vraiment au-delà du prix affiché.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">5</span><span class="gm-stat__label">certifications RGE Groupe Merlin dont QualiPAC et Eco Artisan</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">500+</span><span class="gm-stat__label">familles accompagnées dans la Nièvre et l'Yonne</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">48 h</span><span class="gm-stat__label">délai d'intervention garanti en cas de panne</span></div>
-</div>
 
 <p>Comme pour les pompes à chaleur, la marque d'une climatisation compte moins que l'installateur. Une excellente marque mal installée ou mal dimensionnée donne de moins bons résultats qu'une marque standard parfaitement posée. Cela dit, les marques que vous choisissez ne se valent pas toutes sur la durée — fiabilité, SAV local et disponibilité des pièces détachées font la différence.</p>
 
@@ -2910,11 +2761,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Combien coûte une climatisation split dans la Nièvre ou l'Yonne en 2026 ? On détaille les fourchettes réelles pour un monosplit simple froide, un monosplit réversible et un multi-split, pose incluse.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">3 000 – 5 000 €</span><span class="gm-stat__label">monosplit simple froide posé</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">6 000 – 9 000 €</span><span class="gm-stat__label">monosplit réversible posé</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">+ 1 500 – 3 000 €</span><span class="gm-stat__label">par unité intérieure supplémentaire (multi-split)</span></div>
-</div>
 
 <p>Le prix d'une climatisation est l'une des questions les plus fréquentes que nous recevons. La réponse honnête : il dépend du type de système, de la puissance choisie, de la configuration de votre logement et des travaux nécessaires à l'installation. Voici les fourchettes réelles, sans frais cachés.</p>
 
@@ -2969,11 +2815,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Comment se passe l'installation d'une climatisation chez vous ? De la visite préalable à la mise en service, voici les 6 étapes d'une installation réalisée par un technicien RGE.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">1 journée</span><span class="gm-stat__label">durée habituelle d'une installation monosplit standard</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">2 personnes</span><span class="gm-stat__label">minimum pour une installation réglementaire (habilitation fluide)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">RGE</span><span class="gm-stat__label">certification requise pour les aides d'État</span></div>
-</div>
 
 <p>L'installation d'une climatisation se passe en général en une journée pour un monosplit standard. C'est un travail qui nécessite plusieurs compétences : électricité, manipulation des fluides frigorigènes (habilitation obligatoire), et bonne connaissance du bâtiment. Voici comment ça se passe de A à Z.</p>
 
@@ -3021,11 +2862,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "L'entretien d'une climatisation est recommandé annuellement et parfois obligatoire selon la réglementation F-Gas. Voici ce que la loi impose, ce que comprend une visite d'entretien et pourquoi le négliger coûte plus cher que de le faire.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">1 fois / an</span><span class="gm-stat__label">fréquence recommandée de l'entretien climatisation</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">80 – 150 €</span><span class="gm-stat__label">coût indicatif d'un entretien annuel</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">10 – 15 ans</span><span class="gm-stat__label">durée de vie préservée par un entretien régulier</span></div>
-</div>
 
 <p>La climatisation a la réputation d'un équipement simple qui s'entretient tout seul. C'est faux. Un filtre encrassé peut faire chuter l'efficacité de 15 %, un circuit mal étanche perd du fluide silencieusement. Et dans certains cas, l'entretien n'est pas juste une bonne pratique : c'est une obligation légale.</p>
 
@@ -3081,11 +2917,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Une climatisation bien entretenue dure entre 10 et 15 ans. Voici ce qui détermine cette longévité, les signes qui montrent que votre appareil vieillit et à quel moment anticiper le remplacement.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">10 – 15 ans</span><span class="gm-stat__label">durée de vie moyenne d'une climatisation bien entretenue</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">2 – 5 ans</span><span class="gm-stat__label">garantie constructeur selon les modèles</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">30 %</span><span class="gm-stat__label">de surconsommation typique d'un appareil vieux de 10 ans vs modèle récent</span></div>
-</div>
 
 <p>Quand on investit entre 6 000 € et 9 000 € dans une climatisation réversible, on veut savoir combien de temps elle va durer. La réponse dépend de deux facteurs principaux : la qualité de l'installation initiale et l'entretien régulier. Un appareil bien installé et entretenu chaque année peut facilement dépasser 12 à 15 ans. Un appareil négligé ou mal dimensionné peut tomber en panne bien avant.</p>
 
@@ -3139,10 +2970,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Climatisation qui ne refroidit plus, code erreur, goûtelettes d'eau, bruit inhabituel : les 5 pannes les plus fréquentes et ce que vous pouvez vérifier avant d'appeler un technicien.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">48 h</span><span class="gm-stat__label">délai d'intervention Groupe Merlin dans la Nièvre et l'Yonne</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">500+</span><span class="gm-stat__label">familles accompagnées dans la Nièvre et l'Yonne</span></div>
-</div>
 
 <p>Une climatisation est un appareil électromécanique soumis à des contraintes saisonnières : arrêt pendant 8 mois, redémarrage à pleine charge au cœur de l'été. La plupart des pannes ont des causes simples et prévisibles. Savoir les reconnaître peut vous faire économiser une intervention inutile.</p>
 
@@ -3222,9 +3049,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Votre climatisation tourne mais la pièce ne refroidit plus ? Voici comment diagnostiquer la cause étape par étape, ce que vous pouvez vérifier vous-même et quand appeler un technicien.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">48 h</span><span class="gm-stat__label">délai d'intervention Groupe Merlin dans la Nièvre et l'Yonne</span></div>
-</div>
 
 <p>C'est la panne la plus fréquente en plein été : la climatisation tourne, vous entendez le ventilateur, mais la pièce reste chaude. Ou elle refroidit nettement moins bien qu'avant. Avant d'appeler en urgence, quelques vérifications de base permettent de résoudre le problème dans 30 % des cas sans intervention technique.</p>
 
@@ -3279,15 +3103,10 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     datePublished: "2026-05-27",
     img: "installateur-climatisation-nievre.jpg",
     imgDir: "blog",
-    imgFocus: "15% center",
+    imgFocus: "90% center",
     excerpt:
       "Vous cherchez un installateur de climatisation dans la Nièvre (58) ? Voici les critères pour choisir un professionnel fiable, certifié et réactif, et pourquoi la proximité compte autant que la marque.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">RGE</span><span class="gm-stat__label">certification exigée pour l'habilitation fluide frigorigène et les aides d'État</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">48 h</span><span class="gm-stat__label">délai d'intervention garanti Groupe Merlin dans la Nièvre</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">500+</span><span class="gm-stat__label">familles accompagnées dans la Nièvre et l'Yonne</span></div>
-</div>
 
 <p>Choisir un installateur de climatisation dans la Nièvre, c'est choisir un partenaire pour les 10 à 15 prochaines années. L'installation elle-même prend une journée. Mais l'entretien, le SAV et les éventuels dépannages dureront toute la vie de l'équipement. La proximité géographique n'est pas un détail.</p>
 
@@ -3334,11 +3153,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Vous cherchez un installateur de climatisation dans l'Yonne (89) ? Voici les critères pour choisir un professionnel certifié et réactif dans un département aux étés de plus en plus chauds.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">RGE</span><span class="gm-stat__label">certification exigée pour les aides et l'habilitation fluide frigorigène</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">48 h</span><span class="gm-stat__label">délai d'intervention Groupe Merlin dans l'Yonne</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Corbigny</span><span class="gm-stat__label">agence Groupe Merlin pour l'Yonne, ouverte depuis juin 2026</span></div>
-</div>
 
 <p>L'Yonne (89) connaît des étés qui se réchauffent d'année en année. Les communes d'Auxerre, Sens, Avallon ou Joigny ont enregistré des températures records lors des canicules récentes. Le besoin de rafraîchissement résidentiel n'est plus anecdotique dans le département.</p>
 <p>Choisir le bon installateur de climatisation dans l'Yonne, c'est s'assurer d'une installation correcte, d'un SAV réactif et d'un partenaire qui connaît votre région.</p>
@@ -3528,12 +3342,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Silo, brûleur, échangeur, régulation : tout comprendre sur le fonctionnement d'une chaudière à granulés de bois pour décider en connaissance de cause.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Automatique</span><span class="gm-stat__label">alimentation en granulés par vis sans fin — pas d'intervention manuelle quotidienne</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">≥ 87 %</span><span class="gm-stat__label">rendement minimum des chaudières éligibles aux aides (label Flamme Verte)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">15-35 kW</span><span class="gm-stat__label">puissance typique pour chauffer une maison individuelle de 80 à 250 m²</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">2-4 fois/an</span><span class="gm-stat__label">fréquence de remplissage du silo pour une maison de 150 m² bien isolée</span></div>
-</div>
 
 <p>La chaudière à granulés est souvent perçue comme complexe. En réalité, son principe de fonctionnement est simple : elle brûle du bois compressé pour produire de la chaleur, qu'elle distribue dans votre logement via votre circuit hydraulique. La sophistication tient dans l'automatisation, pas dans la mécanique.</p>
 
@@ -3629,12 +3437,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Froling, Viessmann, Frisquet : comparatif honnête des marques de chaudières à granulés installées par Groupe Merlin dans la Nièvre et l'Yonne.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Froling</span><span class="gm-stat__label">référence autrichienne de la biomasse, 1er constructeur européen de chaudières bois</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Viessmann</span><span class="gm-stat__label">groupe allemand, gamme Vitoligno reconnue pour sa fiabilité et son SAV</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Frisquet</span><span class="gm-stat__label">marque française, qualité de fabrication et réseau SAV réactif en France</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Flamme Verte</span><span class="gm-stat__label">label commun — exigez 7 étoiles pour accéder à toutes les aides d'État</span></div>
-</div>
 
 <p>Choisir une marque de chaudière à granulés, c'est choisir un équipement pour 15 à 25 ans. La décision ne se prend pas à la légère, et le prix d'achat n'est pas le seul critère : la qualité du brûleur, la disponibilité des pièces, la réactivité du SAV et la compatibilité avec votre installation comptent tout autant.</p>
 <p>Voici notre analyse honnête des trois marques que nous installons dans la Nièvre et l'Yonne.</p>
@@ -3701,12 +3503,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Prix d'une chaudière à granulés installée en 2026 : fourchettes selon la puissance, le type de silo et les aides disponibles pour réduire votre reste à charge.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">15 000 – 25 000 €</span><span class="gm-stat__label">fourchette typique pour une chaudière à granulés installée (équipement + pose + silo)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Aides cumulables</span><span class="gm-stat__label">MaPrimeRénov' + CEE + TVA 5,5 % + éco-PTZ peuvent réduire significativement le reste à charge</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">15-35 kW</span><span class="gm-stat__label">puissances courantes pour une maison individuelle de 80 à 250 m²</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">350-500 €/t</span><span class="gm-stat__label">prix moyen des granulés EN Plus A1 (selon marché, région, mode de livraison)</span></div>
-</div>
 
 <p>Le prix d'une chaudière à granulés effraie souvent au premier regard. C'est compréhensible : l'investissement initial est plus élevé que pour une chaudière à gaz classique. Mais ce chiffre brut sans les aides ne veut rien dire. Une fois MaPrimeRénov', prime CEE et TVA à 5,5 % déduits, la réalité est très différente.</p>
 
@@ -3766,12 +3562,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "MaPrimeRénov' Qualibois, prime CEE, TVA à 5,5 % et éco-PTZ : toutes les aides pour financer votre chaudière à granulés en 2026, conditions et démarches expliquées.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">4 aides</span><span class="gm-stat__label">MaPrimeRénov' + CEE + TVA 5,5 % + éco-PTZ — cumulables pour maximiser votre financement</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">RGE Qualibois</span><span class="gm-stat__label">condition sine qua non pour accéder à MaPrimeRénov' — Groupe Merlin est certifié</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Avant le devis</span><span class="gm-stat__label">le dossier MaPrimeRénov' doit être déposé et validé avant la signature du devis</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">100 %</span><span class="gm-stat__label">des démarches prises en charge par Groupe Merlin à votre place</span></div>
-</div>
 
 <p>La chaudière à granulés est l'une des solutions de chauffage les plus fortement soutenues par l'État en France. Renouvelable, performante et sans émissions fossiles, elle cumule plusieurs aides qui peuvent représenter une part importante de l'investissement total. Voici comment les obtenir.</p>
 
@@ -3856,12 +3646,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Entretien annuel obligatoire, ramonage, attestation : tout ce que vous devez faire (et ne pas négliger) pour votre chaudière à granulés, par obligation légale et pour préserver votre installation.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">1 fois/an</span><span class="gm-stat__label">entretien annuel obligatoire par un professionnel qualifié pour toute chaudière > 4 kW</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">2 fois/an</span><span class="gm-stat__label">ramonage obligatoire, dont au moins une fois pendant la période de chauffe</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Attestation</span><span class="gm-stat__label">document obligatoire remis après chaque entretien, à conserver pour assurance et revente</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">200-400 €</span><span class="gm-stat__label">coût annuel moyen d'un contrat d'entretien pour une chaudière à granulés</span></div>
-</div>
 
 <p>Une chaudière à granulés s'entretient. Ce n'est pas une option : c'est une obligation légale, et c'est aussi ce qui fait la différence entre une chaudière qui tient 20 ans et une qui tombe en panne après 8 ans. Voici ce que la loi impose, et pourquoi le respecter protège votre investissement.</p>
 
@@ -3915,12 +3699,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Une chaudière à granulés bien entretenue peut durer 15 à 25 ans. Voici les facteurs qui allongent ou raccourcissent sa durée de vie, et comment maximiser votre investissement.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">15-25 ans</span><span class="gm-stat__label">durée de vie moyenne d'une chaudière à granulés avec entretien annuel régulier</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Brûleur</span><span class="gm-stat__label">pièce d'usure principale — à surveiller après 8-10 ans de fonctionnement</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Granulés EN Plus A1</span><span class="gm-stat__label">qualité du combustible : le premier facteur de longévité, souvent sous-estimé</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Entretien annuel</span><span class="gm-stat__label">seul facteur sous votre contrôle direct pour maximiser la durée de vie</span></div>
-</div>
 
 <p>La durée de vie d'une chaudière à granulés est souvent présentée comme une donnée fixe. En réalité, c'est une fourchette large qui dépend de plusieurs facteurs, dont certains sont entre vos mains. Voici les éléments qui font la différence.</p>
 
@@ -3977,12 +3755,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Chaudière à granulés qui ne s'allume plus, silo vide, vis sans fin bloquée, code erreur : les pannes les plus fréquentes expliquées et ce qu'il faut faire avant d'appeler un technicien.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Silo vide</span><span class="gm-stat__label">première cause de panne signalée — vérifier le niveau avant tout appel technicien</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Granulés humides</span><span class="gm-stat__label">deuxième cause : un granulé humide bloque la vis ou encrasse le brûleur</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Entretien</span><span class="gm-stat__label">80 % des pannes fréquentes sont prévenues par un entretien annuel régulier</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">48 h</span><span class="gm-stat__label">délai d'intervention Groupe Merlin dans la Nièvre et l'Yonne</span></div>
-</div>
 
 <p>Une chaudière à granulés peut tomber en panne. Avant d'appeler un technicien, certaines pannes sont facilement identifiables et parfois résolubles par l'utilisateur. D'autres nécessitent une intervention professionnelle. Voici les situations les plus fréquentes et ce qu'il faut faire dans chaque cas.</p>
 
@@ -4046,12 +3818,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Vous cherchez un installateur de chaudière à granulés dans la Nièvre (58) ou l'Yonne (89) ? Voici les critères pour choisir un professionnel certifié RGE Qualibois et sécuriser vos aides.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">RGE Qualibois</span><span class="gm-stat__label">certification obligatoire pour que vous accédiez à MaPrimeRénov' — à vérifier avant tout devis</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Nièvre (58)</span><span class="gm-stat__label">département rural, réseau gaz limité — la chaudière à granulés est une alternative très pertinente</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Visite préalable</span><span class="gm-stat__label">aucun devis sérieux ne s'établit sans visite chez vous — méfiez-vous des devis à distance</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">48 h</span><span class="gm-stat__label">délai d'intervention SAV Groupe Merlin dans la Nièvre et l'Yonne</span></div>
-</div>
 
 <p>Dans la Nièvre et l'Yonne, trouver un installateur de chaudière à granulés compétent et certifié n'est pas toujours simple. Ces départements ruraux sont moins desservis que les métropoles, et tous les professionnels qui se présentent ne sont pas forcément qualifiés pour ce type d'équipement. Voici comment évaluer un installateur avant de lui confier votre projet.</p>
 
@@ -4108,12 +3874,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Prix d'un poêle à granulés en 2026 : fourchettes selon le type (à insert, autonome, à eau), coût de la pose et aides disponibles pour réduire votre investissement.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">2 500 – 6 000 €</span><span class="gm-stat__label">fourchette typique pour un poêle à granulés installé (équipement + pose)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">3 types</span><span class="gm-stat__label">poêle autonome, poêle à insert, poêle à eau (hydro) — trois usages différents</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Aides possibles</span><span class="gm-stat__label">MaPrimeRénov' et prime CEE sous conditions — moins élevées que pour une chaudière</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Flamme Verte</span><span class="gm-stat__label">label requis pour accéder aux aides — exigez 7 étoiles</span></div>
-</div>
 
 <p>Le poêle à granulés est une solution de chauffage plus accessible que la chaudière à granulés, tant en termes d'investissement initial que de travaux nécessaires. Il peut chauffer une pièce principale, un espace ouvert ou servir d'appoint à un système de chauffage central. Voici ce qu'il faut savoir sur les prix et les aides disponibles en ${CONTENT_YEAR}.</p>
 
@@ -4261,12 +4021,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "De la visite de conception à la réception du chantier : les 6 étapes d'une rénovation de salle de bain clé en main, ce qui se passe et combien de temps ça dure.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">6 étapes</span><span class="gm-stat__label">de la visite initiale à la remise des clés — vous validez à chaque étape</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">5-8 semaines</span><span class="gm-stat__label">durée totale typique d'une rénovation complète de salle de bain 6-8 m²</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">1-2 semaines</span><span class="gm-stat__label">durée du chantier une fois les matériaux commandés et livrés</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">0</span><span class="gm-stat__label">intervenants à coordonner de votre côté — on s'en charge</span></div>
-</div>
 
 <p>La plupart des projets de rénovation de salle de bain se passent mal pour une raison simple : personne ne sait précisément ce qui va se passer et dans quel ordre. Voici les étapes d'un projet clé en main tel qu'on le conduit chez Groupe Merlin, pour que vous sachiez exactement à quoi vous attendre.</p>
 
@@ -4336,12 +4090,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Douche à l'italienne : contraintes techniques, types de bonde, étanchéité, prix et ce qui fait la différence entre une installation réussie et une qui fuit. Tout ce qu'il faut savoir avant de se décider.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Sans seuil</span><span class="gm-stat__label">accessible aux seniors et PMR, confort d'entrée et de sortie incomparable</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Étanchéité</span><span class="gm-stat__label">étape critique : une pose d'étanchéité bâclée, c'est une fuite dans les 2-5 ans</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Pente 1-2 %</span><span class="gm-stat__label">pente minimum vers la bonde pour un écoulement correct — à calculer dès la conception</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">2 500 – 5 000 €</span><span class="gm-stat__label">fourchette pour une douche à l'italienne posée (recueil + étanchéité + carrelage + bonde)</span></div>
-</div>
 
 <p>La douche à l'italienne est devenue l'élément le plus demandé dans les rénovations de salle de bain. Son succès tient à sa facilité d'entretien, son accessibilité et l'espace visuel qu'elle dégage. Mais c'est aussi l'élément qui génère le plus de problèmes quand il est mal installé. Voici ce qu'il faut savoir avant de vous décider.</p>
 
@@ -4399,12 +4147,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Aubade, Alterna, Grohe : pourquoi nous travaillons avec ces trois marques, ce qu'elles apportent et comment nous les choisissons selon votre projet et votre budget.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Aubade</span><span class="gm-stat__label">marque française, fabrication française, reconnue pour ses céramiques et son mobilier de salle de bain</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Alterna</span><span class="gm-stat__label">receveurs, parois et carrelages — bon rapport qualité-prix, gamme étendue</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Grohe</span><span class="gm-stat__label">robinetterie et systèmes de douche allemands, réputés pour leur durabilité</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">10-15 ans</span><span class="gm-stat__label">durée de vie garantie sur la majorité des équipements de qualité professionnelle</span></div>
-</div>
 
 <p>Le choix des marques dans une salle de bain, c'est le choix d'équipements qu'on utilise deux fois par jour pendant 15 ans. On ne change pas de salle de bain tous les cinq ans. Ce critère de durabilité guide notre sélection.</p>
 <p>Voici pourquoi nous avons retenu Aubade, Alterna et Grohe, et ce que chacune apporte dans votre projet.</p>
@@ -4457,12 +4199,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Salle de bain de moins de 5 m² : comment gagner de l'espace, quels équipements choisir et les erreurs à éviter. Nos conseils pour un résultat fonctionnel et esthétique dans un espace contraint.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">< 5 m²</span><span class="gm-stat__label">une petite salle de bain mérite autant de soin qu'une grande — parfois plus</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Suspendu</span><span class="gm-stat__label">WC suspendu et meuble vasque suspendu = sol libéré = impression de volume</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Douche</span><span class="gm-stat__label">dans une petite SDB, une douche à l'italienne gagne plus de place qu'une baignoire</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Grands carreaux</span><span class="gm-stat__label">les grands formats de carrelage agrandissent visuellement l'espace — à privilégier</span></div>
-</div>
 
 <p>Une petite salle de bain est souvent perçue comme une contrainte. En réalité, c'est un défi de conception qui s'adore quand il est bien résolu. L'objectif : que chaque centimètre soit pensé, que rien ne gêne et que l'espace semble plus grand qu'il n'est.</p>
 
@@ -4515,12 +4251,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Fuite d'eau, canalisation bouchée, robinet qui goutte, chasse d'eau défaillante : nos interventions en plomberie dans la Nièvre et l'Yonne, 48 h après votre appel.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">48 h</span><span class="gm-stat__label">délai d'intervention maximum après votre appel dans la Nièvre et l'Yonne</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Toutes marques</span><span class="gm-stat__label">nous intervenons quelle que soit la marque ou l'âge de votre installation</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Fuite détectée</span><span class="gm-stat__label">première chose à faire : couper l'eau au robinet d'arrêt avant d'appeler</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Réparation durable</span><span class="gm-stat__label">on diagnostique la cause, pas seulement le symptôme — pour éviter la récidive</span></div>
-</div>
 
 <p>Un problème de plomberie, ça n'attend pas. Une fuite qui continue pendant 24 heures peut causer des dégâts importants dans les murs, le sol et potentiellement chez votre voisin. Voici les situations courantes et ce que nous faisons.</p>
 
@@ -4570,12 +4300,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Vous cherchez un artisan pour rénover votre salle de bain dans la Nièvre (58) ou l'Yonne (89) ? Voici ce qui spécifie les chantiers dans ces deux départements et comment choisir le bon professionnel.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Nièvre & Yonne</span><span class="gm-stat__label">deux agences couvrent l'ensemble des deux départements — Clamecy et Corbigny</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Bâti ancien</span><span class="gm-stat__label">maisons en pierre, murs épais, planchers bois : des contraintes spécifiques à connaître</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Eau calcaire</span><span class="gm-stat__label">TH > 30°f dans la majorité du département — à prendre en compte dans le choix des équipements</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Visite gratuite</span><span class="gm-stat__label">on se déplace chez vous avant tout devis — aucun déplacement facturé dans les deux départements</span></div>
-</div>
 
 <p>Rénover une salle de bain dans la Nièvre ou l'Yonne, c'est souvent travailler dans un bâti ancien : maisons en pierre du Morvan, longères nivernaises, fermettes de l'Yonne. Ces constructions ont des caractéristiques spécifiques qui influencent la façon de concevoir et de réaliser les travaux.</p>
 
@@ -4625,12 +4349,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Budget salle de bain clé en main : fourchettes selon la taille et le niveau de finition, postes de dépense détaillés et pourquoi les prix varient autant d'un devis à l'autre.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">5 000 – 18 000 €</span><span class="gm-stat__label">fourchette pour une salle de bain rénovée clé en main selon la surface et le niveau de finition</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">4 postes</span><span class="gm-stat__label">équipements, plomberie, carrelage, main d'œuvre — à distinguer dans tout devis sérieux</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Carrelage</span><span class="gm-stat__label">le poste qui fait le plus varier le budget — de 20 à 200 €/m² selon le choix</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Devis détaillé</span><span class="gm-stat__label">exigez un devis poste par poste — un forfait global sans détail ne protège pas</span></div>
-</div>
 
 <p>Le budget d'une salle de bain est souvent une source de surprise désagréable. Soit on sous-estime le projet et on se retrouve à devoir arbitrer en cours de chantier, soit on reçoit un devis beaucoup plus élevé que prévu. Voici comment comprendre ce qui détermine le prix et comment anticiper correctement.</p>
 
@@ -4753,12 +4471,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "TH, dureté, calcaire : comment fonctionne l'eau de la Nièvre et de l'Yonne, pourquoi elle attaque vos équipements et comment savoir si un adoucisseur est nécessaire chez vous.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">TH</span><span class="gm-stat__label">titre hydrotimétrique — l'unité qui mesure la dureté de l'eau (en degrés français, °f)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Variable</span><span class="gm-stat__label">de l'eau douce dans le Morvan granitique à l'eau calcaire dans les plaines nivernaises</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">> 25 °f</span><span class="gm-stat__label">eau dure : des dépôts visibles sur les robinets et les équipements — un adoucisseur est pertinent</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Gratuit</span><span class="gm-stat__label">votre commune publie son rapport annuel qualité d'eau — il contient le TH de votre réseau</span></div>
-</div>
 
 <p>Avant d'investir dans un adoucisseur d'eau, la première question à poser est simple : mon eau est-elle vraiment calcaire ? La réponse varie selon votre commune dans la Nièvre et l'Yonne. Voici comment le savoir et comment interpréter ce que vous trouvez.</p>
 
@@ -4825,12 +4537,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Résine échangeuse d'ions, régénération au sel, dureté en sortie : tout comprendre sur le fonctionnement d'un adoucisseur d'eau pour décider en connaissance de cause.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Échange ionique</span><span class="gm-stat__label">le principe physique qui capte le calcium et le magnésium de l'eau dure</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Sel</span><span class="gm-stat__label">le seul consommable nécessaire — pour régénérer la résine et lui permettre de recapturer le calcaire</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">8-15 °f</span><span class="gm-stat__label">dureté recommandée en sortie d'adoucisseur — ni trop douce, ni trop dure</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Automatique</span><span class="gm-stat__label">la régénération se déclenche automatiquement selon la consommation — aucune intervention manuelle</span></div>
-</div>
 
 <p>Un adoucisseur d'eau est souvent perçu comme un équipement complexe. En réalité, son principe est simple et éprouvé depuis des décennies. Voici comment il fonctionne, étape par étape.</p>
 
@@ -4910,12 +4616,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "BWT MIXXO PRO (ONE SOURCE PEARLWATER) : filtration et minéralisation sous l'évier pour une eau de boisson de qualité source directement au robinet. Ce que c'est, ce que ça fait, ce que ça coûte.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Sous l'évier</span><span class="gm-stat__label">installation discrète, un robinet dédié — eau filtrée et eau normale sur le même évier</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Filtre + minéralise</span><span class="gm-stat__label">réduit le chlore, les goûts et odeurs — et ajoute calcium, magnésium et bicarbonate</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">0 plastique</span><span class="gm-stat__label">plus besoin d'acheter des bouteilles — une eau de source directement au robinet</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Télécommande</span><span class="gm-stat__label">bascule en un geste entre eau filtrée et eau standard selon l'usage</span></div>
-</div>
 
 <p>L'adoucisseur traite l'eau calcaire de toute la maison. Mais pour une eau de boisson de qualité, il faut un traitement complémentaire. Le système BWT MIXXO PRO (commercialisé sous le nom ONE SOURCE PEARLWATER) répond à ce besoin : installé sous votre évier, il délivre une eau filtrée et minéralisée directement à votre robinet cuisine.</p>
 
@@ -4972,12 +4672,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Prix d'un adoucisseur d'eau installé : fourchettes selon le modèle et la capacité, coût du sel, entretien annuel et comment évaluer le retour sur investissement.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">1 500 – 3 500 €</span><span class="gm-stat__label">fourchette typique pour un adoucisseur d'eau résidentiel installé (équipement + pose)</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">800 – 1 500 €</span><span class="gm-stat__label">fourchette pour un système eau de boisson BWT MIXXO PRO installé</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">15-20 ans</span><span class="gm-stat__label">durée de vie d'un adoucisseur de qualité avec entretien régulier</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">ROI</span><span class="gm-stat__label">économies sur chauffe-eau, électroménager et produits ménagers — s'amortit en 5-10 ans</span></div>
-</div>
 
 <p>Le prix d'un adoucisseur d'eau est souvent perçu comme élevé au premier regard. Mais l'investissement doit se comparer à ce qu'il économise : chauffe-eau qui dure plus longtemps, machine à laver moins entartrée, moins de produits ménagers. Voici une vision complète du coût réel.</p>
 
@@ -5036,12 +4730,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Comment entretenir un adoucisseur d'eau, quelle quantité de sel utiliser, à quelle fréquence faire vérifier l'équipement et comment maximiser sa durée de vie — tout ce qu'il faut savoir.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Sel</span><span class="gm-stat__label">seul consommable — pastilles ou granulés, à recharger régulièrement selon la consommation</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">1 fois/an</span><span class="gm-stat__label">contrôle annuel recommandé par un technicien — réglage, vérification résine, contrôle vanne</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">15-20 ans</span><span class="gm-stat__label">durée de vie d'un adoucisseur de qualité bien entretenu</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Wi-Fi</span><span class="gm-stat__label">le BWT PerlaMaxx OPTI alerte automatiquement quand le sel est bas — plus d'oubli possible</span></div>
-</div>
 
 <p>Un adoucisseur d'eau est un équipement robuste qui nécessite peu d'interventions. L'essentiel se résume à ne pas oublier de recharger le sel et à faire contrôler l'équipement une fois par an. Voici tout ce qu'il faut savoir pour que votre adoucisseur dure le plus longtemps possible.</p>
 
@@ -5107,12 +4795,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "BWT PerlaMaxx OPTI : notre analyse honnête après de nombreuses installations dans la Nièvre et l'Yonne. Connectivité Wi-Fi, garantie 10 ans, consommation optimisée — et ce qu'on observe vraiment.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">10 ans</span><span class="gm-stat__label">garantie sur le bac, les bouteilles et la résine — la plus longue du marché résidentiel</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Wi-Fi</span><span class="gm-stat__label">alertes automatiques niveau sel, débit anormal — piloté depuis votre smartphone</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">1-8 personnes</span><span class="gm-stat__label">dimensionnement adaptatif — convient aux petits comme aux grands foyers</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Auto-désinfection</span><span class="gm-stat__label">désinfection automatique des résines — hygiène assurée sans intervention manuelle</span></div>
-</div>
 
 <p>Nous travaillons en partenariat exclusif avec BWT depuis plusieurs années. Le PerlaMaxx OPTI est l'adoucisseur que nous installons par défaut dans les logements de la Nièvre et de l'Yonne. Voici notre retour honnête : ce qui fonctionne bien, ce qui est à connaître, et pourquoi nous avons retenu ce modèle.</p>
 
@@ -5249,12 +4931,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Cellules photovoltaïques, onduleur, compteur Linky, monitoring : comprendre comment fonctionne une installation solaire de A à Z, sans jargon inutile.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Effet PV</span><span class="gm-stat__label">les photons du soleil frappent le silicium et libèrent des électrons — c'est le courant</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">DC → AC</span><span class="gm-stat__label">l'onduleur transforme le courant continu des panneaux en courant alternatif 230 V</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Compteur Linky</span><span class="gm-stat__label">bidirectionnel — il mesure ce que vous consommez ET ce que vous injectez</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Monitoring</span><span class="gm-stat__label">votre production est visible en temps réel depuis une application smartphone</span></div>
-</div>
 
 <p>L'énergie solaire photovoltaïque repose sur un principe physique découvert au XIXe siècle et industrialisé depuis les années 1970 : l'effet photoélectrique. Quand des photons frappent une cellule en silicium, ils libèrent des électrons qui se mettent en mouvement. Ce mouvement d'électrons, c'est le courant électrique.</p>
 
@@ -5309,12 +4985,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Combien coûte une installation solaire photovoltaïque ? Prix par puissance (3, 6, 9 kWc), ce qui est inclus dans une installation clé en main et les facteurs qui font varier le budget.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">3 – 9 kWc</span><span class="gm-stat__label">puissances typiques pour une maison individuelle résidentielle</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">TVA réduite</span><span class="gm-stat__label">applicable sous conditions pour les résidences principales de plus de 2 ans</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Clé en main</span><span class="gm-stat__label">étude, fourniture, pose, raccordement Enedis et Consuel inclus</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">RGE obligatoire</span><span class="gm-stat__label">pour accéder aux aides, votre installateur doit être certifié RGE QualiPV</span></div>
-</div>
 
 <p>Le prix d'une installation photovoltaïque dépend avant tout de la puissance installée, exprimée en kilowatt-crête (kWc). Plus la puissance est élevée, plus le nombre de panneaux est important, et plus l'installation produit d'électricité. Ces fourchettes sont données à titre indicatif pour une installation clé en main réalisée par un installateur RGE.</p>
 
@@ -5372,12 +5042,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Prime à l'autoconsommation, TVA réduite, éco-PTZ : les aides disponibles pour une installation solaire dans la Nièvre et l'Yonne. Conditions d'accès et rôle du RGE QualiPV.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Prime auto.</span><span class="gm-stat__label">prime à l'autoconsommation versée à la mise en service — montant fixé par arrêté chaque trimestre</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">TVA réduite</span><span class="gm-stat__label">applicable sur les installations en résidence principale de plus de 2 ans</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Éco-PTZ</span><span class="gm-stat__label">prêt sans intérêts pour financer votre installation — jusqu'à 50 000 € depuis 2024</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">RGE obligatoire</span><span class="gm-stat__label">toutes ces aides sont conditionnées à l'intervention d'un installateur certifié RGE QualiPV</span></div>
-</div>
 
 <p>En France, plusieurs dispositifs permettent de réduire le coût d'une installation photovoltaïque. Ils sont conditionnés au fait de passer par un installateur certifié RGE QualiPV — ce qui est le cas de Groupe Merlin. Voici les principales aides disponibles.</p>
 
@@ -5434,12 +5098,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Faut-il vendre toute votre production solaire ou la consommer vous-même ? Comparatif honnête entre autoconsommation avec vente du surplus et vente totale pour une maison en Nièvre ou dans l'Yonne.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Autoconsommation</span><span class="gm-stat__label">vous utilisez d'abord ce que vous produisez — c'est la solution recommandée en résidentiel</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Surplus</span><span class="gm-stat__label">l'électricité que vous ne consommez pas en temps réel est injectée et rachetée par EDF OA</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">20 ans</span><span class="gm-stat__label">durée du contrat d'achat du surplus (ou de vente totale) avec EDF OA — tarif garanti</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Batterie</span><span class="gm-stat__label">option pour stocker votre surplus et l'utiliser le soir — améliore votre taux d'autoconsommation</span></div>
-</div>
 
 <p>Quand on installe des panneaux photovoltaïques, on doit choisir comment valoriser sa production. Il existe deux grandes options : l'autoconsommation avec vente du surplus, et la vente totale. Pour la grande majorité des logements résidentiels, la première option est la plus adaptée. Voici pourquoi.</p>
 
@@ -5497,12 +5155,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Ensoleillement, types de toitures, démarches locales, installateur RGE : tout ce qui est spécifique à une installation solaire dans la Nièvre (58) et l'Yonne (89).",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Zone H1b/H2b</span><span class="gm-stat__label">classification climatique de la Bourgogne — ensoleillement modéré, installation rentable</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Sud-Sud-Est</span><span class="gm-stat__label">orientation optimale pour maximiser la production — une toiture sud-ouest reste exploitable</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">30° optimal</span><span class="gm-stat__label">inclinaison idéale en France métropolitaine pour la production annuelle maximale</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">RGE local</span><span class="gm-stat__label">Groupe Merlin intervient dans la Nièvre (58) et l'Yonne (89) — certifié RGE QualiPV</span></div>
-</div>
 
 <p>La Bourgogne n'est pas le Sud de la France. Mais contrairement à une idée reçue, elle bénéficie d'un ensoleillement suffisant pour rendre une installation photovoltaïque rentable. La Nièvre et l'Yonne présentent en outre des caractéristiques locales qui influencent le dimensionnement et la pose des installations.</p>
 
@@ -5552,12 +5204,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Nettoyage, contrôle de l'onduleur, monitoring, durée de vie des équipements : le guide complet de l'entretien d'une installation photovoltaïque pour maximiser sa production sur le long terme.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">25 – 30 ans</span><span class="gm-stat__label">durée de vie des panneaux — avec une garantie constructeur sur la production sur 25 ans</span></div>
-  <div class="gm-stat"><span class="gm-stat__label">10 – 15 ans</span><span class="gm-stat__value">durée de vie de l'onduleur — c'est l'élément qui sera remplacé en cours de vie de l'installation</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Nettoyage</span><span class="gm-stat__label">la pluie entretient naturellement les panneaux — un nettoyage ciblé peut être nécessaire selon l'environnement</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Monitoring</span><span class="gm-stat__label">votre production est surveillée en temps réel — une chute anormale signale une anomalie à vérifier</span></div>
-</div>
 
 <p>Une installation photovoltaïque bien conçue et installée par un professionnel RGE est un équipement très fiable. Il n'a pas de pièces mobiles (sauf l'onduleur qui a des condensateurs). Mais comme tout équipement technique, il bénéficie d'une surveillance régulière pour maintenir ses performances dans le temps.</p>
 
@@ -5635,12 +5281,6 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     excerpt:
       "Chaudière à granulés ou poêle à granulés : comparatif honnête pour les maisons de la Nièvre et l'Yonne. Prix, aides, usage, installation — tout pour décider sans vous tromper.",
     body: `
-<div class="gm-stat-grid">
-  <div class="gm-stat"><span class="gm-stat__value">Chaudière</span><span class="gm-stat__label">chauffage de toute la maison + eau chaude sanitaire — remplace votre ancien système central</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Poêle</span><span class="gm-stat__label">chauffage d'une pièce ou appoint — sans modifier votre circuit de chauffage existant</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Même combustible</span><span class="gm-stat__label">granulés EN Plus A1 pour les deux — mais des usages et des investissements très différents</span></div>
-  <div class="gm-stat"><span class="gm-stat__value">Nièvre & Yonne</span><span class="gm-stat__label">deux départements peu raccordés au gaz — le granulé est une alternative sérieuse au fioul</span></div>
-</div>
 
 <p>Chaudière à granulés ou poêle à granulés : la confusion est fréquente. Ces deux équipements utilisent le même combustible, mais leurs usages, leurs prix et leurs impacts sur votre logement n'ont rien à voir. Choisir l'un quand il faudrait l'autre, c'est risquer de faire un mauvais investissement. Voici le comparatif pour décider sans regret.</p>
 
