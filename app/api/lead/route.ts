@@ -96,8 +96,8 @@ function formatPhone(tel: string): string {
 function buildEmailHtml(d: LeadData): string {
   const e = (s: string) => escapeHtml(s);
   return `
-    <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;padding:24px;color:#171723;">
-      <h2 style="color:#171723;border-bottom:2px solid #FAC864;padding-bottom:8px;">Nouvelle demande de devis — Pompe à chaleur (pub)</h2>
+    <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;padding:24px;color:#1B2841;">
+      <h2 style="color:#1B2841;border-bottom:2px solid #FAC864;padding-bottom:8px;">Nouvelle demande de devis — Pompe à chaleur (pub)</h2>
       <p style="color:#666;margin:0 0 16px;">Demande issue de la campagne Facebook / Instagram (tunnel pompe à chaleur).</p>
       <p><strong>Agence détectée :</strong> ${e(AGENCE_LABELS[d.agence] || d.agence)}</p>
       <table style="width:100%;border-collapse:collapse;margin-top:16px;">

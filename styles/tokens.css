@@ -1,6 +1,6 @@
 :root {
   /* ---------- Palette officielle DA Groupe Merlin ---------- */
-  --gm-bleu-encre:      #171723;
+  --gm-bleu-encre:      #1B2841;
   --gm-blanc-creme:     #EAE1CD;
   --gm-gris-ardoise:    #2E2E3A;
   --gm-dore:            #FAC864; /* CTA primaire, accents (PAS #CDFF8F — coquille DA) */
@@ -61,9 +61,9 @@
   --gm-radius-pill: 999px;
 
   /* ---------- Ombres ---------- */
-  --gm-shadow-soft:    0 10px 30px -12px rgba(23, 23, 35, 0.12);
-  --gm-shadow-video:   0 30px 60px -20px rgba(23, 23, 35, 0.18);
-  --gm-shadow-glass:   0 8px 32px rgba(23, 23, 35, 0.18);
+  --gm-shadow-soft:    0 10px 30px -12px rgba(27, 40, 65, 0.12);
+  --gm-shadow-video:   0 30px 60px -20px rgba(27, 40, 65, 0.18);
+  --gm-shadow-glass:   0 8px 32px rgba(27, 40, 65, 0.18);
 
   /* ---------- Transitions ---------- */
   --gm-ease-out:    cubic-bezier(0.22, 1, 0.36, 1);

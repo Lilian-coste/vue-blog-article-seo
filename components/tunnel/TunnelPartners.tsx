@@ -14,7 +14,7 @@ export default function TunnelPartners() {
         .tunnel-partners .gm-exp-partenaires__item--certif,
         .tunnel-partners .gm-exp-partenaires__item--partenaire{
           width:clamp(140px,16vw,168px); height:96px; box-sizing:border-box;
-          background:#fff; border:1px solid rgba(23,23,35,0.08); border-radius:12px;
+          background:#fff; border:1px solid rgba(27, 40, 65,0.08); border-radius:12px;
           display:flex; align-items:center; justify-content:center; padding:16px;
         }
         .tunnel-partners .gm-exp-partenaires__item img{

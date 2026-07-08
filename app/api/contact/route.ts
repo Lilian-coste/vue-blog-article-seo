@@ -79,8 +79,8 @@ function escapeHtml(s: string): string {
 function buildEmailHtml(d: LeadData): string {
   const e = (s: string) => escapeHtml(s);
   return `
-    <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;padding:24px;color:#171723;">
-      <h2 style="color:#171723;border-bottom:2px solid #FAC864;padding-bottom:8px;">Nouvelle demande de devis</h2>
+    <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;padding:24px;color:#1B2841;">
+      <h2 style="color:#1B2841;border-bottom:2px solid #FAC864;padding-bottom:8px;">Nouvelle demande de devis</h2>
       <p><strong>Agence détectée :</strong> ${e(AGENCE_LABELS[d.agence] || d.agence)}</p>
       <table style="width:100%;border-collapse:collapse;margin-top:16px;">
         <tr><td style="padding:8px 0;color:#666;width:160px;">Prénom</td><td style="padding:8px 0;"><strong>${e(d.prenom)}</strong></td></tr>

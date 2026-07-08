@@ -24,7 +24,7 @@
   -webkit-backdrop-filter: blur(20px) saturate(150%);
   backdrop-filter: blur(20px) saturate(150%);
 
-  border-bottom: 1px solid rgba(23, 23, 35, 0.06);
+  border-bottom: 1px solid rgba(27, 40, 65, 0.06);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset;
 
   transform: translateY(0);
@@ -60,7 +60,7 @@
 /* Sur état "solid" + tone dark, on ajoute un fond bleu encre translucide
    pour que la navbar reste lisible quand elle se pose au-dessus d'une section claire. */
 .gm-navbar[data-state="solid"][data-tone="dark"] {
-  background-color: rgba(23, 23, 35, 0.55);
+  background-color: rgba(27, 40, 65, 0.55);
   border-bottom-color: rgba(255, 255, 255, 0.10);
 }
 
@@ -103,8 +103,8 @@
   box-shadow:
     inset 2px 2px 1px 0 rgba(255, 255, 255, 0.55),
     inset -1px -1px 1px 1px rgba(234, 225, 205, 0.55),
-    0 10px 28px rgba(23, 23, 35, 0.25),
-    0 2px 4px rgba(23, 23, 35, 0.12);
+    0 10px 28px rgba(27, 40, 65, 0.25),
+    0 2px 4px rgba(27, 40, 65, 0.12);
 }
 /* Sur la bulle crème, les liens passent en bleu encre (lisibilité optimale, pas en crème) */
 .gm-navbar[data-state="transparent"] .gm-navbar__nav .gm-navbar__link {
@@ -195,7 +195,7 @@
 
   transform: translateX(100%);
   transition: transform var(--gm-dur-slow) var(--gm-ease-out);
-  box-shadow: -20px 0 60px -20px rgba(23, 23, 35, 0.25);
+  box-shadow: -20px 0 60px -20px rgba(27, 40, 65, 0.25);
 }
 .gm-navbar__drawer[data-open="true"] { transform: translateX(0); }
 
@@ -228,7 +228,7 @@
 .gm-navbar__overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(23, 23, 35, 0.45);
+  background-color: rgba(27, 40, 65, 0.45);
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   z-index: var(--gm-z-navbar);

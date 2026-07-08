@@ -191,7 +191,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
 <svg viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma simplifié du cycle thermodynamique d'une pompe à chaleur en 4 étapes">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#171723"/>
+      <path d="M0,0 L10,5 L0,10 z" fill="#1B2841"/>
     </marker>
   </defs>
   <g font-family="-apple-system, sans-serif" font-size="13" text-anchor="middle">
@@ -201,21 +201,21 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       <text x="80" y="125">Capte la chaleur</text>
       <text x="80" y="143">de l'air extérieur</text>
     </g>
-    <line x1="160" y1="120" x2="195" y2="120" stroke="#171723" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="160" y1="120" x2="195" y2="120" stroke="#1B2841" stroke-width="2" marker-end="url(#arrow)"/>
     <g>
       <circle cx="250" cy="120" r="75" fill="#EAE1CD"/>
       <text x="250" y="100" font-weight="700" font-size="15">2</text>
       <text x="250" y="125">Compresseur</text>
       <text x="250" y="143">monte en T°</text>
     </g>
-    <line x1="330" y1="120" x2="365" y2="120" stroke="#171723" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="330" y1="120" x2="365" y2="120" stroke="#1B2841" stroke-width="2" marker-end="url(#arrow)"/>
     <g>
       <circle cx="420" cy="120" r="75" fill="#EAE1CD"/>
       <text x="420" y="100" font-weight="700" font-size="15">3</text>
       <text x="420" y="125">Diffuse la chaleur</text>
       <text x="420" y="143">dans la maison</text>
     </g>
-    <line x1="500" y1="120" x2="535" y2="120" stroke="#171723" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="500" y1="120" x2="535" y2="120" stroke="#1B2841" stroke-width="2" marker-end="url(#arrow)"/>
     <g>
       <circle cx="590" cy="120" r="75" fill="#FAC864"/>
       <text x="590" y="100" font-weight="700" font-size="15">4</text>
@@ -264,13 +264,13 @@ export const BLOG_ARTICLES: BlogArticle[] = [
 <div class="gm-schema">
 <svg viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma des 4 aides cumulables en 2026 pour une pompe à chaleur">
   <g font-family="-apple-system, sans-serif" text-anchor="middle">
-    <rect x="240" y="10" width="200" height="60" rx="12" fill="#171723"/>
+    <rect x="240" y="10" width="200" height="60" rx="12" fill="#1B2841"/>
     <text x="340" y="38" fill="#FAC864" font-size="14" font-weight="700">Jusqu'à 10 800 €</text>
     <text x="340" y="56" fill="#fff" font-size="11">aides cumulables 2026</text>
-    <line x1="340" y1="70" x2="100" y2="120" stroke="#171723" stroke-width="1.5"/>
-    <line x1="340" y1="70" x2="270" y2="120" stroke="#171723" stroke-width="1.5"/>
-    <line x1="340" y1="70" x2="410" y2="120" stroke="#171723" stroke-width="1.5"/>
-    <line x1="340" y1="70" x2="580" y2="120" stroke="#171723" stroke-width="1.5"/>
+    <line x1="340" y1="70" x2="100" y2="120" stroke="#1B2841" stroke-width="1.5"/>
+    <line x1="340" y1="70" x2="270" y2="120" stroke="#1B2841" stroke-width="1.5"/>
+    <line x1="340" y1="70" x2="410" y2="120" stroke="#1B2841" stroke-width="1.5"/>
+    <line x1="340" y1="70" x2="580" y2="120" stroke="#1B2841" stroke-width="1.5"/>
     <rect x="20" y="120" width="160" height="100" rx="10" fill="#FAC864"/>
     <text x="100" y="148" font-size="13" font-weight="700">MaPrimeRénov'</text>
     <text x="100" y="170" font-size="11">jusqu'à 5 000 €</text>
@@ -1106,7 +1106,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     <text x="340" y="102" font-size="12">dimensionnement juste.</text>
     <text x="340" y="130" font-size="11" fill="#5a5a66">Refusez les devis</text>
     <text x="340" y="148" font-size="11" fill="#5a5a66">sans déplacement.</text>
-    <rect x="470" y="20" width="190" height="160" rx="10" fill="#171723"/>
+    <rect x="470" y="20" width="190" height="160" rx="10" fill="#1B2841"/>
     <text x="565" y="55" fill="#FAC864" font-weight="700" font-size="15">3. Ancrage local</text>
     <text x="565" y="82" fill="#fff" font-size="12">Qui sera là dans 10 ans</text>
     <text x="565" y="102" fill="#fff" font-size="12">pour dépanner votre PAC ?</text>
@@ -1381,13 +1381,13 @@ export const BLOG_ARTICLES: BlogArticle[] = [
 <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma montrant l'impact des aides sur le reste à charge d'une PAC air/eau">
   <defs>
     <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#171723"/>
+      <path d="M0,0 L10,5 L0,10 z" fill="#1B2841"/>
     </marker>
   </defs>
   <g font-family="-apple-system, sans-serif" font-size="12" text-anchor="middle">
     <rect x="20" y="20" width="170" height="140" rx="8" fill="#EAE1CD"/>
     <text x="105" y="48" font-weight="700" font-size="14">Devis brut</text>
-    <text x="105" y="78" font-size="22" font-weight="700" fill="#171723">13 000 €</text>
+    <text x="105" y="78" font-size="22" font-weight="700" fill="#1B2841">13 000 €</text>
     <text x="105" y="105" font-size="11" fill="#5a5a66">exemple 120 m²</text>
     <text x="105" y="125" font-size="11" fill="#5a5a66">TVA 5,5 % incluse</text>
     <text x="200" y="92" font-size="18" font-weight="700">→</text>
@@ -1397,7 +1397,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     <text x="320" y="95" font-size="13">CEE : plusieurs k€</text>
     <text x="320" y="118" font-size="11" fill="#5a5a66">Total : jusqu'à 10 800 € (remplacement fioul)</text>
     <text x="436" y="92" font-size="18" font-weight="700">→</text>
-    <rect x="451" y="20" width="210" height="140" rx="8" fill="#171723"/>
+    <rect x="451" y="20" width="210" height="140" rx="8" fill="#1B2841"/>
     <text x="556" y="48" fill="#FAC864" font-weight="700" font-size="14">Reste à charge</text>
     <text x="556" y="78" fill="#fff" font-size="18" font-weight="700">réduit</text>
     <text x="556" y="105" fill="#EAE1CD" font-size="11">finançable via éco-PTZ</text>
@@ -1545,7 +1545,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
 <svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Les 6 étapes d'une installation PAC air/eau">
   <defs>
     <marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#171723"/>
+      <path d="M0,0 L10,5 L0,10 z" fill="#1B2841"/>
     </marker>
   </defs>
   <g font-family="-apple-system, sans-serif" font-size="11" text-anchor="middle">
@@ -1553,28 +1553,28 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     <text x="55" y="35" font-weight="700">1</text>
     <text x="55" y="55">Visite</text>
     <text x="55" y="70">préalable</text>
-    <line x1="107" y1="50" x2="118" y2="50" stroke="#171723" stroke-width="1.5" marker-end="url(#ar4)"/>
+    <line x1="107" y1="50" x2="118" y2="50" stroke="#1B2841" stroke-width="1.5" marker-end="url(#ar4)"/>
     <rect x="120" y="10" width="100" height="80" rx="6" fill="#FAC864"/>
     <text x="170" y="35" font-weight="700">2</text>
     <text x="170" y="52">Devis +</text>
     <text x="170" y="67">dossiers aides</text>
-    <line x1="222" y1="50" x2="233" y2="50" stroke="#171723" stroke-width="1.5" marker-end="url(#ar4)"/>
+    <line x1="222" y1="50" x2="233" y2="50" stroke="#1B2841" stroke-width="1.5" marker-end="url(#ar4)"/>
     <rect x="235" y="10" width="100" height="80" rx="6" fill="#EAE1CD"/>
     <text x="285" y="35" font-weight="700">3</text>
     <text x="285" y="52">Préparation</text>
     <text x="285" y="67">chantier</text>
-    <line x1="337" y1="50" x2="348" y2="50" stroke="#171723" stroke-width="1.5" marker-end="url(#ar4)"/>
+    <line x1="337" y1="50" x2="348" y2="50" stroke="#1B2841" stroke-width="1.5" marker-end="url(#ar4)"/>
     <rect x="350" y="10" width="100" height="80" rx="6" fill="#EAE1CD"/>
     <text x="400" y="35" font-weight="700">4</text>
     <text x="400" y="52">Installation</text>
     <text x="400" y="67">1-2 jours</text>
-    <line x1="452" y1="50" x2="463" y2="50" stroke="#171723" stroke-width="1.5" marker-end="url(#ar4)"/>
+    <line x1="452" y1="50" x2="463" y2="50" stroke="#1B2841" stroke-width="1.5" marker-end="url(#ar4)"/>
     <rect x="465" y="10" width="100" height="80" rx="6" fill="#EAE1CD"/>
     <text x="515" y="35" font-weight="700">5</text>
     <text x="515" y="52">Mise en</text>
     <text x="515" y="67">service</text>
-    <line x1="567" y1="50" x2="578" y2="50" stroke="#171723" stroke-width="1.5" marker-end="url(#ar4)"/>
-    <rect x="580" y="10" width="92" height="80" rx="6" fill="#171723"/>
+    <line x1="567" y1="50" x2="578" y2="50" stroke="#1B2841" stroke-width="1.5" marker-end="url(#ar4)"/>
+    <rect x="580" y="10" width="92" height="80" rx="6" fill="#1B2841"/>
     <text x="626" y="35" fill="#FAC864" font-weight="700">6</text>
     <text x="626" y="52" fill="#fff">Facture +</text>
     <text x="626" y="67" fill="#FAC864">MPR versée</text>
@@ -1812,22 +1812,22 @@ export const BLOG_ARTICLES: BlogArticle[] = [
   <g font-family="-apple-system, sans-serif" font-size="12" text-anchor="middle">
     <rect x="10" y="20" width="150" height="130" rx="8" fill="#EAE1CD"/>
     <text x="85" y="45" font-weight="700" font-size="13">Prix installation</text>
-    <text x="85" y="75" font-size="20" font-weight="700" fill="#171723">~13 000 €</text>
+    <text x="85" y="75" font-size="20" font-weight="700" fill="#1B2841">~13 000 €</text>
     <text x="85" y="100" font-size="11" fill="#5a5a66">matériel + pose</text>
     <text x="85" y="118" font-size="10" fill="#5a5a66">(exemple indicatif)</text>
-    <text x="172" y="90" font-size="20" fill="#171723">−</text>
+    <text x="172" y="90" font-size="20" fill="#1B2841">−</text>
     <rect x="190" y="20" width="145" height="130" rx="8" fill="#FAC864"/>
     <text x="262" y="45" font-weight="700" font-size="13">MaPrimeRénov'</text>
     <text x="262" y="75" font-size="18" font-weight="700">4 000 €</text>
     <text x="262" y="100" font-size="11">ex. revenus modestes</text>
-    <text x="347" y="90" font-size="20" fill="#171723">−</text>
+    <text x="347" y="90" font-size="20" fill="#1B2841">−</text>
     <rect x="365" y="20" width="145" height="130" rx="8" fill="#FAC864"/>
     <text x="437" y="45" font-weight="700" font-size="13">Prime CEE</text>
     <text x="437" y="75" font-size="15" font-weight="700">variable</text>
     <text x="437" y="98" font-size="11">selon revenus</text>
     <text x="437" y="115" font-size="11">et fournisseur</text>
-    <text x="522" y="90" font-size="20" fill="#171723">=</text>
-    <rect x="540" y="20" width="130" height="130" rx="8" fill="#171723"/>
+    <text x="522" y="90" font-size="20" fill="#1B2841">=</text>
+    <rect x="540" y="20" width="130" height="130" rx="8" fill="#1B2841"/>
     <text x="605" y="45" fill="#FAC864" font-weight="700" font-size="12">Reste à charge</text>
     <text x="605" y="75" fill="#fff" font-size="14" font-weight="700">réduit</text>
     <text x="605" y="100" fill="#EAE1CD" font-size="11">finançable via</text>
@@ -2022,23 +2022,23 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     <text x="70" y="72" font-weight="700" font-size="14">1</text>
     <text x="70" y="90" font-size="11">Vérifier</text>
     <text x="70" y="106" font-size="11">éligibilité</text>
-    <line x1="122" y1="80" x2="148" y2="80" stroke="#171723" stroke-width="2" marker-end="url(#ar)"/>
+    <line x1="122" y1="80" x2="148" y2="80" stroke="#1B2841" stroke-width="2" marker-end="url(#ar)"/>
     <circle cx="200" cy="80" r="50" fill="#FAC864"/>
     <text x="200" y="72" font-weight="700" font-size="14">2</text>
     <text x="200" y="90" font-size="11">Créer</text>
     <text x="200" y="106" font-size="11">votre compte</text>
-    <line x1="252" y1="80" x2="278" y2="80" stroke="#171723" stroke-width="2" marker-end="url(#ar)"/>
+    <line x1="252" y1="80" x2="278" y2="80" stroke="#1B2841" stroke-width="2" marker-end="url(#ar)"/>
     <circle cx="330" cy="80" r="50" fill="#EAE1CD"/>
     <text x="330" y="72" font-weight="700" font-size="14">3</text>
     <text x="330" y="90" font-size="11">Déposer</text>
     <text x="330" y="106" font-size="11">le dossier</text>
-    <line x1="382" y1="80" x2="408" y2="80" stroke="#171723" stroke-width="2" marker-end="url(#ar)"/>
+    <line x1="382" y1="80" x2="408" y2="80" stroke="#1B2841" stroke-width="2" marker-end="url(#ar)"/>
     <circle cx="460" cy="80" r="50" fill="#EAE1CD"/>
     <text x="460" y="72" font-weight="700" font-size="14">4</text>
     <text x="460" y="90" font-size="11">Faire les</text>
     <text x="460" y="106" font-size="11">travaux</text>
-    <line x1="512" y1="80" x2="538" y2="80" stroke="#171723" stroke-width="2" marker-end="url(#ar)"/>
-    <circle cx="590" cy="80" r="50" fill="#171723"/>
+    <line x1="512" y1="80" x2="538" y2="80" stroke="#1B2841" stroke-width="2" marker-end="url(#ar)"/>
+    <circle cx="590" cy="80" r="50" fill="#1B2841"/>
     <text x="590" y="72" fill="#FAC864" font-weight="700" font-size="14">5</text>
     <text x="590" y="90" fill="#fff" font-size="11">Recevoir</text>
     <text x="590" y="106" fill="#fff" font-size="11">le paiement</text>
@@ -2046,7 +2046,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
   </g>
   <defs>
     <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#171723"/>
+      <path d="M0,0 L10,5 L0,10 z" fill="#1B2841"/>
     </marker>
   </defs>
 </svg>
@@ -2265,7 +2265,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
 <svg viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Les 7 étapes du dossier MaPrimeRénov' dans l'ordre chronologique">
   <defs>
     <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#171723"/>
+      <path d="M0,0 L10,5 L0,10 z" fill="#1B2841"/>
     </marker>
   </defs>
   <g font-family="-apple-system, sans-serif" font-size="11" text-anchor="middle">
@@ -2273,36 +2273,36 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     <text x="46" y="35" font-weight="700">1</text>
     <text x="46" y="55">Vérifier</text>
     <text x="46" y="70">éligibilité</text>
-    <line x1="89" y1="50" x2="100" y2="50" stroke="#171723" stroke-width="1.5" marker-end="url(#arrow2)"/>
+    <line x1="89" y1="50" x2="100" y2="50" stroke="#1B2841" stroke-width="1.5" marker-end="url(#arrow2)"/>
     <rect x="102" y="10" width="82" height="80" rx="6" fill="#FAC864"/>
     <text x="143" y="35" font-weight="700">2</text>
     <text x="143" y="55">Créer</text>
     <text x="143" y="70">son compte</text>
-    <line x1="186" y1="50" x2="197" y2="50" stroke="#171723" stroke-width="1.5" marker-end="url(#arrow2)"/>
+    <line x1="186" y1="50" x2="197" y2="50" stroke="#1B2841" stroke-width="1.5" marker-end="url(#arrow2)"/>
     <rect x="199" y="10" width="82" height="80" rx="6" fill="#FAC864"/>
     <text x="240" y="35" font-weight="700">3</text>
     <text x="240" y="47">Déposer</text>
     <text x="240" y="62">la demande</text>
     <text x="240" y="77" fill="#ef4135" font-size="10">avant devis !</text>
-    <line x1="283" y1="50" x2="294" y2="50" stroke="#171723" stroke-width="1.5" marker-end="url(#arrow2)"/>
+    <line x1="283" y1="50" x2="294" y2="50" stroke="#1B2841" stroke-width="1.5" marker-end="url(#arrow2)"/>
     <rect x="296" y="10" width="82" height="80" rx="6" fill="#EAE1CD"/>
     <text x="337" y="35" font-weight="700">4</text>
     <text x="337" y="55">Signer</text>
     <text x="337" y="70">le devis RGE</text>
-    <line x1="380" y1="50" x2="391" y2="50" stroke="#171723" stroke-width="1.5" marker-end="url(#arrow2)"/>
+    <line x1="380" y1="50" x2="391" y2="50" stroke="#1B2841" stroke-width="1.5" marker-end="url(#arrow2)"/>
     <rect x="393" y="10" width="82" height="80" rx="6" fill="#EAE1CD"/>
     <text x="434" y="35" font-weight="700">5</text>
     <text x="434" y="47">Déclarer</text>
     <text x="434" y="62">le devis</text>
     <text x="434" y="77">en ligne</text>
-    <line x1="477" y1="50" x2="488" y2="50" stroke="#171723" stroke-width="1.5" marker-end="url(#arrow2)"/>
+    <line x1="477" y1="50" x2="488" y2="50" stroke="#1B2841" stroke-width="1.5" marker-end="url(#arrow2)"/>
     <rect x="490" y="10" width="82" height="80" rx="6" fill="#EAE1CD"/>
     <text x="531" y="35" font-weight="700">6</text>
     <text x="531" y="47">Réaliser</text>
     <text x="531" y="62">les</text>
     <text x="531" y="77">travaux</text>
-    <line x1="574" y1="50" x2="585" y2="50" stroke="#171723" stroke-width="1.5" marker-end="url(#arrow2)"/>
-    <rect x="587" y="10" width="82" height="80" rx="6" fill="#171723"/>
+    <line x1="574" y1="50" x2="585" y2="50" stroke="#1B2841" stroke-width="1.5" marker-end="url(#arrow2)"/>
+    <rect x="587" y="10" width="82" height="80" rx="6" fill="#1B2841"/>
     <text x="628" y="35" fill="#FAC864" font-weight="700">7</text>
     <text x="628" y="50" fill="#fff">Envoyer</text>
     <text x="628" y="65" fill="#fff">facture →</text>
@@ -3291,23 +3291,23 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     <text x="70" y="75" font-weight="700" font-size="13">1</text>
     <text x="70" y="93" font-size="11">Visite</text>
     <text x="70" y="109" font-size="11">gratuite</text>
-    <line x1="122" y1="80" x2="148" y2="80" stroke="#171723" stroke-width="2" marker-end="url(#ar-gran)"/>
+    <line x1="122" y1="80" x2="148" y2="80" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-gran)"/>
     <circle cx="200" cy="80" r="50" fill="#FAC864"/>
     <text x="200" y="75" font-weight="700" font-size="13">2</text>
     <text x="200" y="93" font-size="11">Dossier</text>
     <text x="200" y="109" font-size="11">aides</text>
-    <line x1="252" y1="80" x2="278" y2="80" stroke="#171723" stroke-width="2" marker-end="url(#ar-gran)"/>
+    <line x1="252" y1="80" x2="278" y2="80" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-gran)"/>
     <circle cx="330" cy="80" r="50" fill="#EAE1CD"/>
     <text x="330" y="75" font-weight="700" font-size="13">3</text>
     <text x="330" y="93" font-size="11">Devis</text>
     <text x="330" y="109" font-size="11">signé</text>
-    <line x1="382" y1="80" x2="408" y2="80" stroke="#171723" stroke-width="2" marker-end="url(#ar-gran)"/>
+    <line x1="382" y1="80" x2="408" y2="80" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-gran)"/>
     <circle cx="460" cy="80" r="50" fill="#EAE1CD"/>
     <text x="460" y="75" font-weight="700" font-size="13">4</text>
     <text x="460" y="93" font-size="11">Pose</text>
     <text x="460" y="109" font-size="11">& mise en route</text>
-    <line x1="512" y1="80" x2="538" y2="80" stroke="#171723" stroke-width="2" marker-end="url(#ar-gran)"/>
-    <circle cx="590" cy="80" r="50" fill="#171723"/>
+    <line x1="512" y1="80" x2="538" y2="80" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-gran)"/>
+    <circle cx="590" cy="80" r="50" fill="#1B2841"/>
     <text x="590" y="75" fill="#FAC864" font-weight="700" font-size="13">5</text>
     <text x="590" y="93" fill="#fff" font-size="11">Versement</text>
     <text x="590" y="109" fill="#fff" font-size="11">des aides</text>
@@ -3315,7 +3315,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
   </g>
   <defs>
     <marker id="ar-gran" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#171723"/>
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1B2841"/>
     </marker>
   </defs>
 </svg>
@@ -3357,7 +3357,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     <text x="75" y="83" font-size="10">Stockage</text>
     <text x="75" y="97" font-size="10">des granulés</text>
     <!-- Flèche silo → brûleur -->
-    <line x1="130" y1="70" x2="175" y2="70" stroke="#171723" stroke-width="2" marker-end="url(#ar-sch)"/>
+    <line x1="130" y1="70" x2="175" y2="70" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-sch)"/>
     <text x="152" y="62" font-size="9" fill="#5a5a66">vis sans fin</text>
     <!-- Brûleur -->
     <rect x="177" y="30" width="110" height="80" rx="6" fill="#FAC864"/>
@@ -3365,7 +3365,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     <text x="232" y="83" font-size="10">Combustion</text>
     <text x="232" y="97" font-size="10">automatique</text>
     <!-- Flèche brûleur → échangeur -->
-    <line x1="287" y1="70" x2="332" y2="70" stroke="#171723" stroke-width="2" marker-end="url(#ar-sch)"/>
+    <line x1="287" y1="70" x2="332" y2="70" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-sch)"/>
     <text x="310" y="62" font-size="9" fill="#5a5a66">chaleur</text>
     <!-- Échangeur -->
     <rect x="334" y="30" width="110" height="80" rx="6" fill="#FAC864"/>
@@ -3373,9 +3373,9 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     <text x="389" y="83" font-size="10">Transfert à</text>
     <text x="389" y="97" font-size="10">l'eau du circuit</text>
     <!-- Flèche échangeur → circuit -->
-    <line x1="444" y1="70" x2="489" y2="70" stroke="#171723" stroke-width="2" marker-end="url(#ar-sch)"/>
+    <line x1="444" y1="70" x2="489" y2="70" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-sch)"/>
     <!-- Circuit hydraulique -->
-    <rect x="491" y="30" width="120" height="80" rx="6" fill="#171723"/>
+    <rect x="491" y="30" width="120" height="80" rx="6" fill="#1B2841"/>
     <text x="551" y="60" fill="#FAC864" font-weight="700" font-size="13">Circuit</text>
     <text x="551" y="78" fill="#fff" font-size="10">Radiateurs</text>
     <text x="551" y="94" fill="#fff" font-size="10">Plancher chauffant</text>
@@ -3389,7 +3389,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
   </g>
   <defs>
     <marker id="ar-sch" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#171723"/>
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1B2841"/>
     </marker>
   </defs>
 </svg>
@@ -3603,18 +3603,18 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     <text x="570" y="62" font-weight="700" font-size="13">Éco-PTZ</text>
     <text x="570" y="80" font-size="11">Jusqu'à 50 000 €</text>
     <!-- cumul arrow -->
-    <line x1="90" y1="100" x2="90" y2="140" stroke="#171723" stroke-width="2"/>
-    <line x1="250" y1="100" x2="250" y2="140" stroke="#171723" stroke-width="2"/>
-    <line x1="410" y1="100" x2="410" y2="140" stroke="#171723" stroke-width="2"/>
-    <line x1="570" y1="100" x2="570" y2="140" stroke="#171723" stroke-width="2"/>
-    <line x1="90" y1="140" x2="570" y2="140" stroke="#171723" stroke-width="2"/>
-    <line x1="330" y1="140" x2="330" y2="165" stroke="#171723" stroke-width="2" marker-end="url(#ar-aides)"/>
-    <rect x="170" y="167" width="320" height="40" rx="8" fill="#171723"/>
+    <line x1="90" y1="100" x2="90" y2="140" stroke="#1B2841" stroke-width="2"/>
+    <line x1="250" y1="100" x2="250" y2="140" stroke="#1B2841" stroke-width="2"/>
+    <line x1="410" y1="100" x2="410" y2="140" stroke="#1B2841" stroke-width="2"/>
+    <line x1="570" y1="100" x2="570" y2="140" stroke="#1B2841" stroke-width="2"/>
+    <line x1="90" y1="140" x2="570" y2="140" stroke="#1B2841" stroke-width="2"/>
+    <line x1="330" y1="140" x2="330" y2="165" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-aides)"/>
+    <rect x="170" y="167" width="320" height="40" rx="8" fill="#1B2841"/>
     <text x="330" y="192" fill="#FAC864" font-weight="700" font-size="14">Toutes ces aides se cumulent</text>
   </g>
   <defs>
     <marker id="ar-aides" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#171723"/>
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1B2841"/>
     </marker>
   </defs>
 </svg>
@@ -3953,30 +3953,30 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     <text x="70" y="72" font-weight="700" font-size="13">1</text>
     <text x="70" y="90" font-size="10">Visite</text>
     <text x="70" y="106" font-size="10">& conception</text>
-    <line x1="122" y1="80" x2="148" y2="80" stroke="#171723" stroke-width="2" marker-end="url(#ar-sdb)"/>
+    <line x1="122" y1="80" x2="148" y2="80" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-sdb)"/>
     <circle cx="200" cy="80" r="50" fill="#FAC864"/>
     <text x="200" y="72" font-weight="700" font-size="13">2</text>
     <text x="200" y="90" font-size="10">Plan &</text>
     <text x="200" y="106" font-size="10">devis accepté</text>
-    <line x1="252" y1="80" x2="278" y2="80" stroke="#171723" stroke-width="2" marker-end="url(#ar-sdb)"/>
+    <line x1="252" y1="80" x2="278" y2="80" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-sdb)"/>
     <circle cx="330" cy="80" r="50" fill="#EAE1CD"/>
     <text x="330" y="72" font-weight="700" font-size="13">3</text>
     <text x="330" y="90" font-size="10">Démolition</text>
     <text x="330" y="106" font-size="10">& plomberie</text>
-    <line x1="382" y1="80" x2="408" y2="80" stroke="#171723" stroke-width="2" marker-end="url(#ar-sdb)"/>
+    <line x1="382" y1="80" x2="408" y2="80" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-sdb)"/>
     <circle cx="460" cy="80" r="50" fill="#EAE1CD"/>
     <text x="460" y="72" font-weight="700" font-size="13">4</text>
     <text x="460" y="90" font-size="10">Pose &</text>
     <text x="460" y="106" font-size="10">carrelage</text>
-    <line x1="512" y1="80" x2="538" y2="80" stroke="#171723" stroke-width="2" marker-end="url(#ar-sdb)"/>
-    <circle cx="590" cy="80" r="50" fill="#171723"/>
+    <line x1="512" y1="80" x2="538" y2="80" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-sdb)"/>
+    <circle cx="590" cy="80" r="50" fill="#1B2841"/>
     <text x="590" y="72" fill="#FAC864" font-weight="700" font-size="13">5</text>
     <text x="590" y="90" fill="#fff" font-size="10">Finitions</text>
     <text x="590" y="106" fill="#fff" font-size="10">& réception</text>
   </g>
   <defs>
     <marker id="ar-sdb" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#171723"/>
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1B2841"/>
     </marker>
   </defs>
 </svg>
@@ -4554,7 +4554,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     <text x="85" y="76" font-size="11">Ca²⁺ + Mg²⁺</text>
     <text x="85" y="92" font-size="10">(calcaire dissous)</text>
     <!-- Flèche -->
-    <line x1="152" y1="65" x2="190" y2="65" stroke="#171723" stroke-width="2" marker-end="url(#ar-ado)"/>
+    <line x1="152" y1="65" x2="190" y2="65" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-ado)"/>
     <!-- Résine -->
     <rect x="192" y="20" width="270" height="160" rx="8" fill="#FAC864"/>
     <text x="327" y="80" font-weight="700" font-size="14">Résine échangeuse d'ions</text>
@@ -4562,19 +4562,19 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     <text x="327" y="118" font-size="12">Na⁺ (sodium) est libéré dans l'eau</text>
     <text x="327" y="148" font-size="11" font-style="italic">→ l'eau ressort douce</text>
     <!-- Flèche -->
-    <line x1="464" y1="65" x2="502" y2="65" stroke="#171723" stroke-width="2" marker-end="url(#ar-ado)"/>
+    <line x1="464" y1="65" x2="502" y2="65" stroke="#1B2841" stroke-width="2" marker-end="url(#ar-ado)"/>
     <!-- Eau douce sortie -->
-    <rect x="504" y="30" width="130" height="70" rx="8" fill="#171723"/>
+    <rect x="504" y="30" width="130" height="70" rx="8" fill="#1B2841"/>
     <text x="569" y="58" fill="#FAC864" font-weight="700" font-size="13">Eau douce</text>
     <text x="569" y="76" fill="#fff" font-size="11">Na⁺ à faible dose</text>
     <text x="569" y="92" fill="#fff" font-size="10">(sans calcaire)</text>
     <!-- Sel régénération -->
-    <rect x="192" y="195" width="270" height="20" rx="4" fill="#171723" opacity="0.15"/>
+    <rect x="192" y="195" width="270" height="20" rx="4" fill="#1B2841" opacity="0.15"/>
     <text x="327" y="210" font-size="11" fill="#5a5a66">La résine se régénère au sel (NaCl) — cycle automatique</text>
   </g>
   <defs>
     <marker id="ar-ado" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#171723"/>
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1B2841"/>
     </marker>
   </defs>
 </svg>

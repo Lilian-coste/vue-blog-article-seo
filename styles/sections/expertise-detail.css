@@ -146,7 +146,7 @@
 }
 .gm-exp-block__dot {
   width: 6px; height: 6px; border-radius: 50%;
-  background-color: rgba(23,23,35,0.25);
+  background-color: rgba(27, 40, 65,0.25);
   transition: background-color var(--gm-dur-fast) var(--gm-ease-out);
 }
 .gm-exp-block__dot[data-active="true"] {
@@ -155,7 +155,7 @@
 .gm-exp-block__arrow {
   width: 44px; height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(23,23,35,0.20);
+  border: 1px solid rgba(27, 40, 65,0.20);
   display: inline-flex; align-items: center; justify-content: center;
   background-color: transparent;
   color: var(--gm-bleu-encre);
@@ -174,7 +174,7 @@
 .gm-exp-block__image {
   position: relative;
   min-height: 620px;
-  background-color: rgba(23,23,35,0.06);
+  background-color: rgba(27, 40, 65,0.06);
   display: grid;
   place-items: center;
   color: var(--gm-gris-anthracite);
@@ -195,8 +195,8 @@
 /* ---- Bloc 4 — Bandeau partenaires (défilant D→G) ---- */
 .gm-exp-partenaires {
   background-color: var(--gm-blanc-creme);
-  border-top: 1px solid rgba(23,23,35,0.10);
-  border-bottom: 1px solid rgba(23,23,35,0.10);
+  border-top: 1px solid rgba(27, 40, 65,0.10);
+  border-bottom: 1px solid rgba(27, 40, 65,0.10);
   overflow: hidden;
   padding-block: clamp(2rem, 4vw, 3.5rem);
 }
@@ -259,7 +259,7 @@
 .gm-exp-avis {
   background-color: var(--gm-blanc-creme);
   padding-block: clamp(4rem, 7vw, 6rem);
-  border-bottom: 1px solid rgba(23,23,35,0.08);
+  border-bottom: 1px solid rgba(27, 40, 65,0.08);
 }
 .gm-exp-avis__title {
   text-align: center;

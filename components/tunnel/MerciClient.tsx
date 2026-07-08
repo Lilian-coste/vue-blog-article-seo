@@ -45,7 +45,7 @@ export default function MerciClient({ banner }: { banner?: React.ReactNode }) {
   return (
     <div className="tmerci">
       <style>{`
-        .tmerci{ --creme:#EAE1CD; --ink:#171723; --marine:#14213D; --or:#FAC864; --bleu:#0055A4; --rouge:#EF4135;
+        .tmerci{ --creme:#EAE1CD; --ink:#1B2841; --marine:#14213D; --or:#FAC864; --bleu:#0055A4; --rouge:#EF4135;
           font-family:'General Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color:var(--ink);
           display:flex; align-items:flex-start; justify-content:center; padding:48px 18px 64px; }
         .tmerci__card{ width:100%; max-width:600px; text-align:center; }
@@ -56,21 +56,21 @@ export default function MerciClient({ banner }: { banner?: React.ReactNode }) {
         .tmerci__sub{ color:#55505e; font-size:16.5px; margin:34px auto 0; max-width:480px; }
         .tmerci__sub em{ font-style:italic; }
         .tmerci__proof{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px 12px; margin:34px auto 0; max-width:520px; }
-        .tmerci__badge{ display:inline-flex; align-items:center; gap:7px; background:#fff; border:1px solid rgba(23,23,35,0.08);
+        .tmerci__badge{ display:inline-flex; align-items:center; gap:7px; background:#fff; border:1px solid rgba(27, 40, 65,0.08);
           border-radius:999px; padding:9px 15px; font-size:13.5px; font-weight:500; }
         .tmerci__badge svg{ color:var(--marine); flex:none; }
         .tmerci__next{ margin-top:48px; text-align:left; }
         .tmerci__next h2{ font-size:23px; font-weight:600; margin-bottom:18px; text-align:center; }
         .tmerci__steps{ display:flex; flex-direction:column; gap:10px; }
         .tmerci__step{ display:flex; gap:13px; align-items:flex-start; background:#fff;
-          border:1px solid rgba(23,23,35,0.07); border-radius:14px; padding:16px 18px; }
+          border:1px solid rgba(27, 40, 65,0.07); border-radius:14px; padding:16px 18px; }
         .tmerci__step .n{ flex:none; width:26px; height:26px; border-radius:50%; background:var(--marine); color:#fff;
           font-size:13px; font-weight:600; display:flex; align-items:center; justify-content:center; }
         .tmerci__step p{ font-size:14.5px; color:#3a3640; margin:0; }
         .tmerci__partners{ margin-top:36px; width:min(96vw, 1000px); margin-left:50%; transform:translateX(-50%); }
         .tmerci__partners .gm-exp-partenaires{ border-top:none; border-bottom:none; }
         .tmerci__avis{ margin-top:16px; display:flex; flex-wrap:wrap; justify-content:center; gap:14px; }
-        .tmerci__avis-card{ flex:1 1 280px; max-width:380px; background:#fff; border:1px solid rgba(23,23,35,0.07);
+        .tmerci__avis-card{ flex:1 1 280px; max-width:380px; background:#fff; border:1px solid rgba(27, 40, 65,0.07);
           border-radius:14px; padding:18px 20px; text-align:left; }
         .tmerci__avis-stars{ color:var(--or); font-size:14px; letter-spacing:2px; margin-bottom:7px; }
         .tmerci__avis-quote{ font-size:13px; color:#3a3640; line-height:1.5; margin:0 0 10px; }

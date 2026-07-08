@@ -8,9 +8,9 @@ export default function TunnelFooter() {
     <footer className="tunnel-footer" role="contentinfo">
       <style>{`
         .tunnel-footer{
-          --foot-cream:#EAE1CD; --foot-ink:#171723; --foot-anthracite:#42424E; --foot-line:rgba(23,23,35,.12);
+          --foot-cream:#EAE1CD; --foot-ink:#1B2841; --foot-anthracite:#42424E; --foot-line:rgba(27, 40, 65,.12);
           background:var(--foot-cream); color:var(--foot-ink);
-          border-top:1px solid rgba(23,23,35,.10);
+          border-top:1px solid rgba(27, 40, 65,.10);
           font-family:'General Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
         }
         .tunnel-footer__inner{
@@ -24,7 +24,7 @@ export default function TunnelFooter() {
         .tunnel-footer__social{ list-style:none; margin:0; padding:0; display:flex; gap:.65rem; }
         .tunnel-footer__social a{
           display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px;
-          border-radius:50%; background:transparent; border:1px solid rgba(23,23,35,.18); color:var(--foot-ink);
+          border-radius:50%; background:transparent; border:1px solid rgba(27, 40, 65,.18); color:var(--foot-ink);
           transition:background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
         }
         .tunnel-footer__social a:hover{ background:var(--foot-ink); color:var(--foot-cream); border-color:var(--foot-ink); transform:translateY(-2px); }

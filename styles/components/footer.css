@@ -58,7 +58,7 @@
   width: 40px;
   height: 40px;
   border-radius: var(--gm-radius-pill);
-  border: 1px solid rgba(23, 23, 35, 0.15);
+  border: 1px solid rgba(27, 40, 65, 0.15);
   color: var(--gm-bleu-encre);
   transition:
     background-color var(--gm-dur-fast) var(--gm-ease-out),
@@ -103,7 +103,7 @@
 .gm-footer__bottom {
   margin-top: var(--gm-space-12);
   padding-top: var(--gm-space-6);
-  border-top: 1px solid rgba(23, 23, 35, 0.10);
+  border-top: 1px solid rgba(27, 40, 65, 0.10);
 
   display: flex;
   flex-direction: column;

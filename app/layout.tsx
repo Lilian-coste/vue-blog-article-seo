@@ -47,7 +47,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   viewportFit: "cover",
-  themeColor: "#171723",
+  themeColor: "#1B2841",
 };
 
 // Schemas JSON-LD globaux (rendus sur toutes les pages).

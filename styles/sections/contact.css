@@ -20,13 +20,13 @@
   width: min(100% - 2rem, 560px);
   margin-inline: auto;
   background-color: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(23, 23, 35, 0.10);
+  border: 1px solid rgba(27, 40, 65, 0.10);
   border-radius: var(--gm-radius-lg);
   padding: clamp(2rem, 4vw, 3rem);
   text-align: center;
   box-shadow:
-    0 1px 2px rgba(23, 23, 35, 0.04),
-    0 8px 24px rgba(23, 23, 35, 0.06);
+    0 1px 2px rgba(27, 40, 65, 0.04),
+    0 8px 24px rgba(27, 40, 65, 0.06);
 }
 .gm-contact__step-cp h2 {
   font-size: clamp(1.4rem, 2.2vw, 1.75rem);
@@ -56,7 +56,7 @@
   letter-spacing: 0.1em;
   color: var(--gm-bleu-encre);
   background-color: #FFFFFF;
-  border: 1.5px solid rgba(23, 23, 35, 0.15);
+  border: 1.5px solid rgba(27, 40, 65, 0.15);
   border-radius: var(--gm-radius-md);
   transition: border-color var(--gm-dur-fast), box-shadow var(--gm-dur-fast);
 }
@@ -142,12 +142,12 @@
 /* ---------- Formulaire ---------- */
 .gm-contact__form {
   background-color: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(23, 23, 35, 0.10);
+  border: 1px solid rgba(27, 40, 65, 0.10);
   border-radius: var(--gm-radius-lg);
   padding: clamp(1.75rem, 3vw, 2.75rem);
   box-shadow:
-    0 1px 2px rgba(23, 23, 35, 0.04),
-    0 8px 24px rgba(23, 23, 35, 0.04);
+    0 1px 2px rgba(27, 40, 65, 0.04),
+    0 8px 24px rgba(27, 40, 65, 0.04);
 }
 .gm-contact__form-title {
   font-size: 1.5rem;
@@ -190,7 +190,7 @@
   font-size: 1rem;
   color: var(--gm-bleu-encre);
   background-color: #FFFFFF;
-  border: 1.5px solid rgba(23, 23, 35, 0.15);
+  border: 1.5px solid rgba(27, 40, 65, 0.15);
   border-radius: var(--gm-radius-md);
   transition:
     border-color var(--gm-dur-fast) var(--gm-ease-out),
@@ -295,7 +295,7 @@
 }
 .gm-contact__card--coords {
   background-color: rgba(234, 225, 205, 0.4);
-  border: 1px solid rgba(23, 23, 35, 0.10);
+  border: 1px solid rgba(27, 40, 65, 0.10);
 }
 .gm-contact__card--garantie {
   background-color: var(--gm-bleu-encre);
@@ -303,7 +303,7 @@
 }
 .gm-contact__card--phone {
   background-color: var(--gm-blanc-creme);
-  border: 1px solid rgba(23, 23, 35, 0.10);
+  border: 1px solid rgba(27, 40, 65, 0.10);
   text-align: center;
 }
 
@@ -360,7 +360,7 @@
   width: 24px; height: 24px;
   border-radius: 6px;
   background-color: var(--gm-dore);
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23171723' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231B2841' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>");
   background-size: 14px;
   background-repeat: no-repeat;
   background-position: center;
