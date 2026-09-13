@@ -1928,6 +1928,14 @@
           nom: state.nom,
           email: state.email,
           telephone: state.telephone,
+          // Chauffage actuel remonté au parent : pré-remplit le champ "Chauffage actuel"
+          // du formulaire de contact, renseigne l'email agence et alimente l'attribut
+          // Brevo CHAUFFAGE_ACTUEL qui segmente la séquence de bienvenue PAC.
+          // Le détail n'est transmis que si "autre" est le choix FINAL : on peut le
+          // saisir à l'étape 2b puis revenir en arrière et choisir gaz ou fioul, ce
+          // qui laisserait sinon un state.chauffage_autre périmé.
+          chauffage: state.chauffage || '',
+          chauffage_autre: state.chauffage === 'autre' ? (state.chauffage_autre || '') : '',
         };
         showStep('done');
       } catch (err) {

@@ -1927,6 +1927,15 @@
           nom: state.nom,
           email: state.email,
           telephone: state.telephone,
+          // V19 : chauffage actuel remonté au parent. Sert à pré-remplir le champ
+          // "Chauffage actuel" du formulaire de contact, à renseigner l'email agence
+          // et à segmenter la séquence Brevo (le dernier email de la séquence PAC a
+          // un bloc réservé aux chaudières fioul).
+          // Le détail n'est transmis que si "autre" est le choix FINAL : on peut le
+          // saisir à l'étape 2b puis revenir en arrière et choisir gaz ou fioul, ce
+          // qui laisserait sinon un state.chauffage_autre périmé.
+          chauffage: state.chauffage || '',
+          chauffage_autre: state.chauffage === 'autre' ? (state.chauffage_autre || '') : '',
         };
         showStep('done');
       } catch (err) {
