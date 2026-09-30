@@ -2426,7 +2426,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
 <p>Le prix d'une climatisation réversible (monosplit) posée par un professionnel se situe entre <strong>6 000 € et 9 000 €</strong> dans la Nièvre et l'Yonne, matériel et pose inclus. Ce montant varie selon la puissance choisie, la configuration du logement et les travaux d'installation nécessaires.</p>
 <p>Pour la climatisation simple froid (rafraîchissement seul), aucune aide d'État significative n'est prévue. Pour la climatisation réversible (PAC air/air), deux dispositifs s'appliquent :</p>
 <ul class="gm-checklist">
-  <li><strong>Prime CEE (Certificats d'Économies d'Énergie)</strong> : versée par les fournisseurs d'énergie, elle peut atteindre <strong>975 €</strong> pour les ménages aux revenus très modestes et <strong>770 €</strong> pour les autres ménages. Conditions : logement de plus de 2 ans, artisan certifié RGE, appareil avec un SCOP ≥ 3,9 pour une puissance ≤ 12 kW, et demande déposée <em>avant</em> la signature du devis.</li>
+  <li><strong>Prime CEE (Certificats d'Économies d'Énergie)</strong> : versée par les fournisseurs d'énergie, elle peut atteindre <strong>900 €</strong> au maximum. Conditions : logement de plus de 2 ans, artisan certifié RGE, appareil avec un SCOP ≥ 3,9 pour une puissance ≤ 12 kW, et demande déposée <em>avant</em> la signature du devis.</li>
   <li><strong>TVA à 10 %</strong> : applicable à la place des 20 % habituels quand l'installation est réalisée par un professionnel dans un logement de plus de 2 ans.</li>
   <li><strong>MaPrimeRénov'</strong> : la climatisation réversible installée seule n'y donne pas droit. Elle peut entrer dans le calcul uniquement dans le cadre d'une rénovation d'ampleur.</li>
 </ul>
